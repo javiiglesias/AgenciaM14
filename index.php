@@ -1,7 +1,7 @@
 <?php
 
 require_once 'model/llibres.class.php';
-require_once 'model/usuaris.class.php';
+require_once 'model/business/class_usuari.php';
 session_start();
 
 $ctl = "inici";

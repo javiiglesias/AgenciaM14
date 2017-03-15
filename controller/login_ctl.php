@@ -1,7 +1,7 @@
 <?php
 
 $titlePage = "Iniciar Sessio";
-$Usuaris = new UsuarisDAO();
+$Usuaris = new UsuariDAO();
 
 if (isset($_REQUEST['recordarUsuari'])) {
     setcookie("usuari", $_REQUEST['usuari'], time() + 3600, "/");

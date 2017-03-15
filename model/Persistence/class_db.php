@@ -101,6 +101,17 @@ class db implements interface_db {
         //print_r($arrayLlibres);
         return $arrayLlibres;
     }
+     public function consultarUsuari($query) {
+        $con = $this->connect();
+        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+        $cont = 0;
+        while ($row = mysqli_fetch_array($consulta)) {
+            $usuari = new Usuari($row["id"], $row["username"], $row["password"], $row["rol"]);
+            $arrayUsuaris[$cont] = $usuari;
+            $cont++;
+        }
+        return $arrayUsuaris;
+    }
 
 }
 

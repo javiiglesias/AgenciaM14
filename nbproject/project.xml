@@ -3,7 +3,11 @@
     <type>org.netbeans.modules.php.project</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/php-project/1">
+<<<<<<< Updated upstream
             <name>Agencia</name>
+=======
+            <name>M14-AgenciaWeb</name>
+>>>>>>> Stashed changes
         </data>
     </configuration>
 </project>

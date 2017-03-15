@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 15-03-2017 a las 16:48:05
+-- Tiempo de generación: 15-03-2017 a las 17:37:46
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 7.0.2
 
@@ -33,7 +33,8 @@ CREATE TABLE `actor` (
   `cognom2` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `sexe` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `foto` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `id` int(20) NOT NULL
+  `id` int(20) NOT NULL,
+  `tipus_actor` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -73,7 +74,8 @@ CREATE TABLE `obra` (
   `nom` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `descripcio` text COLLATE utf8_spanish2_ci NOT NULL,
   `datainici` date NOT NULL,
-  `datafi` date NOT NULL
+  `datafi` date NOT NULL,
+  `tipus_obra` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------

@@ -1,7 +1,6 @@
 <?php
 
-require_once 'model/llibres.class.php';
-require_once 'model/usuaris.class.php';
+require_once("controller/function_AutoLoad.php");
 session_start();
 
 $ctl = "inici";
@@ -29,30 +28,74 @@ switch ($ctl) {
         }
         break;
 
-    case "llibre":        
-        switch ($act){
+    case "obra":
+        switch ($act) {
             case "afegir":
-                include "controller/afegirLlibre_ctl.php";
+                include "controller/afegirObra_ctl.php";
                 break;
             case "cercar":
-                include "controller/cercarLlibre_ctl.php";
+                include "controller/cercarObra_ctl.php";
                 break;
             case "modificar":
-                include "controller/modificarLlibre_ctl.php";
+                include "controller/modificarObra_ctl.php";
                 break;
             case "eliminar":
-                include "controller/eliminarLlibre_ctl.php";
+                include "controller/eliminarObra_ctl.php";
                 break;
         }
         break;
     
-    case"categoria":
-        switch ($act){
+    case "director":
+        switch ($act) {
             case "afegir":
-                include "controller/afegirCategoria_ctl.php";
+                include "controller/afegirDirector_ctl.php";
+                break;
+            case "cercar":
+                include "controller/cercarDirector_ctl.php";
+                break;
+            case "modificar":
+                include "controller/modificarDirector_ctl.php";
+                break;
+            case "eliminar":
+                include "controller/eliminarDirector_ctl.php";
                 break;
         }
         break;
+    
+    case "actor":
+        switch ($act) {
+            case "afegir":
+                include "controller/afegirActor_ctl.php";
+                break;
+            case "cercar":
+                include "controller/cercarActor_ctl.php";
+                break;
+            case "modificar":
+                include "controller/modificarActor_ctl.php";
+                break;
+            case "eliminar":
+                include "controller/eliminarActor_ctl.php";
+                break;
+        }
+        break;
+
+    case"tipusActor":
+        switch ($act) {
+            case "afegir":
+                include "controller/afegirTipusActor_ctl.php";
+                break;
+        }
+        break;
+    
+    case"tipusObra":
+        switch ($act) {
+            case "afegir":
+                include "controller/afegirTipusObra_ctl.php";
+                break;
+        }
+        break;
+    
+    
     default:
         include "controller/" . $ctl . "_ctl.php";
         break;

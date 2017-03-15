@@ -23,34 +23,22 @@
                         <?php } else { ?>
                             <li><a href="?ctl=quisom">Qui som?</a></li>
                         <?php } ?>
-                        <?php if ($titlePage == "Llibres") { ?>
-                            <li class="active"><a href="?ctl=llibres">Llibres</a></li> 
+                        <?php if ($titlePage == "Actors") { ?>
+                            <li class="active"><a href="?ctl=actors">Actors</a></li> 
                         <?php } else { ?>
-                            <li><a href="?ctl=llibres">Llibres</a></li> 
+                            <li><a href="?ctl=actors">Actors</a></li> 
                         <?php } ?>
-                        <?php if ($titlePage == "Categories") { ?>
-                            <li class="dropdown">
-                                <?php
-                                require_once 'model/categoria.class.php';
-                                $cat = new CategoriaDAO();
-
-                                $sel = $cat->llistaCategoria();
-                                echo $sel;
-                                ?> 
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
+                        <?php if ($titlePage == "Obres") { ?>
+                            <li class="active"><a href="?ctl=obres">Obres</a></li> 
                         <?php } else { ?>
-                            <li><a href="?ctl=llibres">Categories</a></li> 
+                            <li><a href="?ctl=obres">Obres</a></li> 
                         <?php } ?>
+                        <?php if ($titlePage == "Directors") { ?>
+                            <li class="active"><a href="?ctl=directors">Directors</a></li> 
+                        <?php } else { ?>
+                            <li><a href="?ctl=directors">Directors</a></li> 
+                        <?php } ?>
+                        
                         <?php if ($titlePage == "contacte") { ?>
                             <li class="active"><a href="?ctl=contacte">Contacte</a></li>
                         <?php } else { ?>

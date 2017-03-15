@@ -12,11 +12,13 @@ class usuaridb {
     }
 
     public function consultarUsuarisdb() {
-        $query="SELECT * FROM Usuari;";				
+        $query="SELECT id, username, password, rol FROM usuari;";				
 		$con = new db();
 		$arrayDeUsuaris = $con->consultarUsuari($query);
 		$con->close();
-		return $arrayDeUsuaris;	  
+                var_dump($arrayDeUsuaris);
+		return $arrayDeUsuaris;
+                
     }
 }
 ?>

@@ -1,0 +1,266 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19-dic-2016, 16:36:25
+    Author     : yaritza
+*/
+
+.container-fluid{
+    padding-left: 0px !important;
+    padding-right:  0px !important;
+}
+
+.paragraf {
+    font-size:18px;
+    padding:40px;
+    line-height: 2;
+    text-align: justify;
+}
+
+/* ======= Header ========*/
+
+.container-header{
+    padding-top: 80px;
+    height: 180px;
+    background-image: url("../images/header.jpg");
+    text-shadow: 1px 1px #ccc;
+    color:#fff;
+}
+
+.title-pag{
+    margin-left: 60px !important;
+}
+
+.jumbotron .h1, .jumbotron h1 {
+    font-size: 53px !important;
+}
+
+
+.img-logoHeader{
+    opacity:0.9;
+}
+
+/* ======= Menu ========== */
+.navbar-container{
+    position: absolute !important;
+    top:0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    margin-top: 0px !important;
+    box-sizing: border-box;
+    border: none !important;
+}
+.navbar-container > .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+.navbar-container .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.navbar-container .navbar .container {
+    width: auto;
+}
+
+.navbar-inverse {
+    background-color: #000 !important;
+    opacity: 0.8;
+    border-color: #ccc;
+}
+
+.navbar-inverse .navbar-brand{
+    color:#fff !important;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color:#fff !important;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:active {
+    color:#337ab7 !important;
+    border-bottom:5px solid #337ab7;
+    text-shadow:1px 1px 1px #000;
+    background-color:rgba(69, 68, 68, 1) !important;
+}
+
+.navbar-form {
+    margin-top: 0px !important;
+    margin-right: 0px !important;
+}
+
+.img-brand{
+    width:30px;
+}
+/* ======= Carrousel ========== */
+.carousel {
+    height: 500px;
+    margin-bottom: 60px;
+}
+.carousel-caption {
+    z-index: 10;
+}
+
+.carousel .item {
+    height: 500px;
+    background-color: #777;
+}
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+}
+/* ======= Mostrar Llibres ========== */
+.llibres{
+    cursor:pointer;
+}
+
+
+.btn-inici{
+    margin-left:70px;
+}
+
+
+.btn-modal{
+    margin-top:20px !important;
+    margin-bottom:20px !important;
+}
+
+/* ======= taula ========== */
+th{
+    text-align: center !important; 
+}
+
+/* ======= missatges ========== */
+.container-confirmacio, .container-error{
+    height:auto !important;
+}
+
+
+/* ======= Login ========== */
+.body-login{
+    min-width: 100%;
+    height:300px !important;
+    background-image: url("../images/bg-login.jpg");
+    background-size: cover;    
+
+}
+
+.container-login{
+    background-color: rgba(255, 255, 255, 0.8);
+    height:380px;
+    padding:30px;
+    margin-top:20px;
+    border-radius:6px;
+}
+
+.img-Logologin{
+    margin-left:30px;
+    margin-top:80px;
+    width:100px;
+}
+
+/*-------------------------------Icons---------------------------------*/
+
+.icon{
+    width:30px !important;
+}
+
+.btn-icon{  
+    width:27px !important;
+}
+
+/* ======= Footer ========== */
+.footer {
+    clear: both;
+    padding:20px;
+    color:#fff;
+    background-color: #000 !important;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+    /*    .navbar-container {
+            margin-top: 20px;
+        }*/
+    .navbar-container .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .navbar-container .navbar {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .navbar-container .navbar {
+        border-radius: 4px;
+    }
+
+    .carousel-caption p {
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+    .col-xs-12 {
+        padding: 0px 0 0 !important;
+    }
+    h1{
+        font-size: 36px;
+    }
+    .img-logoHeader{
+        max-width: 300px;
+        margin-left:-30px;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .featurette-heading {
+        margin-top: 120px;
+    }
+    .col-xs-12 {
+        padding: 0px 0 0 !important;
+    }
+
+    .img-mostra{
+        width:auto;       
+        height:220px !important;
+    }
+    h1{
+        font-size: 36px;
+    }   
+    .img-logoHeader{
+        min-width: 300px;
+        margin-left: -10px;
+
+    }
+}
+
+@media (min-width: 240px){
+    .img-mostra{
+        width: auto;
+        height:220px !important;
+    }
+    .img-wapper, .col-xs-12{
+        padding:0px !important;
+        padding-top: 40px !important;}
+
+    h1{
+        font-size: 20px;
+    }
+    .img-logoHeader{
+        max-width: 230px;
+    }
+}

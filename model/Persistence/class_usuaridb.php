@@ -16,7 +16,6 @@ class usuaridb {
 		$con = new db();
 		$arrayDeUsuaris = $con->consultarUsuari($query);
 		$con->close();
-                var_dump($arrayDeUsuaris);
 		return $arrayDeUsuaris;
                 
     }

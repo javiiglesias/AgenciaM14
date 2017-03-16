@@ -2,8 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d73d3bf-fa9d-48b8-88bc-8dcd081d11bb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/model/Persistence/class_usuarioDAO.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/actors_ctl.php" afterPath="$PROJECT_DIR$/controller/actors_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/afegirCategoria_ctl.php" afterPath="$PROJECT_DIR$/controller/afegirCategoria_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/afegirLlibre_ctl.php" afterPath="$PROJECT_DIR$/controller/afegirLlibre_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/cercarLlibre_ctl.php" afterPath="$PROJECT_DIR$/controller/cercarLlibre_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/contacte_ctl.php" afterPath="$PROJECT_DIR$/controller/contacte_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/directors_ctl.php" afterPath="$PROJECT_DIR$/controller/directors_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/eliminarLlibre_ctl.php" afterPath="$PROJECT_DIR$/controller/eliminarLlibre_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/function_AutoLoad.php" afterPath="$PROJECT_DIR$/controller/function_AutoLoad.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/inici_ctl.php" afterPath="$PROJECT_DIR$/controller/inici_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/llibres_ctl.php" afterPath="$PROJECT_DIR$/controller/llibres_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/login_ctl.php" afterPath="$PROJECT_DIR$/controller/login_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/logout.php" afterPath="$PROJECT_DIR$/controller/logout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/modificarLlibre_ctl.php" afterPath="$PROJECT_DIR$/controller/modificarLlibre_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/obres_ctl.php" afterPath="$PROJECT_DIR$/controller/obres_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/quisom_ctl.php" afterPath="$PROJECT_DIR$/controller/quisom_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/registreusuari_ctl.php" afterPath="$PROJECT_DIR$/controller/registreusuari_ctl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Persistence/class_Actordb.php" afterPath="$PROJECT_DIR$/model/Persistence/class_Actordb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Persistence/class_Directordb.php" afterPath="$PROJECT_DIR$/model/Persistence/class_Directordb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Persistence/class_db.php" afterPath="$PROJECT_DIR$/model/Persistence/class_db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Persistence/class_llibredb.php" afterPath="$PROJECT_DIR$/model/Persistence/class_llibredb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Persistence/class_llibreriadb.php" afterPath="$PROJECT_DIR$/model/Persistence/class_llibreriadb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Persistence/class_obradb.php" afterPath="$PROJECT_DIR$/model/Persistence/class_obradb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Persistence/class_usuaridb.php" afterPath="$PROJECT_DIR$/model/Persistence/class_usuaridb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Persistence/interface_db.php" afterPath="$PROJECT_DIR$/model/Persistence/interface_db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/business/class_Actor.php" afterPath="$PROJECT_DIR$/model/business/class_Actor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/business/class_Director.php" afterPath="$PROJECT_DIR$/model/business/class_Director.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/business/class_llibre.php" afterPath="$PROJECT_DIR$/model/business/class_llibre.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/business/class_llibreria.php" afterPath="$PROJECT_DIR$/model/business/class_llibreria.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/business/class_obra.php" afterPath="$PROJECT_DIR$/model/business/class_obra.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/business/class_usuari.php" afterPath="$PROJECT_DIR$/model/business/class_usuari.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/categoria.class.php" afterPath="$PROJECT_DIR$/model/categoria.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/idioma.class.php" afterPath="$PROJECT_DIR$/model/idioma.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/llibres.class.php" afterPath="$PROJECT_DIR$/model/llibres.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/usuaris.class.php" afterPath="$PROJECT_DIR$/model/usuaris.class.php" />
     </list>
     <ignored path="AgenciaM14.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,10 +56,120 @@
     <favorites_list name="AgenciaM14" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="login_ctl.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/login_ctl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/menu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="76" column="6" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class_usuari.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/business/class_usuari.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="function_AutoLoad.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/function_AutoLoad.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class_usuaridb.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/Persistence/class_usuaridb.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <marker date="1489677343948" expanded="true" signature="304:350" ph="SELECT id, u... usuari" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/db.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/config.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/model/Persistence/class_usuaridb.php" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -117,7 +260,39 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Persistence" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AgenciaM14" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AgenciaM14" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="business" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AgenciaM14" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AgenciaM14" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -183,18 +358,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1489675694263</updated>
-      <workItem from="1489675695498" duration="1042000" />
+      <workItem from="1489675695498" duration="1712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1042000" />
+    <option name="totallyTimeSpent" value="1712000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1368" height="721" extended-state="7" />
-    <editor active="false" />
+    <frame x="-1" y="24" width="1368" height="721" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -203,7 +378,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39730638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3956229" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -226,14 +401,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controller/login_ctl.php</url>
-          <line>3</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -286,22 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/login_ctl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/categoria.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -318,34 +470,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/header.php">
+    <entry file="file://$PROJECT_DIR$/model/business/class_Actor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/usuaris.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Persistence/class_usuarioDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/menu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+        <state relative-caret-position="186">
+          <caret line="76" column="6" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/function_AutoLoad.php">
+    <entry file="file://$PROJECT_DIR$/view/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="186">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/db.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/business/class_usuari.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+        <state relative-caret-position="56">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Persistence/class_usuaridb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <marker date="1489677343948" expanded="true" signature="304:350" ph="SELECT id, u... usuari" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/function_AutoLoad.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/login_ctl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
           <folding />
         </state>
       </provider>

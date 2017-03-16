@@ -1,6 +1,7 @@
 <?php
 
 require_once("controller/function_AutoLoad.php");
+require_once('model/business/class_usuari.php');
 session_start();
 
 $ctl = "inici";

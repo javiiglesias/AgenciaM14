@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 15-03-2017 a las 17:37:46
+-- Tiempo de generación: 16-03-2017 a las 15:40:16
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 7.0.2
 
@@ -75,18 +75,23 @@ CREATE TABLE `obra` (
   `descripcio` text COLLATE utf8_spanish2_ci NOT NULL,
   `datainici` date NOT NULL,
   `datafi` date NOT NULL,
-  `tipus_obra` int(20) NOT NULL
+  `tipus_obra` int(20) NOT NULL,
+  `agencia` int(20) NOT NULL,
+  `director` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tipus_actor`
+-- Estructura de tabla para la tabla `obra_actor`
 --
 
-CREATE TABLE `tipus_actor` (
+CREATE TABLE `obra_actor` (
   `id` int(20) NOT NULL,
-  `paper` varchar(20) COLLATE utf8_spanish2_ci NOT NULL
+  `id_obra` int(20) NOT NULL,
+  `id_actor` int(20) NOT NULL,
+  `paper` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `tipus_paper` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -103,6 +108,21 @@ CREATE TABLE `tipus_obra` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tipus_paper`
+--
+
+CREATE TABLE `tipus_paper` (
+  `id` int(20) NOT NULL,
+  `primari` tinyint(1) NOT NULL,
+  `secundari` tinyint(1) NOT NULL,
+  `extra` tinyint(1) NOT NULL,
+  `especialista` tinyint(1) NOT NULL,
+  `repartiment` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuari`
 --
 
@@ -112,6 +132,13 @@ CREATE TABLE `usuari` (
   `password` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `rol` varchar(20) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `usuari`
+--
+
+INSERT INTO `usuari` (`id`, `username`, `password`, `rol`) VALUES
+(1, 'admin', 'admin', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -142,15 +169,21 @@ ALTER TABLE `obra`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `tipus_actor`
+-- Indices de la tabla `obra_actor`
 --
-ALTER TABLE `tipus_actor`
+ALTER TABLE `obra_actor`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `tipus_obra`
 --
 ALTER TABLE `tipus_obra`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tipus_paper`
+--
+ALTER TABLE `tipus_paper`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -184,9 +217,9 @@ ALTER TABLE `director`
 ALTER TABLE `obra`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `tipus_actor`
+-- AUTO_INCREMENT de la tabla `obra_actor`
 --
-ALTER TABLE `tipus_actor`
+ALTER TABLE `obra_actor`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `tipus_obra`
@@ -194,10 +227,15 @@ ALTER TABLE `tipus_actor`
 ALTER TABLE `tipus_obra`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `tipus_paper`
+--
+ALTER TABLE `tipus_paper`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `usuari`
 --
 ALTER TABLE `usuari`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

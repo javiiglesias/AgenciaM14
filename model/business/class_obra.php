@@ -7,13 +7,14 @@ class Obra {
     private $id;
     private $nom;
     private $descripcio;
-    private $dateinici;
-    private $datefi;
+    private $datainici;
+    private $datafi;
+    private $tipusObra;
 
-    public function __construct($titol_llibre, $autor_llibre, $editorial_llibre) {
+    public function __construct($nom,$descripcio,$datainici,$datafi,$tipusobra) {
         $this->setId(null);
-        $this->setTitol($titol_llibre);
-        $this->setAutor($autor_llibre);
+        $this->setNom($nom);
+        $this->setDescripcio($descripcio);
         $this->setEditorial($editorial_llibre);
     }
 

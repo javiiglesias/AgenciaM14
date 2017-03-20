@@ -30,7 +30,9 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 
         if (isset($_REQUEST['datafi'])) {
             $datafi = $_REQUEST['datafi'];
-            $datafi =  new DateTime($datafi);
+            $datafi = date_create($datafi);
+            $datafi = date_format('d/m/Y');
+            var_dump($datafi);            exit();
         }
         if (isset($_REQUEST['tipusobra'])) {
             $tipusObra = $_REQUEST['tipusobra'];
@@ -43,7 +45,6 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         if (isset($_REQUEST['agencia'])) {
             $agencia= $_REQUEST['agencia'];
         }
-        
         $obra = new Obra($nom, $descripcio, $datainici, $datafi, $tipusobra,$agencia, $directors);
         if ($nom != null && $descripcio != null && $datainici != null && $datafi != null && $tipusObra != null && $director != null && $agencia != null) {
             $obra->inserirObra(addslashes($nom), addslashes($descripcio), $datainici, $datafi, addslashes($tipusObra),  addslashes($agencia), addslashes($director));

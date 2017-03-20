@@ -9,7 +9,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="?ctl=inici"><img src="view/images/icon-logo.png" class="img-brand"/></a>
+                    <a class="navbar-brand" href="?ctl=inici"><img src="view/images/logo2.png" class="img-brand"/></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">                    
                     <ul class="nav navbar-nav">

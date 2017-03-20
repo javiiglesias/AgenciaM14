@@ -15,9 +15,9 @@
                 <?php } ?>
                 <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
                     <?php if ($titlePage == "Afegir Llibres") { ?>
-                        <li role = "presentation" class="active"><a href ="?ctl=llibre&act=afegir">Afegir nou Llibre</a></li>
+                        <li role = "presentation" class="active"><a href ="?ctl=obra&act=afegir">Afegir nova Obra</a></li>
                     <?php } else { ?>
-                        <li role = "presentation"><a href = "?ctl=llibre&act=afegir">Afegir nou Llibre</a></li>
+                        <li role = "presentation"><a href = "?ctl=obra&act=afegir">Afegir nova Obra</a></li>
                     <?php } ?>
                 <?php } ?> 
             </ul>

@@ -2,6 +2,7 @@
 
 require_once("controller/function_AutoLoad.php");
 require_once('model/business/class_usuari.php');
+require_once('model/business/class_obra.php');
 session_start();
 
 $ctl = "inici";

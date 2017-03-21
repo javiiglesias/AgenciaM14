@@ -9,17 +9,19 @@ require_once("config/db.inc.php");
 
 class DirectorDb {
 
+
+    // modificar
     public function inserir($director) {
 
-        $query = "insert into directors values('', '" . $director->getDni() . "', '" . $llibre->getNom() . "', '" . $llibre->getCognom1() . "', '" . $llibre->getCognom2() . "');";
+        $query = "insert into directors values('', '" . $director->getDni() . "', '" . $director->getNom() . "', '" . $director->getCognom1() . "', '" . $director->getCognom2() . "');";
         $con = new db();
         $con->consulta($query);
         $con->close();
     }
-    public function populateDirectordb() {
-        $query="SELECT * FROM llibres;";				
+    public function retornarDirectors() {
+        $query="SELECT * FROM director;";
 		$con = new db();
-		$arrayDeDirectors = $con->consultarDirectors($query);
+		$arrayDeDirectors = $con->consultarDirector($query);
 		$con->close();
 		return $arrayDeDirectors;	  
     }

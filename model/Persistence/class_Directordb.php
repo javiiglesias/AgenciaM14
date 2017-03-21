@@ -39,6 +39,12 @@ class DirectorDb {
         $con->consulta($query);
         $con->close();
     }
+    public function eliminarDirector($dni) {
+        $query = "DELETE FROM director WHERE nif='".$dni."'";
+        $con = new db();
+        $con->consulta($query);
+        $con->close();
+    }
 
 }
 

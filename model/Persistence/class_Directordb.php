@@ -25,6 +25,20 @@ class DirectorDb {
 		$con->close();
 		return $arrayDeDirectors;	  
     }
+    public function retornarDirectorsConcret($dni) {
+        $query="SELECT * FROM director WHERE nif = '".$dni."'";
+        $con = new db();
+        $director = $con->consultarDirector($query);
+        $con->close();
+        return $director;
+    }
+
+    public function modificarDirector($dni, $nom, $cognom1, $cognom2) {
+        $query = "UPDATE director SET nif='".$dni."', nom='".$nom."', cognom1='".$cognom1."', cognom2='".$cognom2."'  WHERE nif='".$dni."'";
+        $con = new db();
+        $con->consulta($query);
+        $con->close();
+    }
 
 }
 

@@ -20,6 +20,13 @@ require_once 'view/menuEdicio.php';
                             <h5><strong><?php echo $data->getNom(); ?></strong></h5>
                             <h5><strong><?php echo $data->getCognom1(); ?></strong></h5>
                             <h5><strong><?php echo $data->getCognom2(); ?></strong></h5>
+                            <?php
+                            if (isset($_SESSION['login']) == true) {
+                                // cambiar param
+                                echo "<td><div align='center'><a href='./index.php?ctl=director&act=modificar&dni=" . $data->getDni() . "'><img src='./view/images/modificar.png' width='40' height='40'></a></div></td>";
+                                echo "<td><div align='center'><a href='./index.php?ctl=director&act=eliminar&dni=" . $data->getDni() . "'><img src='./view/images/eliminar.png' width='40' height='40'></a></div></td>";
+                            }
+                            ?>
                         </div>
                     </div>
                 <?php endforeach; ?>

@@ -61,6 +61,9 @@ switch ($ctl) {
             case "eliminar":
                 include "controller/eliminarDirector_ctl.php";
                 break;
+            case "cercar2":
+                include "view/cercarDirector.php";
+                break;
         }
         break;
     

@@ -25,8 +25,9 @@ class DirectorDb {
 		$con->close();
 		return $arrayDeDirectors;	  
     }
-    public function retornarDirectorsConcret($dni) {
-        $query="SELECT * FROM director WHERE nif = '".$dni."'";
+    public function retornarDirectorsConcret($nom) {
+//        $query="SELECT * FROM director WHERE nif = '".$dni."'";
+        $query="SELECT * FROM director WHERE %nom% =''".$nom."''";
         $con = new db();
         $director = $con->consultarDirector($query);
         $con->close();

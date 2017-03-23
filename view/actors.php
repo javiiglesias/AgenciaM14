@@ -3,12 +3,13 @@
     <div class="container">
         <div class="col-xs-12 col-md-6 col-md-push-3">
             <h1>PAGINA ACTORS</h1>
-            <form action="?ctl=llibres" method="post">
+            <form action="?ctl=actors" method="post">
                 <div class="form-group">
                     Cercar per Categoria:
                     <?php
-                    require_once 'model/categoria.class.php';
-                    $cat = new CategoriaDAO();
+                    
+                    
+                    $cat = new Sexedb();
 
                     $sel = $cat->createSelectCategories();
                     echo $sel;
@@ -32,17 +33,15 @@
             </form>
         </div>
         <div class="row col-lg-8 col-lg-push-3 ">
-            <?php if (count($llibresArray) > 0) { ?>        
-                <?php foreach ($llibresArray as $data): ?>	
+            
+            <?php if (count($arrayActors) > 0) { ?>        
+                <?php foreach ( $arrayActors as  $data): ?>	
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                         <div class="thumbnail col-lg-11 col-lg-pull-1 llibres text-center">
-                            <?php
-                            $nomImg = $data->nom;
-                            include 'imagenes.php';
-                            ?>
-                            <h5><strong><?php echo $data->nom; ?></strong></h5>
-                            <h5><?php echo $data->autor; ?></h5>                        
-                            <h5><strong>Preu:</strong> <?php echo $data->preu; ?> € <button class="btn btn-danger btn-sm"><span class="fa fa-shopping-cart"></span> Comprar</button></h5>                        
+                            <img class="icon" src="<?php echo $data->getFoto(); ?>"></img>
+                            <h5><strong><?php echo $data->getNom(); ?></strong></h5>
+                            <h5><?php echo $data->getDni(); ?></h5>                        
+                            <h5><strong>Sexe:</strong> <?php echo $data->getSexe(); ?> <a href="?ctl=veure_fitxa&id=<?php echo $data->getId(); ?>" class="btn btn-danger btn-sm"></span> Fitxa</a></h5>                        
                         </div>
                     </div>
                 <?php endforeach; ?>

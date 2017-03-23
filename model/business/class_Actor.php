@@ -19,7 +19,7 @@ class Actor {
         $this->setCognom1($_cognom1);
         $this->setCognom2($_cognom2);
         $this->setSexe($_sexe);
-        $this->setFoto($foto);
+        $this->setFoto($_foto);
     }
 
     public function getId() {

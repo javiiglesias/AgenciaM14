@@ -14,10 +14,10 @@
                     <li role = "presentation"><a href = "?ctl=cercarLlibre">Llista Llibres</a></li>
                 <?php } ?>
                 <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
-                    <?php if ($titlePage == "Afegir Llibres") { ?>
-                        <li role = "presentation" class="active"><a href ="?ctl=obra&act=afegir">Afegir nova Obra</a></li>
+                    <?php if ($titlePage == "Directors") { ?>
+                        <li role = "presentation" class="active"><a href ="?ctl=director&act=afegir">Afegir nou director</a></li>
                     <?php } else { ?>
-                        <li role = "presentation"><a href = "?ctl=obra&act=afegir">Afegir nova Obra</a></li>
+                        <li role = "presentation"><a href = "?ctl=director&act=afegir">Por modificar</a></li>
                     <?php } ?>
                 <?php } ?> 
             </ul>

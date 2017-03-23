@@ -11,9 +11,9 @@ class DirectorDb {
 
 
     // modificar
-    public function inserir($director) {
+    public function inserir($dni, $nom, $cognom1, $cognom2) {
 
-        $query = "insert into directors values('', '" . $director->getDni() . "', '" . $director->getNom() . "', '" . $director->getCognom1() . "', '" . $director->getCognom2() . "');";
+        $query = "insert into director values('', '" . $dni . "', '" . $nom . "', '" . $cognom1 . "', '" . $cognom2 . "');";
         $con = new db();
         $con->consulta($query);
         $con->close();

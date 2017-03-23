@@ -13,7 +13,7 @@ require_once 'view/menuEdicio.php';
                         <div class="thumbnail col-lg-11 col-lg-pull-1 llibres text-center">
                             <?php
                             // poner imagen del director
-                            $nomImg = $data->getNom();
+                            $nomImg = "Director";
                             include 'imagenes.php';
                             ?>
                             <h5><strong><?php echo $data->getDni(); ?></strong></h5>

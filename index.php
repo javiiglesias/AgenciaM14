@@ -41,12 +41,15 @@ switch ($ctl) {
             case "modificar":
                 include "controller/modificarObra_ctl.php";
                 break;
+            case "detalls":
+                include "controller/detallObra_ctl.php";
+                break;
             case "eliminar":
                 include "controller/eliminarObra_ctl.php";
                 break;
         }
         break;
-    
+
     case "director":
         switch ($act) {
             case "afegir":
@@ -66,7 +69,7 @@ switch ($ctl) {
                 break;
         }
         break;
-    
+
     case "actor":
         switch ($act) {
             case "afegir":
@@ -91,7 +94,7 @@ switch ($ctl) {
                 break;
         }
         break;
-    
+
     case"tipusObra":
         switch ($act) {
             case "afegir":
@@ -99,8 +102,8 @@ switch ($ctl) {
                 break;
         }
         break;
-    
-    
+
+
     default:
         include "controller/" . $ctl . "_ctl.php";
         break;

@@ -2,7 +2,7 @@
 
 $titlePage = "Obres";
 
-$obra = new Obra("asda", "sadsad", "sadasd", "sdsad", "adasd","sad");
+$obra = new Obra();
 
 $obraArray = $obra->mostrarObra();
 

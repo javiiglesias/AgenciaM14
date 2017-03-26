@@ -10,8 +10,8 @@
             <img class="first-slide img-responsive" src="view/images/carrusel1.png" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <div class="paragraf col-xs-12 col-sm-6 col-md-3   col-sm-push-5 col-md-push-4 col-lg-push-4">
-<!--                        <img src="view/images/Logov2.png" class="img-responsive img-logoHeader">-->
+                    <div class="paragraf col-xs-12 col-sm-6 col-md-3 col-sm-push-5 col-md-push-4 col-lg-push-4">
+                        <img src="view/images/logo.png" class="img-responsive img-logoHeader">
                     </div>              
                 </div>
             </div>
@@ -56,7 +56,7 @@
                     <div class="caixa-info-front caixa-img-1"></div>
                     <div class="caixa-info-back">
                         <h3>Obres</h3>
-                        <p>Obres representades <a href="http://drbl.in/eAoj">Veure</a></p>
+                        <p>Obres representades pels nostres actors <a href="?ctl=obres">Veure</a></p>
                     </div>	
                 </div>
             </div>
@@ -67,7 +67,7 @@
                     <div class="caixa-info-front caixa-img-2"></div>
                     <div class="caixa-info-back">
                         <h3>Actors</h3>
-                        <p>Comptem amb divers actors <a href="http://drbl.in/eCcV">Veure</a></p>
+                        <p>Comptem amb divers actors <a href="?ctl=actors">Veure</a></p>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                     <div class="caixa-info-front caixa-img-3"></div>
                     <div class="caixa-info-back">
                         <h3>Directors</h3>
-                        <p>Que representen els obres<a href="http://drbl.in/ewTL">Veure</a></p>
+                        <p>Que representen els obres<a href="?ctl=directors">Veure</a></p>
                     </div>
                 </div>
             </div>

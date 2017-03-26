@@ -1,7 +1,6 @@
 <div class="container-fluid">
     <div class="container" >
-
-        <div class="paragraf col-xs-12 col-md-8 col-lg-6 col-lg-pull-1  col-lg-push-1">
+        <div class="paragraf col-xs-12 col-md-8 col-lg-5 col-lg-pull-1  col-lg-push-1">
             <p>En 1992 comencen la creació de l'Agència d'Actors.</p>
             <p>Des de llavors estem orgullosos d'ocupar-nos de les carreres d'alguns dels més 
                 destacats actors i actrius d'Espanya que han dipositat en nosaltres la seva confiança 
@@ -18,8 +17,8 @@
                 representats i que amb la nostra presència directa podem ajudar i impulsar.</p>
         </div>
 
-        <div class="paragraf col-xs-12 col-md-3 col-lg-1 col-lg-push-2">
-            <img src="view/images/logo_textNegre.png">
+        <div class="paragraf col-xs-12 col-md-4 col-lg-4 col-lg-push-2">
+            <img src="view/images/logo_textNegre.png" class="img-responsive">
         </div>
     </div>
 </div>

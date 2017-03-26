@@ -89,7 +89,7 @@
                     </div>                  
                     <form action="?ctl=obra&act=eliminar" method="post">
                         <div class="modal-body">
-                            <h1>Estas segur que vos eliminar aquesta obra?</h1>                       
+                            <h1>Estàs segur que vols eliminar aquesta obra?</h1>                       
                             <input type="hidden" name="id" id="idobra" value="">   
                         </div>
                         <div class="modal-footer">
@@ -103,4 +103,14 @@
 
     </div>
 </div>
+
+<script>
+$(document).on("click", ".delete", function () {
+    var data_id = "";
+    if (typeof $(this).data('id') !== undefined) {
+        data_id = $(this).data('id');
+    }
+    $('#idobra').val(data_id);
+});
+</script>
 

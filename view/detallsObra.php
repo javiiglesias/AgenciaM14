@@ -33,20 +33,41 @@
         </div>  
     </div>
     <div class="row">
-        <div  class="col-xs-12 col-md-3 col-lg-4 col-lg-push-4 formulari">        
-            <h1 class="text-center">Detalls Obra</h1>
-            <h5><strong>Nom:</strong></h5>
-            <p><?php echo $obraTrobada->getNomObra();?></p>
-            <h5><strong>Descripció:</strong></h5>
-            <p> <?php echo $obraTrobada->getDescripcioObra();?></p>
-            <h5><strong>Data Inici:</strong></h5>
-            <p> <?php echo $obraTrobada->getDataIniciObra();?></p>
-            <h5><strong>Data Fi:</strong></h5>
-            <p> <?php echo $obraTrobada->getDataFiObra();?></p>
-            <h5><strong>Tipus Obra:</strong> </h5>
-            <p><?php echo $tipusTrobat->getDescripcio()?></p>
-            <h5><strong>Director:</strong></h5>
-            <p> <?php echo $directorTrobat->getNom() . "  ". $directorTrobat->getCognom1(). "  ". $directorTrobat->getCognom2()?></p>
+        <div  class="col-xs-12 col-md-3 col-lg-6 col-lg-push-3">        
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class=" text-center">Detalls Obra</h1>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <td><h5><strong>Nom:</strong></h5></td>
+                            <td><p><?php echo $obraTrobada->getNomObra(); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td><h5><strong>Descripció:</strong></h5> </td>
+                            <td><p> <?php echo $obraTrobada->getDescripcioObra(); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td> <h5><strong>Data Inici:</strong></h5> </td>
+                            <td><p> <?php echo $obraTrobada->getDataIniciObra(); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td> <h5><strong>Data Fi:</strong></h5> </td>
+                            <td><p> <?php echo $obraTrobada->getDataFiObra(); ?></p></td>
+                        </tr>
+                        <tr>
+                            <td> <h5><strong>Tipus Obra:</strong> </h5> </td>
+                            <td><p><?php echo $tipusTrobat->getDescripcio() ?></p></td>
+                        </tr>
+                        <tr>
+                            <td> <h5><strong>Director:</strong></h5> </td>
+                            <td><p> <?php echo $directorTrobat->getNom() . "  " . $directorTrobat->getCognom1() . "  " . $directorTrobat->getCognom2() ?></p></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>            
         </div>
     </div>    
 </div>

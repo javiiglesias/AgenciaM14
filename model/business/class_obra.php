@@ -151,7 +151,7 @@ class Obra {
 
         $select = '<select name="director"  class="form-control">';
         foreach ($ArraydeDirectors as $direct) {
-            $select = $select . '<option value="' . $direct->getId() . '">' . $direct->getNom() . " " . $direct->getCognom1() . '</option>';
+            $select = $select . '<option value="' . $direct->getId() . '">' . $direct->getNom() . " " . $direct->getCognom1() ." " . $direct->getCognom2() . '</option>';
         }
         $select = $select . '</select>';
         return $select;
@@ -163,9 +163,9 @@ class Obra {
         $select = '<select name="tipusobra" class="form-control">';
         foreach ($ArraydeDirectors as $sec) {
             if ($sec->getId() == $directorSelect) {
-                $select = $select . '<option value="' . $sec->getId() . '"selected>' . $sec->getNom() . " " . $sec->getCognom1() . '</option>';
+                $select = $select . '<option value="' . $sec->getId() . '"selected>' . $sec->getNom() . " " . $sec->getCognom1() ." " . $sec->getCognom2(). '</option>';
             } else {
-                $select = $select . '<option value="' . $sec->getId() . '">' . $sec->getNom() . " " . $sec->getCognom1() . '</option>';
+                $select = $select . '<option value="' . $sec->getId() . '">' . $sec->getNom() . " " . $sec->getCognom1() ." " . $sec->getCognom2(). '</option>';
             }
         }
         $select = $select . '</select>';

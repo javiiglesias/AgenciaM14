@@ -262,7 +262,7 @@ a.btn {
 }
 
 .caixa-info h3 {
-    color: #fff;
+    color: #ffcc00;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 24px;
@@ -364,6 +364,12 @@ a.btn {
     margin-bottom:20px !important;
 }
 
+
+/* ======= Panel Obra ====== */
+
+.panel-heading h1 {
+    color: #fff !important;    
+}
 /* ======= taula ========== */
 th{
     text-align: center !important; 

@@ -67,7 +67,7 @@
                     <div class="caixa-info-front caixa-img-2"></div>
                     <div class="caixa-info-back">
                         <h3>Actors</h3>
-                        <p>Comptem amb divers actors <a href="?ctl=actors">Veure</a></p>
+                        <p>Comptem amb molts actors <a href="?ctl=actors">Veure</a></p>
                     </div>
                 </div>
             </div>

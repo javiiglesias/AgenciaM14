@@ -1,3 +1,3 @@
 <?php
-	$GLOBALS['bd'] = "agencia";
+	$GLOBALS['bd'] = "Agencia";
 ?>

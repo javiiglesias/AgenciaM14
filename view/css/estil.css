@@ -23,10 +23,11 @@ and open the template in the editor.
 /* ======= Header ========*/
 
 .container-header{
-    margin:-23px;
+    margin-top:-23px;
     padding-top: 80px;
     height: 210px;
     background-image: url("../images/header.jpg");
+    background-size: cover;
     text-shadow: 1px 1px #ccc;
     color:#fff;
 }
@@ -315,6 +316,7 @@ a.btn {
 
 
 .div-caixa:hover{
+    box-sizing: border-box;
     border: 5px solid #ffcc00;
 }
 

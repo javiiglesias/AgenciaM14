@@ -13,6 +13,7 @@ $director = null;
 require_once 'view/header.php';
 
 if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
+    
     if (isset($_REQUEST['id'])) {
         $id = $_REQUEST['id'];
     }
@@ -41,6 +42,9 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
     
     $obraTrobada = $obra->cercarIdObra($id);
     
+    $tipusObraSeleccionat = $obra->tipusObraSeleccionat($obraTrobada->getTipusObra());
+    $directorSeleccionat = $obra->directorObraSeleccionat($obraTrobada->getDirectorObra());
+    
     if (isset($_REQUEST['Submit'])) {        
         if ($nom != null && $descripcio != null && $datainici != null && $datafi != null && $tipusObra != null && $director != null) {
             $obra->modificarObra($obraTrobada, addslashes($nom), addslashes($descripcio), addslashes($datainici), addslashes($datafi), addslashes($tipusObra), addslashes($director));
@@ -56,7 +60,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
     }
     
 } else {
-    $missatge = "No tens permisos per entrar en aquesta pagina! sis plau inicia sessio. Gracies";
+    $missatge = "No tens permisos per entrar en aquesta pàgina! Si us plau, inicia sessió. Gràcies";
     require_once 'view/error.php';
 }
 

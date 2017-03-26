@@ -75,7 +75,7 @@ and open the template in the editor.
 
 .navbar-inverse {
     background-color: #000 !important;
-    opacity: 0.8;
+    opacity: 0.9;
     border-color: #ccc;
 }
 
@@ -119,6 +119,14 @@ a{
 }
 
 a:hover {
+    color:#ffcc00 !important;
+}
+
+.alert-link{
+    color:#fff !important;
+}
+
+.alert-link:hover{
     color:#ffcc00 !important;
 }
 
@@ -314,10 +322,37 @@ a.btn {
 
 /* ===== Caixa Mostrar===== */
 
-
-.div-caixa:hover{
-    box-sizing: border-box;
-    border: 5px solid #ffcc00;
+.div-caixa {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+.div-caixa:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-color: #ffcc00;
+  border-style: solid;
+  border-width: 0;
+  -webkit-transition-property: border-width;
+  transition-property: border-width;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.div-caixa:hover:before, .div-caixa:focus:before, .div-caixa:active:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  border-width: 4px;
 }
 
 .btn-mof-elim{
@@ -378,6 +413,7 @@ th{
     clear: both;
     padding:20px;
     color:#fff;
+    border-top: 1px solid #ffcc00;
     background-color: #313131!important;
     margin-top: 40px;
 }

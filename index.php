@@ -97,8 +97,17 @@ switch ($ctl) {
 
     case"tipusObra":
         switch ($act) {
+            case "mostrar":
+                include "controller/tipusObra_ctl.php";
+                break;
             case "afegir":
                 include "controller/afegirTipusObra_ctl.php";
+                break;
+            case "modificar":
+                include "controller/modificarTipusObra_ctl.php";
+                break;
+            case "eliminar":
+                include "controller/eliminarTipusObra_ctl.php";
                 break;
         }
         break;

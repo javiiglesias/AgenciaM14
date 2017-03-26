@@ -118,6 +118,7 @@ class db implements interface_db {
         $cont = 0;
         while ($row = mysqli_fetch_array($consulta)) {
             $director = new Director($row["nif"], $row["nom"], $row["cognom1"], $row["cognom2"]);
+            $director->setId($row["id"]);
             $arrayDeDirectors[$cont] = $director;
             $cont++;
         }

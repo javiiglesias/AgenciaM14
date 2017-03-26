@@ -4,12 +4,18 @@ require_once("controller/function_AutoLoad.php");
 
 class tipus_obra {
 
-    private $id;
-    private $descripcio;
+    private $id = null;
+    private $descripcio = null;
 
-    public function __construct($id, $descripcio) {
-        $this->setId(null);
-        $this->setDescripcio($descripcio);
+    public function __construct() {
+        switch (func_num_args()) {
+            case 0:
+                break;
+            case 1:
+                $this->setId(null);
+                $this->setDescripcio(func_get_args()[0]);
+                break;
+        }
     }
 
     public function getId() {
@@ -28,9 +34,39 @@ class tipus_obra {
         $this->descripcio = $value;
     }
 
-    public function inserirTipus_obra() {
-        $tipus_obraDb = new tipus_obraDb();
-        $tipus_obraDb->inserir($this);
+    public function afegirTipusObra($descripcio) {
+        $tipusObra = new tipus_obra($descripcio);
+        $tipus_obraDb = new tipus_obradb();
+        $tipus_obraDb->inserir($tipusObra);
+    }
+
+    public function mostrarTipusObra() {
+        $tipusObra = new tipus_obradb();
+        $arrayTipusObra = $tipusObra->populateTipusObraDb();
+        return $arrayTipusObra;
+    }
+
+    public function cercarId($id) {
+        $arrayTipusObra = $this->mostrarTipusObra();
+        $found = null;
+        foreach ($arrayTipusObra as $typeselect) {
+            if ($typeselect->getId() == $id) {
+                $found = $typeselect;
+            }
+        }
+        return $found;
+    }
+
+    public function modificarTipusObra($id, $descripcio) {
+        $tipusObra = $this->cercarId($id);
+        $tipus_obraDb = new tipus_obradb();
+        $tipus_obraDb->modificar($tipusObra, $descripcio);
+    }
+
+    public function eliminarTipusObra($id) {
+        $tipusObra = $this->cercarId($id);
+        $tipus_obraDb = new tipus_obradb();
+        $tipus_obraDb->eliminar($tipusObra);
     }
 
 }

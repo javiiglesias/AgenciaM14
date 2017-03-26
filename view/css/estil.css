@@ -20,6 +20,9 @@ and open the template in the editor.
     text-align: justify;
 }
 
+.color-groc{
+    color:#ffcc00 !important;
+}
 /* ======= Header ========*/
 
 .container-header{
@@ -420,7 +423,7 @@ th{
     padding:20px;
     color:#fff;
     border-top: 1px solid #ffcc00;
-    background-color: #313131!important;
+    background-color: #000 !important;
     margin-top: 40px;
 }
 

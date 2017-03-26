@@ -18,7 +18,7 @@
         </div>
 
         <div class="paragraf col-xs-12 col-md-4 col-lg-4 col-lg-push-2">
-            <img src="view/images/logo_textNegre.png" class="img-responsive">
+            <img src="view/images/logo_negre.png" class="img-responsive">
         </div>
     </div>
 </div>

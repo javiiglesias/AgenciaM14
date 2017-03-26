@@ -37,9 +37,9 @@
                     <h4>Contacta-nos</h4>                        
                 </div>
                 <div class="col-xs-9 col-xs-push-2 col-sm-9  col-md-12 col-lg-11 col-lg-push-1">
-                    <p><span class="fa fa-location-arrow"></span>  Camp de les Moreres, 14 Granollers (08401) Catalunya</p>
-                    <p><span class="fa fa-envelope"></span>  info@agenciaactors.cat</p>
-                    <p><span class="fa fa-phone"></span>  Telèfon: 938600021 | Fax: 938791981</p>
+                    <p><span class="fa fa-location-arrow color-groc"></span>  Camp de les Moreres, 14 Granollers (08401) Catalunya</p>
+                    <p><span class="fa fa-envelope color-groc"></span>  info@agenciaactors.cat</p>
+                    <p><span class="fa fa-phone color-groc"></span>  Telèfon: 938600021 | Fax: 938791981</p>
                 </div>
             </div>      
         </div>

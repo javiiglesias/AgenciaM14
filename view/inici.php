@@ -49,37 +49,41 @@
 <div class="container">
     <h1>Pagina inici Agencia</h1>
     <hr class="featurette-divider">
-
-
-    <div style="float:left; width: 500px">
-    <h1>Actors</h1>
-    <a  href="index.php?ctl=actors">
-        <img style="align:center;" border="0"  src="view/images/logo.png" width="100" height="100">
-    </a>
-    </div>
-
-    <div style="float:left; width: 500px">
-    <h1>Directors</h1>
-    <a href="index.php?ctl=directors">
-        <img border="0"  src="view/images/logo.png" width="100" height="100">
-    </a>
-        </div>
-
-    <div style="float:left;">
-    <h1>Obres</h1>
-    <a href="index.php?ctl=obres">
-        <img border="0"  src="view/images/logo2.png" width="100" height="100">
-    </a>
-        </div>
-
-    
-
-
-
-
-
-
-
+    <ul class="caixa-grid">
+        <li>
+            <div class="caixa-item">				
+                <div class="caixa-info">
+                    <div class="caixa-info-front caixa-img-1"></div>
+                    <div class="caixa-info-back">
+                        <h3>Obres</h3>
+                        <p>Obres representades <a href="http://drbl.in/eAoj">Veure</a></p>
+                    </div>	
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="caixa-item">
+                <div class="caixa-info">
+                    <div class="caixa-info-front caixa-img-2"></div>
+                    <div class="caixa-info-back">
+                        <h3>Actors</h3>
+                        <p>Comptem amb divers actors <a href="http://drbl.in/eCcV">Veure</a></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="caixa-item">
+                <div class="caixa-info">
+                    <div class="caixa-info-front caixa-img-3"></div>
+                    <div class="caixa-info-back">
+                        <h3>Directors</h3>
+                        <p>Que representen els obres<a href="http://drbl.in/ewTL">Veure</a></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
 
 </div>

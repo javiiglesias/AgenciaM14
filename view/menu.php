@@ -9,7 +9,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="?ctl=inici"><img src="view/images/logo2.png" class="img-brand"/></a>
+                    <a class="navbar-brand" href="?ctl=inici"><img src="view/images/logo_icon.png" class="img-brand"/></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">                    
                     <ul class="nav navbar-nav">
@@ -39,7 +39,7 @@
                             <li><a href="?ctl=directors">Directors</a></li> 
                         <?php } ?>
                         
-                        <?php if ($titlePage == "contacte") { ?>
+                        <?php if ($titlePage == "Contacte") { ?>
                             <li class="active"><a href="?ctl=contacte">Contacte</a></li>
                         <?php } else { ?>
                             <li><a href="?ctl=contacte">Contacte</a></li> 

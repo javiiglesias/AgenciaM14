@@ -1,6 +1,26 @@
 <div class="container">      
     </br>
     <div class="row">
+        <br>
+        <div class="col-xs-11 col-sm-5 col-md-5 col-lg-5 col-xs-push-1 col-sm-push-4 col-md-push-4 col-lg-push-4">
+            <ul class="nav nav-pills">
+                <?php if ($titlePage == "Obres") { ?>
+                    <li role="presentation" class="active"><a href="?ctl=llibres">Mostrar Obres</a></li>
+                <?php } else { ?>
+                    <li role="presentation"><a href="?ctl=obres">Mostrar Obres</a></li>
+                <?php } ?>                   
+                <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
+                    <?php if ($titlePage == "Afegir Obra") { ?>
+                        <li role = "presentation" class="active"><a href ="?ctl=obra&act=afegir">Afegir nova Obra</a></li>
+                    <?php } else { ?>
+                        <li role = "presentation"><a href = "?ctl=obra&act=afegir">Afegir nova Obra</a></li>
+                    <?php } ?>
+                <?php } ?>
+            </ul>
+            <hr class="featurette-divider">
+        </div>  
+    </div>
+    <div class="row">
         <div  class="col-xs-12 col-md-3 col-lg-4 col-lg-push-4 formulari">        
             <form action="?ctl=obra&act=afegir" method="post">  
                 <h1 class="text-center">Afegir Obra</h1>

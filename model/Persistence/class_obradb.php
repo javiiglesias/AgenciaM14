@@ -8,7 +8,7 @@ class obraDb {
 
     public function inserir($obra) {
 
-        $query = "insert into obra values('', '" . $obra->getNomObra() . "', '" . $obra->getDescripcioObra() . "', '" . $obra->getDataIniciObra() . "', '" . $obra->getDataFiObra() . "', '" . $obra->getTipusObra() . "', '" . $obra->getDirectorObra() . "', '" . "');";
+        $query = "insert into obra values('', '" . $obra->getNomObra() . "', '" . $obra->getDescripcioObra() . "', '" . $obra->getDataIniciObra() . "', '" . $obra->getDataFiObra() . "', '" . $obra->getTipusObra() . "', '" . $obra->getDirectorObra() .  "');";
         $con = new db();
         $con->consulta($query);
         $con->close();
@@ -31,10 +31,7 @@ class obraDb {
     
     public function cercarObraPerTipusDb($tipus) {
         $query="SELECT * FROM obra WHERE tipus_obra =''".$tipus."''";
-        var_dump($tipu);        exit();
-        $con = new db();
         $obra = $this->consultarObra($query);  
-        $con->close();
         return $obra;
     }
 

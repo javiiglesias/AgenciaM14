@@ -28,12 +28,19 @@ class obraDb {
         $con->consulta($query);
         $con->close();
     }
+    
+    public function cercarObraPerTipusDb($tipus) {
+        $query="SELECT * FROM obra WHERE tipus_obra =''".$tipus."''";
+        var_dump($tipu);        exit();
+        $con = new db();
+        $obra = $this->consultarObra($query);  
+        $con->close();
+        return $obra;
+    }
 
     public function populateObraDb() {
         $query = "SELECT * FROM obra";
-        $con = new db();
-        $arrayTipusObra = $this->consultarObra($query);
-        
+        $arrayTipusObra = $this->consultarObra($query);        
         return $arrayTipusObra;
     }
     

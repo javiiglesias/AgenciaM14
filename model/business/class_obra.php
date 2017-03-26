@@ -117,6 +117,87 @@ class Obra {
         return $found;
     }
 
+    public function createSelectTipusObra() {
+        $type = new tipus_obra();
+        $ArraydeTipusObra = $type->mostrarTipusObra();
+
+        $select = '<select name="tipusobra"  class="form-control">';
+        foreach ($ArraydeTipusObra as $key => $tipus) {
+
+            $select = $select . '<option value="' . $tipus->getId() . '">' . $tipus->getDescripcio() . '</option>';
+        }
+        $select = $select . '</select>';
+        return $select;
+    }
+
+    public function tipusObraSeleccionat($tipusSelect) {
+        $type = new tipus_obra();
+        $ArraydeTipusObra = $type->mostrarTipusObra();
+        $select = '<select name="tipusobra" class="form-control">';
+        foreach ($ArraydeTipusObra as $key => $sec) {
+            if ($sec->getId() == $tipusSelect) {
+                $select = $select . '<option value="' . $sec->getId() . '"selected>' . $sec->getDescripcio() . '</option>';
+            } else {
+                $select = $select . '<option value="' . $sec->getId() . '">' . $sec->getDescripcio() . '</option>';
+            }
+        }
+        $select = $select . '</select>';
+        return $select;
+    }
+
+    public function createSelectDirectorObra() {
+        $director = new Directordb();
+        $ArraydeDirectors = $director->retornarDirectors();
+
+        $select = '<select name="director"  class="form-control">';
+        foreach ($ArraydeDirectors as $direct) {
+            $select = $select . '<option value="' . $direct->getId() . '">' . $direct->getNom() . " " . $direct->getCognom1() . '</option>';
+        }
+        $select = $select . '</select>';
+        return $select;
+    }
+
+    public function directorObraSeleccionat($directorSelect) {
+        $director = new Directordb();
+        $ArraydeDirectors = $director->retornarDirectors();
+        $select = '<select name="tipusobra" class="form-control">';
+        foreach ($ArraydeDirectors as $sec) {
+            if ($sec->getId() == $directorSelect) {
+                $select = $select . '<option value="' . $sec->getId() . '"selected>' . $sec->getNom() . " " . $sec->getCognom1() . '</option>';
+            } else {
+                $select = $select . '<option value="' . $sec->getId() . '">' . $sec->getNom() . " " . $sec->getCognom1() . '</option>';
+            }
+        }
+        $select = $select . '</select>';
+        return $select;
+    }
+
+    public function cercartipusObra($id) {
+        $type = new tipus_obra();
+        $TipusObra = $type->cercarId($id);
+        return $TipusObra;
+    }
+
+    public function cercarDirectorObra($id) {
+        
+
+        $director = new Directordb();
+        $ArraydeDirectors = $director->retornarDirectors();
+        $directorTrobat = null;
+        foreach ($ArraydeDirectors as $direc) {
+            if ($direc->getId() == $id) {
+                $directorTrobat = $direc;
+            }
+        }
+        return $directorTrobat;
+    }
+
+    public function cercarObraPerTipus($tipus) {
+        $obradb = new obradb();
+        $arrayObra = $obradb->cercarObraPerTipusDb($tipus);
+        return $arrayObra;
+    }
+
 }
 
 ?>

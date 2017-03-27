@@ -1,5 +1,6 @@
 <?php
 require_once('model/Persistence/class_Directordb.php');
+require_once('controller/validarDni.php');
 
 $titlePage = "Afegir Director";
 
@@ -22,7 +23,12 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
     if (isset($_REQUEST['Submit'])) {
 
         if (isset($_REQUEST['dni'])) {
-            $dni = $_REQUEST['dni'];
+            if(validarDni($_REQUEST['dni'])){
+                $dni = $_REQUEST['dni'];
+            }else{
+                $dni = null;
+                $missatge = "Dni no valid.";
+            }
         }
         if (isset($_REQUEST['nom'])) {
             $nom = $_REQUEST['nom'];

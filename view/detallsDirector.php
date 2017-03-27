@@ -5,9 +5,9 @@
         <div class="col-xs-11 col-sm-5 col-md-5 col-lg-6 col-xs-push-1 col-sm-push-4 col-md-push-4 col-lg-push-3">
             <ul class="nav nav-pills">
                 <?php if ($titlePage == "Director") { ?>
-                    <li role="presentation" class="active"><a href="?ctl=obres">Mostrar Directors</a></li>
+                    <li role="presentation" class="active"><a href="?ctl=directors">Mostrar Directors</a></li>
                 <?php } else { ?>
-                    <li role="presentation"><a href="?ctl=obres">Mostrar Directors</a></li>
+                    <li role="presentation"><a href="?ctl=directors">Mostrar Directors</a></li>
                 <?php } ?>
                 <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
 

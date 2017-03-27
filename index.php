@@ -30,6 +30,15 @@ switch ($ctl) {
         }
         break;
 
+    case "agencia":
+        switch ($act){
+            case "detall":
+                include "controller/Agencia_ctl.php";
+                break;
+        }
+
+
+
     case "obra":
         switch ($act) {
             case "afegir":

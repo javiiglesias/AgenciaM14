@@ -125,6 +125,20 @@ class db implements interface_db {
         return $arrayDeDirectors;
     }
 
+    public function consultarAgencia($query) {
+        $con = $this->connect();
+        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+        $cont = 0;
+        while ($row = mysqli_fetch_array($consulta)) {
+            $agencia = new Agencia($row["cif"], $row["nom"]);
+            $agencia->setId($row["id"]);
+            $arrayDeAgencia[$cont] = $agencia;
+            $cont++;
+        }
+        return $arrayDeAgencia;
+    }
+
+
 }
 
 ?>

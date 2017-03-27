@@ -9,11 +9,15 @@ $datainici = null;
 $datafi = null;
 $tipusObra = null;
 $director = null;
-$agencia = null;
 
 require_once 'view/header.php';
 
 if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
+    
+    $obra = new Obra();
+    $selectTipusObra = $obra->createSelectTipusObra();
+    $selectDirector = $obra->createSelectDirectorObra();
+    
     if (isset($_REQUEST['Submit'])) {
 
         if (isset($_REQUEST['nom'])) {
@@ -23,37 +27,25 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
             $descripcio = $_REQUEST['descripcio'];
         }
         if (isset($_REQUEST['datainici'])) {
-            $datainici = $_REQUEST['datainici'];
-            $datainici = DateTime::createFromFormat('d/m/Y', $datainici);
-            $datainici = $datainici->format('d/m/Y');
+            $datainici = $_REQUEST['datainici'];          
         }
 
         if (isset($_REQUEST['datafi'])) {
             $datafi = $_REQUEST['datafi'];
-            $datafi = date_create($datafi);
-            $datafi = date_format('d/m/Y');
-            var_dump($datafi);            exit();
+
         }
         if (isset($_REQUEST['tipusobra'])) {
             $tipusObra = $_REQUEST['tipusobra'];
         }
-        
+
         if (isset($_REQUEST['director'])) {
-            $director= $_REQUEST['director'];
+            $director = $_REQUEST['director'];
         }
         
-        if (isset($_REQUEST['agencia'])) {
-            $agencia= $_REQUEST['agencia'];
-        }
-        $obra = new Obra($nom, $descripcio, $datainici, $datafi, $tipusobra,$agencia, $directors);
-        if ($nom != null && $descripcio != null && $datainici != null && $datafi != null && $tipusObra != null && $director != null && $agencia != null) {
-            $obra->inserirObra(addslashes($nom), addslashes($descripcio), $datainici, $datafi, addslashes($tipusObra),  addslashes($agencia), addslashes($director));
+        
+        if ($nom != null && $descripcio != null && $datainici != null && $datafi != null && $tipusObra != null && $director != null) {
+            $obra->inserirObra(addslashes($nom), addslashes($descripcio), addslashes($datainici), addslashes($datafi), addslashes($tipusObra), addslashes($director));
             $missatge = "S'ha afegit l'obra correctament!";
-//                $quantitat = 200;
-//                $llibresArray = $llibres->cercar($categoria, $quantitat);
-//                if ($categoria != null) {
-//                    $llistaTitle = "Resultats de " . $categoria;
-//                }
             require_once 'view/confirmacio.php';
         } else {
             $missatge = "No s'ha pogut afegit l'obra, camps sense informació!";
@@ -63,7 +55,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         require_once 'view/afegirObra.php';
     }
 } else {
-    $missatge = "No tens permisos per entrar en aquesta pagina! sis plau inicia sessio. Gracies";
+    $missatge = "No tens permisos per entrar en aquesta pàgina! Si us plau, inicia sessió. Gràcies";
     require_once 'view/error.php';
 }
 

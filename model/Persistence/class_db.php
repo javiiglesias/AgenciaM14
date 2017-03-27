@@ -117,7 +117,8 @@ class db implements interface_db {
         $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
         $cont = 0;
         while ($row = mysqli_fetch_array($consulta)) {
-            $director = new Director($row["nif"], $row["nom"], $row["cognom1"], $row["cognom2"]);
+            $director = new Director($row["nif"], $row["nom"], $row["cognom1"], $row["cognom2"], $row["descripcio"]);
+            $director->setId($row["id"]);
             $arrayDeDirectors[$cont] = $director;
             $cont++;
         }

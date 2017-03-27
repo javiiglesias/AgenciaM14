@@ -10,8 +10,8 @@
             <img class="first-slide img-responsive" src="view/images/carrusel1.png" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <div class="paragraf col-xs-12 col-sm-6 col-md-3   col-sm-push-5 col-md-push-4 col-lg-push-4">
-<!--                        <img src="view/images/Logov2.png" class="img-responsive img-logoHeader">-->
+                    <div class="paragraf col-xs-12 col-sm-6 col-md-3 col-sm-push-5 col-md-push-4 col-lg-push-4">
+                        <img src="view/images/logo.png" class="img-responsive img-logoHeader">
                     </div>              
                 </div>
             </div>
@@ -49,37 +49,41 @@
 <div class="container">
     <h1>Pagina inici Agencia</h1>
     <hr class="featurette-divider">
-
-
-    <div style="float:left; width: 500px">
-    <h1>Actors</h1>
-    <a  href="index.php?ctl=actors">
-        <img style="align:center;" border="0"  src="view/images/logo.png" width="100" height="100">
-    </a>
-    </div>
-
-    <div style="float:left; width: 500px">
-    <h1>Directors</h1>
-    <a href="index.php?ctl=directors">
-        <img border="0"  src="view/images/logo.png" width="100" height="100">
-    </a>
-        </div>
-
-    <div style="float:left;">
-    <h1>Obres</h1>
-    <a href="index.php?ctl=obres">
-        <img border="0"  src="view/images/logo2.png" width="100" height="100">
-    </a>
-        </div>
-
-    
-
-
-
-
-
-
-
+    <ul class="caixa-grid">
+        <li>
+            <div class="caixa-item">				
+                <div class="caixa-info">
+                    <div class="caixa-info-front caixa-img-1"></div>
+                    <div class="caixa-info-back">
+                        <h3>Obres</h3>
+                        <p>Obres representades pels nostres actors <a href="?ctl=obres">Veure</a></p>
+                    </div>	
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="caixa-item">
+                <div class="caixa-info">
+                    <div class="caixa-info-front caixa-img-2"></div>
+                    <div class="caixa-info-back">
+                        <h3>Actors</h3>
+                        <p>Comptem amb molts actors <a href="?ctl=actors">Veure</a></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="caixa-item">
+                <div class="caixa-info">
+                    <div class="caixa-info-front caixa-img-3"></div>
+                    <div class="caixa-info-back">
+                        <h3>Directors</h3>
+                        <p>Que representen els obres<a href="?ctl=directors">Veure</a></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
 
 </div>

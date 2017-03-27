@@ -28,8 +28,8 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         if (isset($_REQUEST['cognom2'])) {
             $cognom2 = $_REQUEST['cognom2'];
         }
-        if (isset($_REQUEST['sexe'])) {
-            $sexe = $_REQUEST['sexe'];
+        if (isset($_REQUEST['categoria'])) {
+            $sexe = $_REQUEST['categoria'];
         }
         if (isset($_REQUEST['foto'])) {
             $foto = $_REQUEST['foto'];
@@ -42,7 +42,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 
         if (!$actordb->buscarPerDni($dni)) {
             //validem dades per metode de la clase
-            if ($nom->validateProduct()->getOk()) {
+            if ($nouActor->validarActor()->getOk()) {
                 try {
                     //afegim el actor a la base de dades
                     $nouActor->inserirActor();

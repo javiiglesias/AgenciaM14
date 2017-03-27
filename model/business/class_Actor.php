@@ -120,23 +120,30 @@ class Actor {
             $validation->setOk(false);
             $validation->setMsg("Has d'afegir una descripcio");
         }
-        if ($validation->getOk()) {
-            if (trim($this->getDni()) == "" || !$this->validateDNI($this->getDni())) {
-                $validation->setOk(false);
-                $validation->setMsg("DNI invalid");
-            }
-        }
+//        if ($validation->getOk()) {
+//            if (trim($this->getDni()) == "" || !$this->validateDNI($this->getDni())) {
+//                $validation->setOk(false);
+//                $validation->setMsg("DNI invalid");
+//            }
+//        }
         return $validation;
     }
 
     public function validateDNI($dni) {
         $letra = substr($dni, -1);
-        $numeros = substr($dni, 0, -1);
-        if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) == $letra && strlen($letra) == 1 && strlen($numeros) == 8) {
-            return true;
-        } else {
-            return false;
-        }
+    $numeros = substr($dni, 0, -1);
+    if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) == $letra && strlen($letra) == 1 && strlen($numeros) == 8) {
+        echo 'Dni valido';
+    } else {
+        echo 'Dni no valido';
+    }
+//        $letra = substr($dni, -1);
+//        $numeros = substr($dni, 0, -1);
+//        if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) == $letra && strlen($letra) == 1 && strlen($numeros) == 8) {
+//            return true;
+//        } else {
+//            return false;
+//        }
     }
 
 }

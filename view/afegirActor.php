@@ -2,64 +2,45 @@
 <div class="container">  
     </br>
     <div  class="col-xs-12 col-md-3 col-lg-4 col-lg-push-4 formulari">        
-        <form action="?ctl=llibre&act=afegir" method="post">  
-            <h1 class="text-center">Afegir Llibre</h1>
+        <form action="?ctl=actor&act=afegir" method="post">  
+            <h1 class="text-center">Afegir Actor</h1>
             <small class="col-xs-offset-2 col-md-offset-1 col-sm-offset-1  col-lg-offset-3">Introdueix les dades del nou llibre </small></br> 
             <div class="form-group">
-                <label>ISBN:</label>
-                <input type="text" name="isbn" class="form-control" >
+                <label>DNI:</label>
+                <input type="text" name="dni" class="form-control" >
             </div>
             <div class="form-group">
                 <label>Nom:</label>
                 <input type="text" name="nom" class="form-control" >
             </div>
             <div class="form-group">
-                <label>Num pagines: </label>
-                <input type="text" name="numPag" class="form-control" >
+                <label>1º Cognom: </label>
+                <input type="text" name="cognom1" class="form-control" >
             </div>
             <div class="form-group">
-                <label>autor:</label>
-                <input type="text" name="autor" class="form-control" >
+                <label>2º Cognom:</label>
+                <input type="text" name="cognom2" class="form-control" >
             </div>
             <div class="form-group">
-                <label>Categoria:</label>
+                <label>Sexe:</label>
                 <?php
-                require_once 'model/categoria.class.php';
-                $cat = new CategoriaDAO();
-
-                $selCat = $cat->createSelectCategories();
-                echo $selCat;
+                $sexe = new Sexedb();
+                $selsexe = $sexe->createSelectCategories();
+               
+                echo $selsexe;
                 ?> 
             </div>
-            <button type="button" class="btn btn-primary btn-xs btn-modal" data-toggle="modal" data-target="#afegirCategoria">
-                Afegir Categoria
-            </button>
+           
             <div class="form-group">
-                <label>cubierta:</label>
-                <input type="text" name="cubierta" class="form-control">
+                <label>Foto:</label>
+                <input type="text" name="foto" class="form-control">
             </div>
+          
             <div class="form-group">
-                <label>Editorial:</label>
-                <input type="text" name="editorial" class="form-control">
+                <label>Descripcio:</label>
+                <textarea class="form-control" name="descripcio" rows="4" cols="4"></textarea>
             </div>
-            <div class="form-group">
-                <label>llengua:</label>
-                <?php
-                require_once 'model/idioma.class.php';
-                $idioma = new IdiomaDAO();
-
-                $selIdioma = $idioma->createSelectIdiomes();
-                echo $selIdioma;
-                ?>
-            </div>
-            <div class="form-group">
-                <label>Resum:</label>
-                <textarea class="form-control" name="resumen" rows="4" cols="4"></textarea>
-            </div>
-            <div class="form-group">
-                <label>Preu:</label>
-                <input type="text" name="preu">
-            </div>
+            
             <div class="col-md-offset-3 col-xs-offset-2">
                 <button name="Submit" class="btn btn-primary btn-lg"><image class="btn-icon" src="view/images/afegir.png"/>  Afegir </button>
             </div>

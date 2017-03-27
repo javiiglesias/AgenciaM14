@@ -11,7 +11,7 @@ class ActorDb {
 
     public function inserir($actor) {
 
-        $query = "insert into directors values('', '" . $director->getDni() . "', '" . $llibre->getNom() . "', '" . $llibre->getCognom1() . "', '" . $llibre->getCognom2() . "');";
+        $query = "insert into actor values( '" . $actor->getDni() . "', '" . $actor->getNom() . "', '" . $actor->getCognom1() . "', '" . $actor->getCognom2() . "','" . $actor->getDescripcio() . "','" . $actor->getSexe() . "','" . $actor->getFoto() . "','');";
         $con = new db();
         $con->consulta($query);
         $con->close();

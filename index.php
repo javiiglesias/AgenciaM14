@@ -76,6 +76,9 @@ switch ($ctl) {
             case "cercar2":
                 include "view/cercarDirector.php";
                 break;
+            case "detall":
+                include "controller/detallDirector_ctl.php";
+                break;
         }
         break;
 

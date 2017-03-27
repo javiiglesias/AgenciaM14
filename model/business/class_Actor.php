@@ -11,8 +11,9 @@ class Actor {
     private $cognom2;
     private $sexe;
     private $foto;
+    private $descripcio;
 
-    public function __construct($_dni, $_nom, $_cognom1, $_cognom2, $_sexe, $_foto) {
+    public function __construct($_dni, $_nom, $_cognom1, $_cognom2, $_sexe, $_foto, $_descripcio) {
         $this->setId(null);
         $this->setDni($_dni);
         $this->setNom($_nom);
@@ -20,6 +21,15 @@ class Actor {
         $this->setCognom2($_cognom2);
         $this->setSexe($_sexe);
         $this->setFoto($_foto);
+        $this->setDescripcio($_descripcio);
+    }
+
+    public function getDescripcio() {
+        return $this->descripcio;
+    }
+
+    public function setDescripcio($descripcio) {
+        $this->descripcio = $descripcio;
     }
 
     public function getId() {
@@ -81,6 +91,52 @@ class Actor {
     public function inserirActor() {
         $actorDb = new Actordb();
         $actorDb->inserir($this);
+    }
+
+    public function validarActor() {
+        $validation = new Validation(true, '');
+        $validation->setMsg("all ok");
+        if (trim($this->getNom()) == '') {
+            $validation->setOk(false);
+            $validation->setMsg("Camp nom buit");
+        }
+        if ($validation->getOk() && trim($this->getCognom1()) == '') {
+            $validation->setOk(false);
+            $validation->setMsg("Camp cognom buit");
+        }
+        if ($validation->getOk() && trim($this->getCognom2()) == '') {
+            $validation->setOk(false);
+            $validation->setMsg("Camp cognom buit");
+        }
+        if ($validation->getOk() && trim($this->getSexe()) == '') {
+            $validation->setOk(false);
+            $validation->setMsg("Has d'escollir sexe");
+        }
+        if ($validation->getOk() && trim($this->getFoto()) == '') {
+            $validation->setOk(false);
+            $validation->setMsg("Has de posar ruta foto");
+        }
+        if ($validation->getOk() && trim($this->getDescripcio()) == '') {
+            $validation->setOk(false);
+            $validation->setMsg("Has d'afegir una descripcio");
+        }
+        if ($validation->getOk()) {
+            if (trim($this->getDni()) == "" || !$this->validateDNI($this->getDni())) {
+                $validation->setOk(false);
+                $validation->setMsg("DNI invalid");
+            }
+        }
+        return $validation;
+    }
+
+    public function validateDNI($dni) {
+        $letra = substr($dni, -1);
+        $numeros = substr($dni, 0, -1);
+        if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) == $letra && strlen($letra) == 1 && strlen($numeros) == 8) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

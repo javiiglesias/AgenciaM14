@@ -61,8 +61,19 @@ class ActorDb {
         $trobat = false;
         for ($i = 0; $i < count($llistaactors) || $trobat = false; $i++) {
             if ($llistaactors[$i]->getId() == $id) {
-                $actorTrobat = new Actor($llistaactors[$i]->getDni(), $llistaactors[$i]->getNom(), $llistaactors[$i]->getCognom1(), $llistaactors[$i]->getCognom2(), $llistaactors[$i]->getSexe(), $llistaactors[$i]->getFoto());
+                $actorTrobat = new Actor($llistaactors[$i]->getDni(), $llistaactors[$i]->getNom(), $llistaactors[$i]->getCognom1(), $llistaactors[$i]->getCognom2(), $llistaactors[$i]->getSexe(), $llistaactors[$i]->getFoto(), $llistaactors[$i]->getDescripcio());
                 return $actorTrobat;
+            }
+        }
+    }
+    function buscarPerDni($dni){
+        $actors = new ActorDb();
+        $llistaactors = $actors->populateActordb();
+        $trobat = false;
+        for ($i = 0; $i < count($llistaactors) || $trobat = false; $i++) {
+            if ($llistaactors[$i]->getDni() == $dni) {
+                $actorTrobat = new Actor($llistaactors[$i]->getDni(), $llistaactors[$i]->getNom(), $llistaactors[$i]->getCognom1(), $llistaactors[$i]->getCognom2(), $llistaactors[$i]->getSexe(), $llistaactors[$i]->getFoto(), $llistaactors[$i]->getDescripcio());
+                return $trobat;
             }
         }
     }

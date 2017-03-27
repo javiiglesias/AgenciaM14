@@ -3,6 +3,9 @@
     <div class="container">
         <div class="col-xs-12 col-md-6 col-md-push-3">
             <h1>PAGINA ACTORS</h1>
+            <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
+            <a href="?ctl=actor&act=afegir" class="btn btn-danger btn-sm"></span> Afegir Actor</a>
+            <?php }?>
             <form action="?ctl=actors" method="post">
                 <div class="form-group">
                     Cercar per Categoria:

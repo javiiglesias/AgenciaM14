@@ -61,7 +61,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
             require_once 'view/error.php';
         }
     } else {
-        require_once 'view/modificarLlibre.php';
+        require_once 'view/modificarActor.php';
     }
 } else {
     $missatge = "No tens permisos per entrar en aquesta pagina! sis plau inicia sessio. Gracies";

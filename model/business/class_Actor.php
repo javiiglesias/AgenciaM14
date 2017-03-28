@@ -91,6 +91,11 @@ class Actor {
     public function inserirActor() {
         $actorDb = new Actordb();
         $actorDb->inserir($this);
+    
+    }
+    public function modificarActor($id){
+        $actorDb = new ActorDb();
+        $actorDb->modificar($this,  $id);
     }
 
     public function validarActor() {

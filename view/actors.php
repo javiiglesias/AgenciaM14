@@ -4,14 +4,12 @@
         <div class="col-xs-12 col-md-6 col-md-push-3">
             <h1>PAGINA ACTORS</h1>
             <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
-            <a href="?ctl=actor&act=afegir" class="btn btn-danger btn-sm"></span> Afegir Actor</a>
-            <?php }?>
+                <a href="?ctl=actor&act=afegir" class="btn btn-danger btn-sm"></span> Afegir Actor</a>
+            <?php } ?>
             <form action="?ctl=actors" method="post">
                 <div class="form-group">
                     Cercar per Categoria:
                     <?php
-                    
-                    
                     $cat = new Sexedb();
 
                     $sel = $cat->createSelectCategories();
@@ -36,18 +34,26 @@
             </form>
         </div>
         <div class="row col-lg-8 col-lg-push-3 ">
-            
-            <?php if (count($arrayActors) > 0) { ?>        
-                <?php foreach ( $arrayActors as  $data): ?>	
+
+<?php if (count($arrayActors) > 0) { ?>        
+                <?php foreach ($arrayActors as $data): ?>	
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                         <div class="thumbnail col-lg-11 col-lg-pull-1 llibres text-center">
                             <img class="icon" src="<?php echo $data->getFoto(); ?>"></img>
                             <h5><strong><?php echo $data->getNom(); ?></strong></h5>
                             <h5><?php echo $data->getDni(); ?></h5>                        
-                            <h5><strong>Sexe:</strong> <?php echo $data->getSexe(); ?> <a href="?ctl=veure_fitxa&id=<?php echo $data->getId(); ?>" class="btn btn-danger btn-sm"></span> Fitxa</a></h5>                        
+                            <h5><strong>Sexe:</strong> <?php echo $data->getSexe(); ?> 
+                                <a href="?ctl=veure_fitxa&id=<?php echo $data->getId(); ?>" class="btn btn-danger btn-sm"></span> Fitxa</a>
+        <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
+                                    <a href="?ctl=actor&act=modificar&id=<?php echo $data->getId(); ?>" class="btn btn-danger btn-sm"></span> Modificar Actor</a>
+                                <?php } ?>
+                                <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
+                                    <a href="?ctl=actor&act=eliminar&id=<?php echo $data->getId(); ?>" class="btn btn-danger btn-sm"></span> Eliminar Actor</a>
+                                <?php } ?>    
+                            </h5>                        
                         </div>
                     </div>
-                <?php endforeach; ?>
+    <?php endforeach; ?>
             <?php } ?>
         </div> 
     </div>

@@ -16,6 +16,21 @@ class ActorDb {
         $con->consulta($query);
         $con->close();
     }
+    
+    public function modificar($actor, $id) {
+
+        $query = "update actor set nif='".$actor->getDni()."', nom='".$actor->getNom()."', cognom1='".$actor->getCognom1()."',cognom2='".  $actor->getCognom2()."', descripcio='".  $actor->getDescripcio()."', sexe='".  $actor->getSexe()."', foto='".  $actor->getFoto()."' WHERE id='" . $id . "' ";
+        $con = new db();
+        $con->consulta($query);
+        $con->close();
+    }
+    
+    public function eliminar($id) {
+        $query = "delete from actor WHERE id='" .$id. "'";
+        $con = new db();
+        $con->consulta($query);
+        $con->close();
+    }
 
     public function populateActordb() {
         $query = "SELECT * FROM actor;";
@@ -62,6 +77,7 @@ class ActorDb {
         for ($i = 0; $i < count($llistaactors) || $trobat = false; $i++) {
             if ($llistaactors[$i]->getId() == $id) {
                 $actorTrobat = new Actor($llistaactors[$i]->getDni(), $llistaactors[$i]->getNom(), $llistaactors[$i]->getCognom1(), $llistaactors[$i]->getCognom2(), $llistaactors[$i]->getSexe(), $llistaactors[$i]->getFoto(), $llistaactors[$i]->getDescripcio());
+                $actorTrobat->setId($id);
                 return $actorTrobat;
             }
         }

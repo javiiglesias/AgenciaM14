@@ -12,9 +12,9 @@ if (isset($_REQUEST['id'])) {
 $actor= $actordb->buscarPerId($id);
 if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
     $actor= $actordb->buscarPerId($id);
-    if ($llibresDAO->eliminarLlibre($llibre)) {
+    if ($actordb->eliminar($id)) {
 
-        $missatge = "S'ha esborrat el llibre correctament!";
+        $missatge = "S'ha esborrat el actor correctament!";
         require_once 'view/confirmacio.php';
     }
 } else {

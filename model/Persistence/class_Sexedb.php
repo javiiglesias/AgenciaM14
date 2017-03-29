@@ -1,42 +1,30 @@
 <?php
+include_once("controller/function_AutoLoad.php");
+require_once("config/config.inc.php");
+require_once("config/db.inc.php");
 
-class Categoria {
 
-    public $id;
-    public $descripcion;
+class Sexedb {
 
-    function __construct($_id, $_descripcion) {
-        $this->id = $_id;
-        $this->descripcion = $_descripcion;
-    }
-
-}
-
-class CategoriaDAO {
-
-    private $llistaCategoria = [];
+    private $llistaSexe = [];
 
     function __construct() {
-        $this->llistaCategoria[] = new Categoria(' ', ' ');
-        $this->llistaCategoria[] = new Categoria('1', 'Poesia');
-        $this->llistaCategoria[] = new Categoria('2', 'Historia');
-        $this->llistaCategoria[] = new Categoria('3', 'Fantasia');
-        $this->llistaCategoria[] = new Categoria('4', 'Narratiu');
-        $this->llistaCategoria[] = new Categoria('5', 'Idiomes');
-        $this->llistaCategoria[] = new Categoria('6', 'Art');
-        $this->llistaCategoria[] = new Categoria('7', 'Noveles');
+        $this->llistaSexe[] = new Sexe(' ', ' ');
+        $this->llistaSexe[] = new Sexe('Dona', 'Dona');
+        $this->llistaSexe[] = new Sexe('Home', 'Home');
+        
     }
     
     function afegirCategoria($id,$nom){
-        $this->llistaCategoria[] = new Categoria($id, $nom);
+        $this->llistaSexe[] = new Sexe($id, $nom);
     }
 
     function createSelectCategories() {
 
         $select = '<select name="categoria">';
-        foreach ($this->llistaCategoria as $key => $cat) {
+        foreach ($this->llistaSexe as $key => $cat) {
 
-            $select = $select . '<option value="' . $cat->id . '">' . $cat->descripcion . '</option>';
+            $select = $select . '<option value="' . $cat->id . '">' . $cat->sexe . '</option>';
         }
         $select = $select . '</select>';
         return $select;
@@ -44,7 +32,7 @@ class CategoriaDAO {
 
     function categoriaSeleccionat($catSelect) {
         $select = '<select name="categoria">';
-        foreach ($this->llistaCategoria as $key => $cat) {
+        foreach ($this->llistaSexe as $key => $cat) {
             if ($cat->id == $catSelect->id) {
                 $select = $select . '<option value="' . $catSelect->id . '"selected>' . $catSelect->sexe . '</option>';
             } else {
@@ -57,7 +45,7 @@ class CategoriaDAO {
 
     function llistaCategoria() {
         $llista = '<ul>';
-        foreach ($this->llistaCategoria as $key => $cat) {
+        foreach ($this->llistaSexe as $key => $cat) {
             if ($cat->descripcion != " ") {
                 $llista = $llista . '<li><a href="?ctl=llibre&act=cercar"> ' . $cat->descripcion . '</a></li>';
             }
@@ -68,7 +56,7 @@ class CategoriaDAO {
 
     function getCategoria($id) {
         $getCat = null;
-        foreach ($this->llistaCategoria as $data) {
+        foreach ($this->llistaSexe as $data) {
             if ($data->id == $id) {
                 $getCat = $data;
             }

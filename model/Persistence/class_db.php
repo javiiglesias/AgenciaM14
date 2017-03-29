@@ -101,6 +101,29 @@ class db implements interface_db {
         //print_r($arrayLlibres);
         return $arrayLlibres;
     }
+    
+    public function consultarActors($query) {
+        $con = $this->connect();
+        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+        $cont = 0;
+        while ($row = mysqli_fetch_array($consulta)) {
+            $actor = new Actor($row["nif"], $row["nom"], $row["cognom1"], $row["cognom2"], $row["sexe"], $row["foto"], $row["descripcio"]);
+            $actor->setId($row["id"]);
+            $arrayActors[$cont] = $actor;
+            $cont++;
+
+            /*
+              $arrayLlibres[$cont][0] = $row["id"];
+              $arrayLlibres[$cont][1] = $row["titol"];
+              $arrayLlibres[$cont][2] = $row["autor"];
+              $arrayLlibres[$cont][3] = $row["editorial"];
+
+             */
+        }
+        //print_r($arrayLlibres);
+        return $arrayActors;
+    }
+    
      public function consultarUsuari($query) {
         $con = $this->connect();
         $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());

@@ -1,6 +1,9 @@
 <html>
     <head>
         <title><?php echo $titlePage ?></title>
+        <!-- JS -->
+        <script src="view/js/jquery-3.2.0.min.js"></script>
+        <script src="view/js/validateForm.js"></script>
         <!-- Estils -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css"/>-

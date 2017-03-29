@@ -9,13 +9,15 @@ class Director {
     private $nom;
     private $cognom1;
     private $cognom2;
+    private $descripcio;
 
-    public function __construct($_dni, $_nom, $_cognom1, $_cognom2) {
+    public function __construct($_dni, $_nom, $_cognom1, $_cognom2, $descripcio) {
         $this->setId(null);
         $this->setDni($_dni);
         $this->setNom($_nom);
         $this->setCognom1($_cognom1);
         $this->setCognom2($_cognom2);
+        $this->setDescripcio($descripcio);
     }
 
     public function getId() {
@@ -40,6 +42,15 @@ class Director {
 
     public function setId($id) {
         $this->id = $id;
+    }
+
+
+    public function getDescripcio() {
+        return $this->descripcio;
+    }
+
+    public function setDescripcio($descripcio) {
+        $this->descripcio = $descripcio;
     }
 
     public function setDni($dni) {

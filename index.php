@@ -2,6 +2,7 @@
 
 require_once("controller/function_AutoLoad.php");
 require_once('model/business/class_usuari.php');
+require_once('model/business/class_obra.php');
 session_start();
 
 $ctl = "inici";
@@ -29,6 +30,15 @@ switch ($ctl) {
         }
         break;
 
+    case "agencia":
+        switch ($act){
+            case "detall":
+                include "controller/Agencia_ctl.php";
+                break;
+        }
+
+
+
     case "obra":
         switch ($act) {
             case "afegir":
@@ -40,12 +50,15 @@ switch ($ctl) {
             case "modificar":
                 include "controller/modificarObra_ctl.php";
                 break;
+            case "detalls":
+                include "controller/detallObra_ctl.php";
+                break;
             case "eliminar":
                 include "controller/eliminarObra_ctl.php";
                 break;
         }
         break;
-    
+
     case "director":
         switch ($act) {
             case "afegir":
@@ -60,9 +73,15 @@ switch ($ctl) {
             case "eliminar":
                 include "controller/eliminarDirector_ctl.php";
                 break;
+            case "cercar2":
+                include "view/cercarDirector.php";
+                break;
+            case "detall":
+                include "controller/detallDirector_ctl.php";
+                break;
         }
         break;
-    
+
     case "actor":
         switch ($act) {
             case "afegir":
@@ -87,16 +106,25 @@ switch ($ctl) {
                 break;
         }
         break;
-    
+
     case"tipusObra":
         switch ($act) {
+            case "mostrar":
+                include "controller/tipusObra_ctl.php";
+                break;
             case "afegir":
                 include "controller/afegirTipusObra_ctl.php";
                 break;
+            case "modificar":
+                include "controller/modificarTipusObra_ctl.php";
+                break;
+            case "eliminar":
+                include "controller/eliminarTipusObra_ctl.php";
+                break;
         }
         break;
-    
-    
+
+
     default:
         include "controller/" . $ctl . "_ctl.php";
         break;

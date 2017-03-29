@@ -135,6 +135,32 @@ class db implements interface_db {
         }
         return $arrayUsuaris;
     }
+    public function consultarDirector($query) {
+        $con = $this->connect();
+        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+        $cont = 0;
+        while ($row = mysqli_fetch_array($consulta)) {
+            $director = new Director($row["nif"], $row["nom"], $row["cognom1"], $row["cognom2"], $row["descripcio"]);
+            $director->setId($row["id"]);
+            $arrayDeDirectors[$cont] = $director;
+            $cont++;
+        }
+        return $arrayDeDirectors;
+    }
+
+    public function consultarAgencia($query) {
+        $con = $this->connect();
+        $consulta = mysqli_query($con, $query) or die('Error, query failed: ' . $this->error());
+        $cont = 0;
+        while ($row = mysqli_fetch_array($consulta)) {
+            $agencia = new Agencia($row["cif"], $row["nom"]);
+            $agencia->setId($row["id"]);
+            $arrayDeAgencia[$cont] = $agencia;
+            $cont++;
+        }
+        return $arrayDeAgencia;
+    }
+
 
 }
 

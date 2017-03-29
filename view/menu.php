@@ -9,7 +9,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="?ctl=inici"><img src="view/images/icon-logo.png" class="img-brand"/></a>
+                    <a class="navbar-brand" href="?ctl=inici"><img src="view/images/logo_icon.png" class="img-brand"/></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">                    
                     <ul class="nav navbar-nav">
@@ -18,6 +18,13 @@
                         <?php } else { ?>
                             <li><a href="?ctl=inici">Inici</a></li>
                         <?php } ?>
+
+                        <?php if ($titlePage == "Agencia") { ?>
+                            <li class="active"><a href="?ctl=agencia&act=detall">Agencia</a></li>
+                        <?php } else { ?>
+                            <li><a href="?ctl=agencia&act=detall">Agencia</a></li>
+                        <?php } ?>
+
                         <?php if ($titlePage == "Qui som?") { ?>
                             <li class="active"><a href="?ctl=quisom">Qui som?</a></li>
                         <?php } else { ?>
@@ -39,7 +46,7 @@
                             <li><a href="?ctl=directors">Directors</a></li> 
                         <?php } ?>
                         
-                        <?php if ($titlePage == "contacte") { ?>
+                        <?php if ($titlePage == "Contacte") { ?>
                             <li class="active"><a href="?ctl=contacte">Contacte</a></li>
                         <?php } else { ?>
                             <li><a href="?ctl=contacte">Contacte</a></li> 

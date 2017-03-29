@@ -1,19 +1,24 @@
 <div class="container-fluid">
     <div class="container" >
+        <div class="paragraf col-xs-12 col-md-8 col-lg-5 col-lg-pull-1  col-lg-push-1">
+            <p>En 1992 comencen la creació de l'Agència d'Actors.</p>
+            <p>Des de llavors estem orgullosos d'ocupar-nos de les carreres d'alguns dels més 
+                destacats actors i actrius d'Espanya que han dipositat en nosaltres la seva confiança 
+                per assistir-los en la seva contractació amb els més prestigiosos directors de cinema 
+                i les més importants productores audiovisuals nacionals i internacionals.</p> 
+            <p>L'agència s'ocupa d'estudiar els projectes en marxa en la indústria audiovisual, 
+                proposar als seus representats als directors de repartiment i negociar la seva 
+                contractació amb productors de Cinema, Teatre, Televisió i Publicitat. Part important 
+                del treball diari és l'assistència tècnica, jurídica i professional als artistes, la gestió 
+                de premsa i comunicació i el treball actiu per a la seva promoció tant dins com fora d'Espanya.</p>
 
-        <div class="paragraf col-xs-12 col-md-8 col-lg-8 col-lg-pull-1  col-lg-push-1">
-            <p>Benvingut a un lloc on la cultura es viu i es gaudeix.</p>
-            <p>Nosaltes som la una comunitat de lectors, format per un milió de llibres i
-                que és una referència cultural.</p>
-            <p>Accedeix potser de la cultura amb una qualitat incomparable: una selecció dels millors
-                títols del moment, en edicions molt cuidades i llibres exclusius del club, a més de música, cinema...
-                Però tenim molt més que llibres. T'espera una oferta d'oci, 
-                benestar i cultura que creix dia a dia amb avantatges exclusius.</p>
-            <p>Veuen i descobreix-ho tu també!</p>
+            <p>Des de fa anys per mitjà de la nostra pròpia productora audiovisual, intentem fer-nos 
+                presents en aquells projectes que considerem que són interessants per als nostres 
+                representats i que amb la nostra presència directa podem ajudar i impulsar.</p>
         </div>
 
-        <div class="paragraf col-xs-12 col-md-3 col-lg-1 col-lg-push-1">
-            <img src="view/images/Logo.png">
+        <div class="paragraf col-xs-12 col-md-4 col-lg-4 col-lg-push-2">
+            <img src="view/images/logo_negre.png" class="img-responsive">
         </div>
     </div>
 </div>

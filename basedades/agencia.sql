@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-03-2017 a las 16:33:31
+-- Tiempo de generación: 27-03-2017 a las 15:32:11
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 7.0.2
 
@@ -31,6 +31,7 @@ CREATE TABLE `actor` (
   `nom` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `cognom1` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `cognom2` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `descripcio` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
   `sexe` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `foto` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
   `id` int(20) NOT NULL
@@ -40,9 +41,9 @@ CREATE TABLE `actor` (
 -- Volcado de datos para la tabla `actor`
 --
 
-INSERT INTO `actor` (`nif`, `nom`, `cognom1`, `cognom2`, `sexe`, `foto`, `id`) VALUES
-('23232323F', 'Iván', 'Mir', 'Mir', 'Masculí', 'foto1.jpg', 1),
-('45454545C', 'Yaritza', 'Aburdene', 'Aburdene', 'Femení', 'foto2.jpg', 2);
+INSERT INTO `actor` (`nif`, `nom`, `cognom1`, `cognom2`, `descripcio`, `sexe`, `foto`, `id`) VALUES
+('23232323F', 'Iván', 'Mir', 'Mir', '', 'Masculí', 'foto1.jpg', 1),
+('45454545C', 'Yaritza', 'Aburdene', 'Aburdene', '', 'Femení', 'foto2.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -75,16 +76,17 @@ CREATE TABLE `director` (
   `nif` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `nom` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `cognom1` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
-  `cognom2` varchar(20) COLLATE utf8_spanish2_ci NOT NULL
+  `cognom2` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `descripcio` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `director`
 --
 
-INSERT INTO `director` (`id`, `nif`, `nom`, `cognom1`, `cognom2`) VALUES
-(1, '22222222B', 'Pepe', 'Peña', 'Salgado'),
-(2, '33333333C', 'María', 'Fernández', 'López');
+INSERT INTO `director` (`id`, `nif`, `nom`, `cognom1`, `cognom2`, `descripcio`) VALUES
+(1, '22222222B', 'Pepe', 'Peña', 'Salgado', ''),
+(2, '33333333C', 'María', 'Fernández', 'López', '');
 
 -- --------------------------------------------------------
 
@@ -96,10 +98,9 @@ CREATE TABLE `obra` (
   `id` int(20) NOT NULL,
   `nom` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `descripcio` text COLLATE utf8_spanish2_ci NOT NULL,
-  `datainici` date NOT NULL,
-  `datafi` date NOT NULL,
+  `datainici` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
+  `datafi` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
   `tipus_obra` int(20) NOT NULL,
-  `agencia` int(20) NOT NULL,
   `director` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
@@ -107,9 +108,9 @@ CREATE TABLE `obra` (
 -- Volcado de datos para la tabla `obra`
 --
 
-INSERT INTO `obra` (`id`, `nom`, `descripcio`, `datainici`, `datafi`, `tipus_obra`, `agencia`, `director`) VALUES
-(2, 'Hamlet', 'La tragedia de Hamlet, Príncipe de Dinamarca, o simplemente Hamlet, es una tragedia del dramaturgo inglés William Shakespeare.', '2017-03-20', '2017-03-24', 1, 1, 1),
-(3, 'Otelo', 'El moro de Venecia es una obra teatral de Shakespeare escrita alrededor de 1603. Otelo es una tragedia, como Hamlet, Macbeth y El rey Lear.', '2017-04-03', '2017-04-07', 2, 2, 2);
+INSERT INTO `obra` (`id`, `nom`, `descripcio`, `datainici`, `datafi`, `tipus_obra`, `director`) VALUES
+(2, 'Hamlet', 'La tragedia de Hamlet, Príncipe de Dinamarca, o simplemente Hamlet, es una tragedia del dramaturgo inglés William Shakespeare.', '2017-03-20', '2017-03-24', 1, 1),
+(3, 'Otelo', 'El moro de Venecia es una obra teatral de Shakespeare escrita alrededor de 1603. Otelo es una tragedia, como Hamlet, Macbeth y El rey Lear.', '2017-04-03', '2017-04-07', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -149,7 +150,8 @@ CREATE TABLE `tipus_obra` (
 
 INSERT INTO `tipus_obra` (`id`, `descripcio`) VALUES
 (1, 'Teatre'),
-(2, 'Dansa');
+(2, 'Dansa'),
+(4, 'Cinema');
 
 -- --------------------------------------------------------
 
@@ -159,6 +161,7 @@ INSERT INTO `tipus_obra` (`id`, `descripcio`) VALUES
 
 CREATE TABLE `tipus_paper` (
   `id` int(20) NOT NULL,
+  `nom` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `primari` tinyint(1) NOT NULL,
   `secundari` tinyint(1) NOT NULL,
   `extra` tinyint(1) NOT NULL,
@@ -170,12 +173,12 @@ CREATE TABLE `tipus_paper` (
 -- Volcado de datos para la tabla `tipus_paper`
 --
 
-INSERT INTO `tipus_paper` (`id`, `primari`, `secundari`, `extra`, `especialista`, `repartiment`) VALUES
-(1, 1, 0, 0, 0, 0),
-(2, 0, 1, 0, 0, 0),
-(3, 0, 0, 1, 0, 0),
-(4, 0, 0, 0, 1, 0),
-(5, 0, 0, 0, 0, 1);
+INSERT INTO `tipus_paper` (`id`, `nom`, `primari`, `secundari`, `extra`, `especialista`, `repartiment`) VALUES
+(1, 'Batman', 1, 0, 0, 0, 0),
+(2, 'Robin', 0, 1, 0, 0, 0),
+(3, 'Majordom Alfred', 0, 0, 1, 0, 0),
+(4, 'Peatón Paco', 0, 0, 0, 1, 0),
+(5, 'Camarera Yashira', 0, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -283,7 +286,7 @@ ALTER TABLE `obra_actor`
 -- AUTO_INCREMENT de la tabla `tipus_obra`
 --
 ALTER TABLE `tipus_obra`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `tipus_paper`
 --

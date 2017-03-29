@@ -27,7 +27,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
                 $dni = $_REQUEST['dni'];
             }else{
                 $dni = null;
-                $missatge = "Dni no valid.";
+                $missatge = "Dni no";
             }
         }
         if (isset($_REQUEST['nom'])) {
@@ -39,13 +39,20 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         if (isset($_REQUEST['cognom2'])) {
             $cognom2 = $_REQUEST['cognom2'];
         }
+        if (isset($_REQUEST['descripcio'])) {
+            $descripcio = $_REQUEST['descripcio'];
+        }
 
-            if ($dni != null && $nom != null && $cognom1 != null && $cognom2 != null) {
-                $director->inserir($dni, $nom, $cognom1, $cognom2);
+            if ($dni != null && $nom != null && $cognom1 != null && $cognom2 != null && $descripcio != null) {
+                $director->inserir($dni, $nom, $cognom1, $cognom2, $descripcio);
                 $missatge = "S'ha afegit el director correctament!";
                 $quantitat = 200;
                 require_once 'view/confirmacio.php';
             } else {
+                if($missatge == "Dni no"){
+                    $missatge = "El DNI introduit no es vàlid!";
+                    require_once 'view/error.php';
+            }
                 $missatge = "No s'ha pogut afegit el director, camps sense informació!";
                 require_once 'view/error.php';
             }

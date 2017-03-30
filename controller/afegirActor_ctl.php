@@ -37,7 +37,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         if (isset($_REQUEST['descripcio'])) {
             $descripcio = $_REQUEST['descripcio'];
         }
-        $nouActor = new Actor($dni, $nom, $cognom1, $cognom2, $sexe, $foto,$descripcio);
+        $nouActor = new Actor($dni, $nom, $cognom1, $cognom2, $sexe, $foto, $descripcio);
         //verifiquem que el actor no estigui a la base de dades per el dni
 
         if (!$actordb->buscarPerDni($dni)) {
@@ -47,12 +47,14 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
                     //afegim el actor a la base de dades
                     $nouActor->inserirActor();
                     $missatge = $nouActor->validarActor()->getMsg();
+                    require_once 'view/confirmacio.php';
                 } catch (Exception $e) {
                     $missatge = $e->getMessage();
                     require_once 'view/error.php';
                 }
             } else {
                 //missatege de la clase validar
+                 
                 $missatge = $nouActor->validarActor()->getMsg();
                 require_once 'view/confirmacio.php';
             }

@@ -6,19 +6,25 @@
                 <div class="form-group">
                     <label for="nom" class="col-sm-2 control-label">Nom:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputPassword3" placeholder="Nom">
+                        <input type="text" id="nom" class="form-control" id="inputPassword3" placeholder="Nom">
+                        <img class="icon" src="view/images/confirm.png" hidden id="correctnom"/>
+                        <img class="icon" src="view/images/error.png" hidden id="errornom"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail" class="col-sm-2 control-label">Email:</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        <input type="email" id="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        <img class="icon" src="view/images/confirm.png" hidden id="correctemail"/>
+                        <img class="icon" src="view/images/error.png" hidden id="erroremail"/>
                     </div>
                 </div>   
                 <div class="form-group">
                     <label for="Missatge" class="col-sm-2 control-label">Missatge:</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="missatge" class="form-control" rows="3"></textarea>
+                        <img class="icon" src="view/images/confirm.png" hidden id="correctmissatge"/>
+                        <img class="icon" src="view/images/error.png" hidden id="errormissatge"/>
                     </div>
                 </div> 
                 <div class="form-group">

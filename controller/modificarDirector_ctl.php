@@ -36,6 +36,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         if (isset($_REQUEST['cognom2'])) {
             $cognom2 = $_REQUEST['cognom2'];
         }
+        $redireccio = "?ctl=directors";
         if ($dni != null && $nom != null && $cognom1 != null && $cognom1 != null ) {
             $director->modificarDirector($dni, $nom, $cognom1, $cognom2);
             $missatge = "S'ha modificat el director correctament!";

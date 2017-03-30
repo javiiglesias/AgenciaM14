@@ -11,6 +11,7 @@ if (isset($_REQUEST['dni'])) {
 require_once 'view/header.php';
 if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
     $director = $directorDAO->retornarDirectorsConcret($dni);
+    $redireccio = "?ctl=directors";
     if (isset($director)) {
         // mirar porque no entra aquí
         $directorDAO->eliminarDirector($director[0]->getDni());

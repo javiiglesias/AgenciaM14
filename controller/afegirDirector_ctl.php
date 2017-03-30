@@ -42,7 +42,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         if (isset($_REQUEST['descripcio'])) {
             $descripcio = $_REQUEST['descripcio'];
         }
-
+        $redireccio = "?ctl=directors";
             if ($dni != null && $nom != null && $cognom1 != null && $cognom2 != null && $descripcio != null) {
                 $director->inserir($dni, $nom, $cognom1, $cognom2, $descripcio);
                 $missatge = "S'ha afegit el director correctament!";

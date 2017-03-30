@@ -9,11 +9,18 @@ require_once("model/Persistence/class_Agenciadb.php");
 
 $titlePage = "Agencia";
 
-$agencia = new Agenciadb();
+$agenciadb = new Agenciadb();
 
-$ArrayAgencia = $agencia->retornarAgencia();
-//$ArrayDirectores= $agencia->retornarDirectors();
-//$ArrayOBRAS = $agencia->mostrarObra();
+$ArrayAgencia = $agenciadb->retornarAgencia();
+$ArrayDirectores= $agenciadb->retornarDirectors();
+$ArrayOBRAS = $agenciadb->mostrarObra();
+$ArrayActores = $agenciadb->populateActordb();
+
+
+$agencia=$ArrayAgencia;
+$directores=$ArrayDirectores;
+$obras=$ArrayOBRAS;
+$actores=$ArrayActores;
 
 require_once 'view/header.php';
 require_once 'view/Agencia.php';

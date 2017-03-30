@@ -50,7 +50,7 @@
           
             <div class="form-group">
                 <label>Descripcio:</label>
-                <textarea class="form-control" id="descripcio" name="descripcio" rows="4" cols="4" onchange="notEmpty('descripcio')"></textarea>
+                <textarea class="form-control" id="descripcio" name="descripcio" rows="4" cols="4"></textarea>
                 <img class="icon" src="view/images/confirm.png" hidden id="correctdescripcio"/>
                 <img class="icon" src="view/images/error.png" hidden id="errordescripcio"/>
             </div>

@@ -54,9 +54,9 @@
             </div>
             <div class="form-group">
                 <label>Descripció:</label>
-                <textarea id="description" rows="4" cols="50" name="descripcio" class="form-control" required></textarea>
-                <img class="icon" src="view/images/confirm.png" hidden id="correctdescription"/>
-                <img class="icon" src="view/images/error.png" hidden id="errordescription"/>
+                <textarea id="descripcio" rows="4" cols="50" name="descripcio" class="form-control" required></textarea>
+                <img class="icon" src="view/images/confirm.png" hidden id="correctdescripcio"/>
+                <img class="icon" src="view/images/error.png" hidden id="errordescripcio"/>
             </div>
             <div class="col-md-offset-3 col-xs-offset-2">
                 <button name="Submit" class="btn btn-primary btn-lg"><image class="btn-icon" src="view/images/afegir.png"/>  Afegir </button>

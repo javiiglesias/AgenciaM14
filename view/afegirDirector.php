@@ -29,32 +29,32 @@
             <small class="col-xs-offset-2 col-md-offset-1 col-sm-offset-1  col-lg-offset-3">Introdueix les dades del nou Director </small></br>
             <div class="form-group">
                 <label>DNI:</label>
-                <input id="dni" type="text" name="dni" class="form-control" required">
+                <input id="dni" type="text" name="dni" class="form-control"  required>
                 <img class="icon" src="view/images/confirm.png" hidden id="correctDni"/>
                 <img class="icon" src="view/images/error.png" hidden id="errorDni"/>
             </div>
 
             <div class="form-group">
                 <label>Nom:</label>
-                <input id="nom" type="text" name="nom" class="form-control"  onchange="notEmpty('nom')" required>
+                <input id="nom" type="text" name="nom" class="form-control"   required>
                 <img class="icon" src="view/images/confirm.png" hidden id="correctnom"/>
                 <img class="icon" src="view/images/error.png" hidden id="errornom"/>
             </div>
             <div class="form-group">
                 <label>Cognom: </label>
-                <input id="cognom1" type="text" name="cognom1" class="form-control"  onchange="notEmpty('cognom1')" required>
+                <input id="cognom1" type="text" name="cognom1" class="form-control"   required>
                 <img class="icon" src="view/images/confirm.png" hidden id="correctcognom1"/>
                 <img class="icon" src="view/images/error.png" hidden id="errorcognom1"/>
             </div>
             <div class="form-group">
                 <label>Segon cognom:</label>
-                <input id="cognom2" type="text" name="cognom2" class="form-control" onchange="notEmpty('cognom2')" required>
+                <input id="cognom2" type="text" name="cognom2" class="form-control"  required>
                 <img class="icon" src="view/images/confirm.png" hidden id="correctcognom2"/>
                 <img class="icon" src="view/images/error.png" hidden id="errorcognom2"/>
             </div>
             <div class="form-group">
                 <label>Descripció:</label>
-                <textarea id="description" rows="4" cols="50" name="descripcio" class="form-control" onchange="notEmpty('description')" required></textarea>
+                <textarea id="description" rows="4" cols="50" name="descripcio" class="form-control" required></textarea>
                 <img class="icon" src="view/images/confirm.png" hidden id="correctdescription"/>
                 <img class="icon" src="view/images/error.png" hidden id="errordescription"/>
             </div>

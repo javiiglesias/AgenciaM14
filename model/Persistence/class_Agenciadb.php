@@ -36,6 +36,13 @@ class Agenciadb{
         $arrayTipusObra = $obradb->populateObraDb();
         return $arrayTipusObra;
     }
+    public function populateActordb() {
+        $query = "SELECT * FROM actor;";
+        $con = new db();
+        $arrayDeActors = $con->consultarActors($query);
+        $con->close();
+        return $arrayDeActors;
+    }
 
 
 }

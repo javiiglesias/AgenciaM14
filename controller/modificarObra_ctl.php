@@ -45,6 +45,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
     $tipusObraSeleccionat = $obra->tipusObraSeleccionat($obraTrobada->getTipusObra());
     $directorSeleccionat = $obra->directorObraSeleccionat($obraTrobada->getDirectorObra());
     
+    $redireccio = "?ctl=obres";
     if (isset($_REQUEST['Submit'])) {        
         if ($nom != null && $descripcio != null && $datainici != null && $datafi != null && $tipusObra != null && $director != null) {
             $obra->modificarObra($obraTrobada, addslashes($nom), addslashes($descripcio), addslashes($datainici), addslashes($datafi), addslashes($tipusObra), addslashes($director));

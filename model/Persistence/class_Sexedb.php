@@ -21,7 +21,7 @@ class Sexedb {
 
     function createSelectCategories() {
 
-        $select = '<select name="categoria">';
+        $select = '<select name="categoria" id="sexe">';
         foreach ($this->llistaSexe as $key => $cat) {
 
             $select = $select . '<option value="' . $cat->id . '">' . $cat->sexe . '</option>';

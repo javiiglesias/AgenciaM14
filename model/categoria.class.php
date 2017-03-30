@@ -46,7 +46,7 @@ class CategoriaDAO {
         $select = '<select name="categoria">';
         foreach ($this->llistaCategoria as $key => $cat) {
             if ($cat->id == $catSelect->id) {
-                $select = $select . '<option value="' . $catSelect->id . '"selected>' . $catSelect->descripcion . '</option>';
+                $select = $select . '<option value="' . $catSelect->id . '"selected>' . $catSelect->sexe . '</option>';
             } else {
                 $select = $select . '<option value="' . $cat->id . '">' . $cat->descripcion . '</option>';
             }

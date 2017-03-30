@@ -23,6 +23,15 @@
             <file>file:/home/yaritza/dades/M14/Server/ProjecteWeb/model/llibres.class.php</file>
             <file>file:/home/yaritza/dades/M14/Server/ProjecteWeb/controller/afegirCategoria_ctl.php</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/opt/lampp/htdocs/AgenciaM14/model/Persistence/class_Actordb.php</file>
+            <file>file:/opt/lampp/htdocs/AgenciaM14/controller/modificarActor_ctl.php</file>
+            <file>file:/opt/lampp/htdocs/AgenciaM14/controller/eliminarActor_ctl.php.php</file>
+            <file>file:/opt/lampp/htdocs/AgenciaM14/index.php</file>
+            <file>file:/opt/lampp/htdocs/AgenciaM14/model/business/class_Actor.php</file>
+            <file>file:/opt/lampp/htdocs/AgenciaM14/model/Persistence/class_obradb.php</file>
+            <file>file:/opt/lampp/htdocs/AgenciaM14/controller/eliminarLlibre_ctl.php</file>
+            <file>file:/opt/lampp/htdocs/AgenciaM14/view/actors.php</file>
+        </group>
     </open-files>
 </project-private>

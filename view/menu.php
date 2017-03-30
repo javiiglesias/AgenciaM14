@@ -18,6 +18,13 @@
                         <?php } else { ?>
                             <li><a href="?ctl=inici">Inici</a></li>
                         <?php } ?>
+
+                        <?php if ($titlePage == "Agencia") { ?>
+                            <li class="active"><a href="?ctl=agencia&act=detall">Agencia</a></li>
+                        <?php } else { ?>
+                            <li><a href="?ctl=agencia&act=detall">Agencia</a></li>
+                        <?php } ?>
+
                         <?php if ($titlePage == "Qui som?") { ?>
                             <li class="active"><a href="?ctl=quisom">Qui som?</a></li>
                         <?php } else { ?>

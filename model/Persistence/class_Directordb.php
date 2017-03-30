@@ -11,9 +11,9 @@ class DirectorDb {
 
 
     // modificar
-    public function inserir($dni, $nom, $cognom1, $cognom2) {
+    public function inserir($dni, $nom, $cognom1, $cognom2, $descripcio) {
 
-        $query = "insert into director values('', '" . $dni . "', '" . $nom . "', '" . $cognom1 . "', '" . $cognom2 . "');";
+        $query = "insert into director values('', '" . $dni . "', '" . $nom . "', '" . $cognom1 . "', '" . $cognom2 . "', '" . $descripcio . "');";
         $con = new db();
         $con->consulta($query);
         $con->close();
@@ -25,9 +25,9 @@ class DirectorDb {
 		$con->close();
 		return $arrayDeDirectors;	  
     }
-    public function retornarDirectorsConcret($nom) {
+    public function retornarDirectorsConcret($dni) {
 //        $query="SELECT * FROM director WHERE nif = '".$dni."'";
-        $query="SELECT * FROM director WHERE %nom% =''".$nom."''";
+        $query="SELECT * FROM director WHERE nif ='".$dni."'";
         $con = new db();
         $director = $con->consultarDirector($query);
         $con->close();

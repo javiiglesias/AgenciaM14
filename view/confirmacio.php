@@ -22,14 +22,11 @@
                 <div class="alert alert-dismissible alert-success text-center">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <h3> <?php echo $missatge; ?>  <img src="view/images/confirm.png" class="icon"</h3>
-<<<<<<< HEAD
-                    <p><a class="alert-link" href='?ctl=llibre&act=afegir'>Tornar a afegir</a></p>
+                    <p><a class="alert-link" href='?ctl=director&act=afegir'>Tornar a afegir</a></p>
                 </div>
-=======
                     <p><a class="alert-link" href='?ctl=directors'>Tornar a la llista de directors</a></p>
                 </div>
 
->>>>>>> master
             <?php } ?>
         </div>
     </div>

@@ -160,7 +160,7 @@ class Obra {
     public function directorObraSeleccionat($directorSelect) {
         $director = new Directordb();
         $ArraydeDirectors = $director->retornarDirectors();
-        $select = '<select name="tipusobra" class="form-control">';
+        $select = '<select name="director" class="form-control">';
         foreach ($ArraydeDirectors as $sec) {
             if ($sec->getId() == $directorSelect) {
                 $select = $select . '<option value="' . $sec->getId() . '"selected>' . $sec->getNom() . " " . $sec->getCognom1() ." " . $sec->getCognom2(). '</option>';

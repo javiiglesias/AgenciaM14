@@ -91,16 +91,16 @@ class Actor {
     public function inserirActor() {
         $actorDb = new Actordb();
         $actorDb->inserir($this);
-    
     }
-    public function modificarActor($id){
+
+    public function modificarActor($id) {
         $actorDb = new ActorDb();
-        $actorDb->modificar($this,  $id);
+        $actorDb->modificar($this, $id);
     }
 
     public function validarActor() {
         $validation = new Validation(true, '');
-        $validation->setMsg("all ok");
+        $validation->setMsg("Has afegit correctament");
         if (trim($this->getNom()) == '') {
             $validation->setOk(false);
             $validation->setMsg("Camp nom buit");
@@ -125,30 +125,24 @@ class Actor {
             $validation->setOk(false);
             $validation->setMsg("Has d'afegir una descripcio");
         }
-//        if ($validation->getOk()) {
-//            if (trim($this->getDni()) == "" || !$this->validateDNI($this->getDni())) {
-//                $validation->setOk(false);
-//                $validation->setMsg("DNI invalid");
-//            }
-//        }
+        if ($validation->getOk()) {
+            if (trim($this->getDni()) == "" || !$this->validateDNI($this->getDni())) {
+                $validation->setOk(false);
+                $validation->setMsg("DNI invalid");
+            }
+        }
         return $validation;
     }
 
     public function validateDNI($dni) {
         $letra = substr($dni, -1);
-    $numeros = substr($dni, 0, -1);
-    if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) == $letra && strlen($letra) == 1 && strlen($numeros) == 8) {
-        echo 'Dni valido';
-    } else {
-        echo 'Dni no valido';
-    }
-//        $letra = substr($dni, -1);
-//        $numeros = substr($dni, 0, -1);
-//        if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) == $letra && strlen($letra) == 1 && strlen($numeros) == 8) {
-//            return true;
-//        } else {
-//            return false;
-//        }
+        $letraMayus = strtoupper($letra);
+        $numeros = substr($dni, 0, -1);
+        if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) == $letraMayus && strlen($letraMayus) == 1 && strlen($numeros) == 8) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

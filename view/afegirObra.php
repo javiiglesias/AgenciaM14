@@ -52,9 +52,21 @@
                 <div class="form-group">
                     <label>Data Fi:</label>
                     <input type="text" name="datafi" id="datepicker-2" class="form-control" >               
-                </div>   
+                </div> 
+                <div class="form-group" id="addActor">
+                    <label>Actor:</label>
+                    <div class="col-sm-12" id="addActor-btn"><br>                        
+                        <div class="col-xs-6">
+                            <p><button  type="button" class="btn btn-primary btn-sm" id="afegirActor"><span class="fa fa-plus"></span>Afegir Actor A Obra</button></p>                        
+                        </div>
+                        <!--                        <div class="col-xs-6">
+                                                    <p><button  type="button" class="btn btn-primary btn-sm" id="afegirActor"><span class="fa fa-plus"></span>Afegir nou Actor</button></p>
+                                                </div>-->
+                    </div>
+                    <br>
+                </div>
                 <div class="form-group">
-                    <label>Tipus:</label>
+                    <label>Tipus d'Obra:</label>
                     <?php echo $selectTipusObra; ?>
                 </div>   
                 <div class="form-group">
@@ -77,4 +89,47 @@
     $(function () {
         $("#datepicker-2").datepicker();
     });
+
+    document.getElementById('afegirActor').onclick = afegirActor;
+
+    function afegirActor() {
+
+        //Container Actor/Paper
+        var divRow = document.createElement("div");
+        divRow.setAttribute("id", "div-row");
+        divRow.setAttribute("class", "row");
+        document.getElementById("addActor").appendChild(divRow);
+        var btn = document.getElementById("addActor-btn");
+        btn.insertBefore(divRow, btn.childNodes[0]);
+        
+        /* ===== Actor ======= */
+
+        var divActor = document.createElement("div");
+        divActor.setAttribute("id", "div-actor");
+        divActor.setAttribute("class", "col-xs-6");
+        document.getElementById("div-row").appendChild(divActor);
+
+        var inputActor = document.createElement("input");
+        inputActor.setAttribute("class", "form-control");
+        var label = document.createElement("label");
+        var text = document.createTextNode(" Actor:");
+        label.appendChild(text);
+        document.getElementById("div-actor").appendChild(label);
+        document.getElementById("div-actor").appendChild(inputActor);
+
+        /* ===== Paper ======= */
+        var divPaper = document.createElement("div");
+        divPaper.setAttribute("id", "div-paper");
+        divPaper.setAttribute("class", "col-xs-6");
+        document.getElementById("div-row").appendChild(divPaper);
+
+        var inputActor = document.createElement("input");
+        inputActor.setAttribute("class", "form-control");
+        var label2 = document.createElement("label");
+        var text2 = document.createTextNode(" Paper:");
+        label2.appendChild(text2);
+        document.getElementById("div-paper").appendChild(label2);
+        document.getElementById("div-paper").appendChild(inputActor);
+    }
+
 </script>

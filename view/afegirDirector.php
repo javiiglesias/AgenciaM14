@@ -29,19 +29,34 @@
             <small class="col-xs-offset-2 col-md-offset-1 col-sm-offset-1  col-lg-offset-3">Introdueix les dades del nou Director </small></br>
             <div class="form-group">
                 <label>DNI:</label>
-                <input type="text" name="dni" class="form-control" >
+                <input id="dni" type="text" name="dni" class="form-control"  required>
+                <img class="icon" src="view/images/confirm.png" hidden id="correctDni"/>
+                <img class="icon" src="view/images/error.png" hidden id="errorDni"/>
             </div>
+
             <div class="form-group">
                 <label>Nom:</label>
-                <input type="text" name="nom" class="form-control" >
+                <input id="nom" type="text" name="nom" class="form-control"   required>
+                <img class="icon" src="view/images/confirm.png" hidden id="correctnom"/>
+                <img class="icon" src="view/images/error.png" hidden id="errornom"/>
             </div>
             <div class="form-group">
                 <label>Cognom: </label>
-                <input type="text" name="cognom1" class="form-control" >
+                <input id="cognom1" type="text" name="cognom1" class="form-control"   required>
+                <img class="icon" src="view/images/confirm.png" hidden id="correctcognom1"/>
+                <img class="icon" src="view/images/error.png" hidden id="errorcognom1"/>
             </div>
             <div class="form-group">
                 <label>Segon cognom:</label>
-                <input type="text" name="cognom2" class="form-control" >
+                <input id="cognom2" type="text" name="cognom2" class="form-control"  required>
+                <img class="icon" src="view/images/confirm.png" hidden id="correctcognom2"/>
+                <img class="icon" src="view/images/error.png" hidden id="errorcognom2"/>
+            </div>
+            <div class="form-group">
+                <label>Descripció:</label>
+                <textarea id="description" rows="4" cols="50" name="descripcio" class="form-control" required></textarea>
+                <img class="icon" src="view/images/confirm.png" hidden id="correctdescription"/>
+                <img class="icon" src="view/images/error.png" hidden id="errordescription"/>
             </div>
             <div class="col-md-offset-3 col-xs-offset-2">
                 <button name="Submit" class="btn btn-primary btn-lg"><image class="btn-icon" src="view/images/afegir.png"/>  Afegir </button>

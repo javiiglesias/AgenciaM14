@@ -3,28 +3,28 @@
         <div class="paragraf col-xs-12 col-md-5 col-lg-5">
             <h3 class="text-center">formulari de contacte</h3><br>
             <form class="form-horizontal">
-                <div class="form-group">
+                <div class="form-group has-feedback" id="validacio">
                     <label for="nom" class="col-sm-2 control-label">Nom:</label>
                     <div class="col-sm-10">
                         <input type="text" id="nom" class="form-control" id="inputPassword3" placeholder="Nom">
-                        <img class="icon" src="view/images/confirm.png" hidden id="correctnom"/>
-                        <img class="icon" src="view/images/error.png" hidden id="errornom"/>
+                        <span id="span-validacio" class="glyphicon form-control-feedback"></span>
+                        <span id="missatge_error"></span>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group has-feedback" id="validacio">
                     <label for="inputEmail" class="col-sm-2 control-label">Email:</label>
                     <div class="col-sm-10">
                         <input type="email" id="email" class="form-control" id="inputEmail3" placeholder="Email">
-                        <img class="icon" src="view/images/confirm.png" hidden id="correctemail"/>
-                        <img class="icon" src="view/images/error.png" hidden id="erroremail"/>
+                        <span id="span-validacio" class="glyphicon form-control-feedback"></span>
+                        <span id="error_email" class="missatge_error"></span>
                     </div>
                 </div>   
-                <div class="form-group">
+                <div class="form-group has-feedback" id="validacio">
                     <label for="Missatge" class="col-sm-2 control-label">Missatge:</label>
                     <div class="col-sm-10">
                         <textarea id="missatge" class="form-control" rows="3"></textarea>
-                        <img class="icon" src="view/images/confirm.png" hidden id="correctmissatge"/>
-                        <img class="icon" src="view/images/error.png" hidden id="errormissatge"/>
+                        <span id="span-validacio" class="glyphicon form-control-feedback"></span>
+                        <span id="missatge_error"></span>
                     </div>
                 </div> 
                 <div class="form-group">

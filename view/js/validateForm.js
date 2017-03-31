@@ -2,9 +2,9 @@
  * Created by ivan on 29/03/17.
  */
 
-$( document ).ready(function() {
+$(document).ready(function () {
     $('#dni').change(validateDni);
-    $('#email').change(notEmpty);
+    $('#email').change(validacioEmail);
     $('#missatge').change(notEmpty);
     $('#nom').change(notEmpty);
     $('#cognom1').change(notEmpty);
@@ -14,28 +14,34 @@ $( document ).ready(function() {
     $('#sexe').change(notEmptyDesplegable);
 });
 
-function notEmptyDesplegable(){
+function notEmptyDesplegable() {
     var select = this.selectedIndex;
-    var opcio = this.id;
-    if(select == 0 || select == ""){
-        $('#error'+opcio).show();
-        $('#correct'+opcio).hide();
-    }else{
-        $('#error'+opcio).hide();
-        $('#correct'+opcio).show();
+    var div = $(this).parent();
+    var span = $(this).next();
+    if (select == 0 || select == "") {
+        div.addClass("has-error").removeClass("has-success");
+        span.addClass("glyphicon-remove").removeClass("glyphicon-ok");
+
+    } else {
+        div.addClass("has-success").removeClass("has-error");
+        span.addClass("glyphicon-ok").removeClass("glyphicon-remove");
     }
 }
 
 
-function notEmpty(){
+function notEmpty() {
     var select = this.value;
-    var opcio = this.id;
-    if(select == null || select == ""){
-        $('#error'+opcio).show();
-        $('#correct'+opcio).hide();
-    }else{
-        $('#error'+opcio).hide();
-        $('#correct'+opcio).show();
+    var div = $(this).parent();
+    var span = $(this).next();
+    var missatge = $("#missatge_error");
+    if (select == null || select == "") {
+        div.addClass("has-error").removeClass("has-success");
+        span.addClass("glyphicon-remove").removeClass("glyphicon-ok");
+        missatge.html('El camp ha de estar ple!');
+    } else {
+        div.addClass("has-success").removeClass("has-error");
+        span.addClass("glyphicon-ok").removeClass("glyphicon-remove");
+        missatge.hide();
     }
 }
 
@@ -65,5 +71,22 @@ function validateDni() {
     } else {
         $('#correctDni').hide();
         $('#errorDni').show();
+    }
+}
+
+function validacioEmail() {
+
+    var email = this.value;
+    var div = $(this).parent();
+    var span = $(this).next();
+    var missatge = $("#error_email");
+    if (email.indexOf("@") == -1) {
+        div.addClass("has-error").removeClass("has-success");
+        span.addClass("glyphicon-remove").removeClass("glyphicon-ok");
+        missatge.html('*Email no vàlid');
+    } else {
+        div.addClass("has-success").removeClass("has-error");
+        span.addClass("glyphicon-ok").removeClass("glyphicon-remove");
+        missatge.hide();
     }
 }

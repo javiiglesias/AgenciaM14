@@ -24,7 +24,6 @@ if (isset($_COOKIE['usuari'])) {
                                 <input type="password" name="pass" class="form-control">
                             </div>
                             <p>Recordar usuari <input type="checkbox" name="recordarUsuari"><p>
-                            <p><a href="?ctl=usuari&act=registre">Registrar-se com a usuari</a></p>
                             <div class="col-xs-10 col-md-9 col-md-offset-3 col-xs-offset-2">
                                 <button name="Submit" class="btn btn-warning"> Entrar <image class="btn-icon" src="view/images/login.ico"/> </button>
                             </div>

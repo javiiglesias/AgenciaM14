@@ -49,8 +49,9 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         $redireccio = "?ctl=obres";
         if ($nom != null && $descripcio != null && $datainici != null && $datafi != null && $tipusObra != null && $director != null) {
             $obra->inserirObra(addslashes($nom), addslashes($descripcio), addslashes($datainici), addslashes($datafi), addslashes($tipusObra), addslashes($director));
-            $idObra = $obra->cercarUltimaObra() + 1;
-            $obra_actor = new Obra_Actor();
+            $ultimaObra = $obra->cercarUltimaObra();
+            $idObra = $ultimaObra->getIdObra() + 1;
+            $obra_actor = new obra_actor();
 
             foreach ($_REQUEST['actors'] as $actor) {
                 foreach ($_REQUEST['personatge'] as $personatge) {

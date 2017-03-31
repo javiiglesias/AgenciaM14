@@ -1,19 +1,38 @@
 <?php require_once 'view/menuEdicio.php'; ?>
 <div class="col-lg-12">
     <div class="container">
-        <div class="col-xs-12 col-md-6 col-md-push-3">
-            <h1>Fitxa <?php echo $actor->getNom(); ?></h1>
+        <div class="row">
+            <div  class="col-xs-12 col-md-3 col-lg-6 col-lg-push-3">        
 
-        </div>
-        <div class="row col-lg-8 col-lg-push-3 ">
-            <div class="thumbnail col-lg-11 col-lg-pull-1 llibres text-center">
-                <img class="icon" src="<?php echo $actor->getFoto(); ?>"></img>
-                <h5><strong><?php echo $actor->getNom(); ?></strong></h5>
-                <h5><?php echo $actor->getDni(); ?></h5> 
-                <h5><?php echo $actor->getDescripcio(); ?></h5> 
-                <h5><strong>Sexe:</strong> <?php echo $actor->getSexe(); ?> <a  href="?clt=veure_fitxa&id=<?php echo $actor->getId(); ?>" class="btn btn-danger btn-sm"></span> Fitxa</a></h5>                        
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1 class=" text-center">Fitxa d'Actor: <?php echo $actor->getNom(); ?></h1>
+                    </div>
+                    <div class="panel-body">
+                        <img src="view/images/<?php echo $actor->getFoto(); ?>" style="margin-left: 30%; padding: 10px;">
+                        <table class="table">
+                            <tr>
+                                <td><h5><strong>Nom:</strong></h5></td>
+                                <td><p><?php echo $actor->getNom(); ?></p></td>
+                            </tr>
+                            <tr>
+                                <td><h5><strong>DNI:</strong></h5></td>
+                                <td><p><?php echo $actor->getDni(); ?></p></td>
+                            </tr>
+                            <tr>
+                                <td><h5><strong>Sexe:</strong></h5></td>
+                                <td><p> <?php echo $actor->getSexe(); ?> </p></td>
+                            </tr>
+                            <tr>
+                                <td><h5><strong>Descripcio:</strong></h5></td>
+                                <td><p><?php echo $actor->getDescripcio(); ?></p></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>            
             </div>
-        </div> 
+        </div>   
+
     </div>
 </div>
 

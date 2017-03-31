@@ -21,7 +21,7 @@
                         <?php } else { ?>
                             <li role = "presentation"><a href = "?ctl=obra&act=afegir">Afegir nova Obra</a></li>
                         <?php } ?>
-                            
+
                         <?php if ($titlePage == "Afegir Tipus Obra") { ?>
                             <li role = "presentation" class="active"><a href ="?ctl=tipusObra&act=afegir">Afegir nou Tipus Obra</a></li>
                         <?php } else { ?>

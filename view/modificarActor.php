@@ -3,8 +3,8 @@
     </br>
     <div  class="col-xs-12 col-md-3 col-lg-4 col-lg-push-4 formulari">        
         <form action="?ctl=actor&act=modificar" method="post">  
-            <h1 class="text-center">Afegir Actor</h1>
-            <small class="col-xs-offset-2 col-md-offset-1 col-sm-offset-1  col-lg-offset-3">Introdueix les dades del nou llibre </small></br> 
+            <h1 class="text-center">Modificar Actor</h1>
+            <small class="col-xs-offset-2 col-md-offset-1 col-sm-offset-1  col-lg-offset-2">Introdueix les dades a modificar del actor </small></br> 
             <div class="form-group">
                 <label>DNI:</label>
                 <input type="text" name="dni" class="form-control" value="<?php echo $actor->getDni(); ?>" >
@@ -38,49 +38,13 @@
 
             <div class="form-group">
                 <label>Descripcio:</label>
-                <textarea class="form-control" name="descripcio" rows="4" cols="4" value="<?php echo $actor->getDescripcio(); ?>"></textarea>
+                <textarea class="form-control" name="descripcio" rows="4" cols="4"><?php echo $actor->getDescripcio(); ?></textarea>
             </div>
-            <div class="form-group">
-                <label>Id:</label>
-                <input type="hidden" name="id" value="<?php echo $id; ?>"/>
-            </div>
+            <input type="hidden" name="id" value="<?php echo $id; ?>"/>
             <div class="col-md-offset-3 col-xs-offset-2">
                 <button name="Submit" class="btn btn-primary btn-lg"><image class="btn-icon" src="view/images/afegir.png"/>  Modificar </button>
             </div>
 
         </form>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="afegirCategoria" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Afegir Categoria</h4>
-                </div>
-                <div class="modal-body">
-                    <div  class="col-xs-12 col-md-12 col-lg-12 ">        
-                        <form action="?ctl=categoria&act=afegir" method="post">  
-                            <h1 class="text-center">Afegir Categoria</h1>
-                            <div class="col-xs-6 col-xs-offset-3  form-group">
-                                <label>ID:</label>
-                                <input type="text" name="id" class="form-control" />
-                            </div>
-                            <div class="col-xs-6 col-xs-offset-3  form-group">
-                                <label>Nom:</label>
-                                <input type="text" name="nom" class="form-control" />
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Tancar</button>
-                    <button type="submit" class="btn btn-primary">Afegir</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
+    </div>    
 </div>

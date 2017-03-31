@@ -2,7 +2,7 @@
 
 $titlePage = "Tipus Obra";
 
-$tipusObra = new tipus_obra("gh");
+$tipusObra = new tipus_obra();
 
 $id = null;
 $descripcio = 0;

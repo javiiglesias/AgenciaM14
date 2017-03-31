@@ -15,7 +15,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         $tipusObra = new tipus_obra();
         if ($descripcio != null) {
             $tipusObra->afegirTipusObra($descripcio);
-            $missatge = "S'ha afegit el llibre correctament!";
+            $missatge = "S'ha afegit el tipus d'obra correctament!";
             require_once 'view/confirmacio.php';
         } else {
             $missatge = "No s'ha pogut afegir el tipus d'obra, camps sense informació!";

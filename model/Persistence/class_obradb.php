@@ -55,6 +55,8 @@ class obraDb {
         $con->close();
         return $arrayTipusObra;
     }
+    
+     
 
 }
 

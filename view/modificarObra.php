@@ -48,19 +48,19 @@
                 </div>
                 <div class="form-group">
                     <label>Data Inici:</label>
-                    <input type="date" name="datainici" class="form-control" value="<?php echo $obraTrobada->getDataIniciObra(); ?>" >               
+                    <input type="date" name="datainici" id="datepicker-1" class="form-control" value="<?php echo $obraTrobada->getDataIniciObra(); ?>" >               
                 </div>       
                 <div class="form-group">
                     <label>Data Fi:</label>
-                    <input type="date" name="datafi" class="form-control" value="<?php echo $obraTrobada->getDataFiObra(); ?>">               
+                    <input type="date" name="datafi" id="datepicker-2" class="form-control" value="<?php echo $obraTrobada->getDataFiObra(); ?>">               
                 </div>   
                 <div class="form-group">
                     <label>Tipus:</label>
-                    <?php echo $tipusObraSeleccionat?>
+                    <?php echo $tipusObraSeleccionat ?>
                 </div>   
                 <div class="form-group">
                     <label>Director:</label>
-                    <?php echo $directorSeleccionat?>
+                    <?php echo $directorSeleccionat ?>
                 </div>                  
                 <div class="col-md-offset-3 col-xs-offset-2">
                     <button name="Submit" class="btn btn-primary btn-lg"><image class="btn-icon" src="view/images/guardar.png"/>  Modificar </button>
@@ -68,6 +68,80 @@
             </form>
         </div>
     </div>
-
-
 </div>
+
+<script>
+
+    /* ============= DatePicker ============= */
+    $.datepicker.regional['ca'] = {
+        closeText: 'Tancar',
+        prevText: '< Ant',
+        nextText: 'Seg >',
+        currentText: 'Avui',
+        monthNames: ['Gener', 'Febrer', 'Març', 'Abril', 'Maig', 'Juny', 'Juliol', 'Agost', 'Setembre', 'Octubre', 'Novembre', 'Desembre'],
+        monthNamesShort: ['Gen', 'Feb', 'Mar', 'Abr', 'Maig', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Des'],
+        dayNames: ['Diumenge', 'Dilluns', 'Dimarts', 'Dimecres', 'Dijous', 'Divendres', 'Dissabte'],
+        dayNamesShort: ['Diu', 'Dill', 'Dima', 'Dime', 'Dijo', 'Dive', 'Diss'],
+        dayNamesMin: ['Diu', 'Dill', 'Dimt', 'Dimc', 'Dij', 'Div', 'Dis'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional['ca']);
+    $(function () {
+        $("#fecha").datepicker();
+    });
+   $(function () {
+        $("#datepicker-1").datepicker({dateFormat: 'dd/mm/yy'});
+    });
+    $(function () {
+        $("#datepicker-2").datepicker({dateFormat: 'dd/mm/yy'});
+    });
+
+    //BOTO AFEGIR ACTOR I PAPER
+    document.getElementById('afegirActor').onclick = afegirActor;
+
+    function afegirActor() {
+
+        //Container Actor/Paper
+        var divRow = document.createElement("div");
+        divRow.setAttribute("id", "div-row");
+        divRow.setAttribute("class", "row");
+        document.getElementById("addActor").appendChild(divRow);
+        var btn = document.getElementById("addActor-btn");
+        btn.insertBefore(divRow, btn.childNodes[0]);
+
+        /* ===== Actor ======= */
+
+        var divActor = document.createElement("div");
+        divActor.setAttribute("id", "div-actor");
+        divActor.setAttribute("class", "col-xs-6");
+        document.getElementById("div-row").appendChild(divActor);
+
+        var inputActor = document.createElement("input");
+        inputActor.setAttribute("class", "form-control");
+        var label = document.createElement("label");
+        var text = document.createTextNode(" Actor:");
+        label.appendChild(text);
+        document.getElementById("div-actor").appendChild(label);
+        document.getElementById("div-actor").appendChild(inputActor);
+
+        /* ===== Paper ======= */
+        var divPaper = document.createElement("div");
+        divPaper.setAttribute("id", "div-paper");
+        divPaper.setAttribute("class", "col-xs-6");
+        document.getElementById("div-row").appendChild(divPaper);
+
+        var inputActor = document.createElement("input");
+        inputActor.setAttribute("class", "form-control");
+        var label2 = document.createElement("label");
+        var text2 = document.createTextNode(" Paper:");
+        label2.appendChild(text2);
+        document.getElementById("div-paper").appendChild(label2);
+        document.getElementById("div-paper").appendChild(inputActor);
+    }
+
+</script>

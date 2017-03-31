@@ -38,50 +38,50 @@
 
             <form action="?ctl=obra&act=cercar" method="post">
                 <div class="form-group">                   
-                    <div class="col-xs-5">
-                    <p>Cercar per Tipus d'obra:
-                    <?php                    
-                    echo $selectTipusObra;
-                    ?> </p>
+                    <div class="col-sm-5">
+                        <p>Cercar per Tipus d'obra:
+                            <?php
+                            echo $selectTipusObra;
+                            ?> </p>
                     </div>
-                    <div class="col-xs-5">
-                    <p>Quantitat de registres:
-                    <select name="quantitat" class="form-control">
-                        <option value=" "> </option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="10">10</option>
-                        <option value="12">12</option>
-                        <option value="16">16</option>
-                        <option value="24">24</option>
-                        <option value="36">36</option>
-                        <option value="72">72</option>
-                        <option value="100">100</option>
-                        <option value="200">200</option>
-                    </select></p>
+                    <div class="col-sm-5">
+                        <p>Quantitat de registres:
+                            <select name="quantitat" class="form-control">
+                                <option value=" "> </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="10">10</option>
+                                <option value="12">12</option>
+                                <option value="16">16</option>
+                                <option value="24">24</option>
+                                <option value="36">36</option>
+                                <option value="72">72</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                            </select></p>
                     </div>
-                    <div class="col-xs-2"><br>
-                    <button name="Submit" class="btn btn-primary"><image class="btn-icon" src="view/images/cercar.png"/>  Cercar</button>
+                    <div class="col-sm-2"><br>
+                        <button name="Submit" class="btn btn-primary"><image class="btn-icon" src="view/images/cercar.png"/>  Cercar</button>
                     </div>
                 </div>            
             </form>            
         </div>
-        
+
         <div class="row">
             <div class="col-lg-12">
                 <br>
                 <br>
                 <?php if (count($obraArray) > 0) { ?>
-                    <?php if($llistaTitle != null){ 
-                        echo $llistaTitle;
-                    }?>
+                    <?php if ($llistaTitle != null) {?>
+                        <h3><?php echo $llistaTitle;?></h3>
+                    <?php }  ?>
                     <?php foreach ($obraArray as $data): ?>	
                         <a href="?ctl=obra&act=detalls&id=<?php echo $data->getIdObra(); ?>" class="caixa-detalls" data-detalls="Clic per veure detalls d'aquesta obra">
                             <div class="col-sm-6 col-md-4 col-lg-4 ">
                                 <div class="thumbnail text-center div-caixa">
                                     <img src="view/images/obra.jpg">
                                     <div class="caption">
-                                        <h5><strong>Nom:</strong> <?php echo $data->getNomObra(); ?></h5>
+                                        <h5><strong>Nom d'Obra:</strong> <?php echo $data->getNomObra(); ?></h5>
                                         <h5><strong>Data Inici:</strong> <?php echo $data->getDataIniciObra(); ?></h5>                        
                                         <h5><strong>Data Fi:</strong> <?php echo $data->getDataFiObra(); ?></h5>
                                         <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
@@ -130,23 +130,23 @@
         }
         $('#idobra').val(data_id);
     });
-    $(function(){
-	$(".caixa-detalls").mouseover(function(){
-		var veure = $(this).data("detalls");
-		$("#fixa").html("<strong>"+ veure +"</strong>").show();
-	});
+    $(function () {
+        $(".caixa-detalls").mouseover(function () {
+            var veure = $(this).data("detalls");
+            $("#fixa").html("<strong>" + veure + "</strong>").show();
+        });
 
-	$(".caixa-detalls").mouseout(function(){
-		$("#fixa").hide().html("");
+        $(".caixa-detalls").mouseout(function () {
+            $("#fixa").hide().html("");
 
-	});
+        });
 
-	$(document).mousemove(function(evento){
-		var posx = evento.pageX;
-		var posy = evento.pageY;
-		$("#fixa").css("left", posx + 15);
-		$("#fixa").css("top", posy + 15);
-	});
-});
+        $(document).mousemove(function (evento) {
+            var posx = evento.pageX;
+            var posy = evento.pageY;
+            $("#fixa").css("left", posx + 15);
+            $("#fixa").css("top", posy + 15);
+        });
+    });
 </script>
 

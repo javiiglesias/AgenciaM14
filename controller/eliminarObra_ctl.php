@@ -3,12 +3,6 @@
 $titlePage = "Eliminar Obra";
 
 $id = null;
-$nom = null;
-$descripcio = null;
-$datainici = null;
-$datafi = null;
-$tipusObra = null;
-$director = null;
 
 require_once 'view/header.php';
 
@@ -23,6 +17,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 
     $obra->eliminarObra($obraTrobada);
     $missatge = "S'ha eliminat l'obra correctament!";
+    $redireccio = "?ctl=obres";
     require_once 'view/confirmacio.php';
     
 } else {

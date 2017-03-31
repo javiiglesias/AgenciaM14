@@ -122,6 +122,7 @@ class Obra {
         $ArraydeTipusObra = $type->mostrarTipusObra();
 
         $select = '<select name="tipusobra"  class="form-control">';
+        $select = $select . '<option value=""></option>';
         foreach ($ArraydeTipusObra as $key => $tipus) {
 
             $select = $select . '<option value="' . $tipus->getId() . '">' . $tipus->getDescripcio() . '</option>';
@@ -150,12 +151,28 @@ class Obra {
         $ArraydeDirectors = $director->retornarDirectors();
 
         $select = '<select name="director"  class="form-control">';
+        $select = $select . '<option value=""></option>';
         foreach ($ArraydeDirectors as $direct) {
-            $select = $select . '<option value="' . $direct->getId() . '">' . $direct->getNom() . " " . $direct->getCognom1() ." " . $direct->getCognom2() . '</option>';
+            $select = $select . '<option value="' . $direct->getId() . '">' . $direct->getNom() . " " . $direct->getCognom1() . " " . $direct->getCognom2() . '</option>';
         }
         $select = $select . '</select>';
         return $select;
     }
+    
+    public function createSelectActorObra() {
+        $actor = new Actordb();
+        $ArraydeActor = $actor->populateActordb();
+
+        $select = '<select name="actor"  class="form-control">';
+        $select = $select . '<option value=""></option>';
+        foreach ($ArraydeActor as $act) {
+            $select = $select . '<option value="' . $act->getId() . '">' . $act->getNom() . " " . $act->getCognom1() . " " . $act->getCognom2() . '</option>';
+        }
+        $select = $select . '</select>';
+        return $select;
+    }
+    
+    
 
     public function directorObraSeleccionat($directorSelect) {
         $director = new Directordb();
@@ -163,9 +180,9 @@ class Obra {
         $select = '<select name="director" class="form-control">';
         foreach ($ArraydeDirectors as $sec) {
             if ($sec->getId() == $directorSelect) {
-                $select = $select . '<option value="' . $sec->getId() . '"selected>' . $sec->getNom() . " " . $sec->getCognom1() ." " . $sec->getCognom2(). '</option>';
+                $select = $select . '<option value="' . $sec->getId() . '"selected>' . $sec->getNom() . " " . $sec->getCognom1() . " " . $sec->getCognom2() . '</option>';
             } else {
-                $select = $select . '<option value="' . $sec->getId() . '">' . $sec->getNom() . " " . $sec->getCognom1() ." " . $sec->getCognom2(). '</option>';
+                $select = $select . '<option value="' . $sec->getId() . '">' . $sec->getNom() . " " . $sec->getCognom1() . " " . $sec->getCognom2() . '</option>';
             }
         }
         $select = $select . '</select>';
@@ -179,7 +196,7 @@ class Obra {
     }
 
     public function cercarDirectorObra($id) {
-        
+
 
         $director = new Directordb();
         $ArraydeDirectors = $director->retornarDirectors();
@@ -192,10 +209,53 @@ class Obra {
         return $directorTrobat;
     }
 
-    public function cercarObraPerTipus($tipus) {
-        $obradb = new obradb();
-        $arrayObra = $obradb->cercarObraPerTipusDb($tipus);
+    public function cercarObraPerTipus($tipusid) {
+        $tipus = new tipus_obra();
+        $arrayTipusObra = $tipus->mostrarTipusObra();
+        $found = null;
+        foreach ($arrayTipusObra as $typeselect) {
+            if ($typeselect->getId() == $tipusid) {
+                $found = $typeselect;
+            }
+        }
+        return $found;
+    }
+
+    public function cercarTipus($tipus, $limit) {
+        $obra = new obradb();
+        $llistaobra = $obra->populateObraDb();
+        if ($tipus != " ") {
+            $res = [];
+            for ($i = 0; $i < count($llistaobra); $i++) {
+                if ($llistaobra[$i]->getTipusObra() == $tipus) {
+                    array_push($res, $llistaobra[$i]);
+                }
+            }
+        } else {
+            $res = $obra->populateActordb();
+        }
+        if ($limit != " ") {
+            $arrayObra = [];
+            for ($i = 0; $i < count($res) && $i < $limit; $i++) {
+                array_push($arrayObra, $res[$i]);
+            }
+        } else {
+            $arrayObra = [];
+            $limit = 3;
+            for ($i = 0; $i < count($res) && $i < $limit; $i++) {
+                array_push($arrayObra, $res[$i]);
+            }
+        }
+
         return $arrayObra;
+    }
+
+    public function cercarUltimaObra() {
+        $arrayObra = $this->mostrarObra();
+
+        $found = end($arrayObra);
+          
+        return $found;
     }
 
 }

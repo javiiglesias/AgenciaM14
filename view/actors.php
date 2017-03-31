@@ -1,4 +1,3 @@
-<?php require_once 'view/menuEdicio.php'; ?>
 <div class="col-lg-12">
     <div class="container">
         <div class="row">
@@ -12,22 +11,22 @@
                         <li role="presentation"><a href="?ctl=actors">Mostrar Actors</a></li>
                     <?php } ?>  
                     <?php if ($titlePage == "Tipus Paper") { ?>
-                        <li role="presentation" class="active"><a href="?ctl=?ctl=tipusObra&act=mostrar">Mostrar Tipus Obres</a></li>
+                        <li role="presentation" class="active"><a href="?ctl=?ctl=tipusPaper&act=mostrar">Mostrar Tipus Paper</a></li>
                     <?php } else { ?>
-                        <li role="presentation"><a href="?ctl=tipusObra&act=mostrar">Mostrar Tipus Obres</a></li>
+                        <li role="presentation"><a href="?ctl=tipusPaper&act=mostrar">Mostrar Tipus Paper</a></li>
                     <?php } ?> 
                     <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
 
                         <?php if ($titlePage == "Afegir Actor") { ?>
-                            <li role = "presentation" class="active"><a href ="?ctl=actor&act=afegir">Afegir nova Obra</a></li>
+                            <li role = "presentation" class="active"><a href ="?ctl=actor&act=afegir">Afegir nou Actor</a></li>
                         <?php } else { ?>
-                            <li role = "presentation"><a href = "?ctl=actor&act=afegir">Afegir nova Obra</a></li>
+                            <li role = "presentation"><a href = "?ctl=actor&act=afegir">Afegir nou Actor</a></li>
                         <?php } ?>
 
                         <?php if ($titlePage == "Afegir Tipus Paper") { ?>
-                            <li role = "presentation" class="active"><a href ="?ctl=tipusObra&act=afegir">Afegir nou Tipus Obra</a></li>
+                            <li role = "presentation" class="active"><a href ="?ctl=tipusPaper&act=afegir">Afegir nou Tipus Paper</a></li>
                         <?php } else { ?>
-                            <li role = "presentation"><a href = "?ctl=tipusObra&act=afegir">Afegir nou Tipus Obra</a></li>
+                            <li role = "presentation"><a href = "?ctl=tipusPaper&act=afegir">Afegir nou Tipus Paper</a></li>
                         <?php } ?>
                     <?php } ?>
                 </ul>
@@ -37,28 +36,34 @@
         <div class="col-xs-12 col-md-6 col-md-push-3">            
             <form action="?ctl=actors" method="post">
                 <div class="form-group">
-                    Cercar per Sexe:
-                    <?php
-                    $cat = new Sexedb();
+                    <div class="col-sm-5">
+                        <p>Cercar per Sexe:
+                            <?php
+                            $cat = new Sexedb();
 
-                    $sel = $cat->createSelectCategories();
-                    echo $sel;
-                    ?> 
-                    Quantitat de registres:
-                    <select name="quantitat">
-                        <option value=" "> </option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="10">10</option>
-                        <option value="12">12</option>
-                        <option value="16">16</option>
-                        <option value="24">24</option>
-                        <option value="36">36</option>
-                        <option value="72">72</option>
-                        <option value="100">100</option>
-                        <option value="200">200</option>
-                    </select>
-                    <button name="Submit" class="btn btn-info"><image class="btn-icon" src="view/images/cercar.png"/>  Cercar</button>
+                            $sel = $cat->createSelectCategories();
+                            echo $sel;
+                            ?> </p>
+                    </div>
+                    <div class="col-sm-5">
+                        Quantitat de registres:
+                        <select name="quantitat" class="form-control">
+                            <option value=" "> </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                            <option value="16">16</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                            <option value="72">72</option>
+                            <option value="100">100</option>
+                            <option value="200">200</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2"><br>
+                        <button name="Submit" class="btn btn-info"><image class="btn-icon" src="view/images/cercar.png"/>  Cercar</button>
+                    </div>
                 </div>            
             </form>
         </div>

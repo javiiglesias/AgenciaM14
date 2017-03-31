@@ -51,10 +51,15 @@ class db implements interface_db {
 
     public function connect() {
 
-        $this->link = mysqli_connect($this->getServer(), $this->getUsername(), $this->getPassword(), $this->getDbname());
+
+
+        $mysqli= $this->link = mysqli_connect($this->getServer(), $this->getUsername(), $this->getPassword(), $this->getDbname());
+        $mysqli->set_charset("utf8");
+
         if (!$this->link) {
             die('Error, could not connect: ' . $this->error());
         }
+
         return $this->link;
     }
 

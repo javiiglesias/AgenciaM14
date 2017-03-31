@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-03-2017 a las 15:32:11
+-- Tiempo de generación: 31-03-2017 a las 15:15:14
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 7.0.2
 
@@ -122,16 +122,17 @@ CREATE TABLE `obra_actor` (
   `id` int(20) NOT NULL,
   `id_obra` int(20) NOT NULL,
   `id_actor` int(20) NOT NULL,
-  `tipus_paper` int(20) NOT NULL
+  `tipus_paper` int(20) NOT NULL,
+  `personatge` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `obra_actor`
 --
 
-INSERT INTO `obra_actor` (`id`, `id_obra`, `id_actor`, `tipus_paper`) VALUES
-(1, 2, 1, 1),
-(2, 3, 2, 2);
+INSERT INTO `obra_actor` (`id`, `id_obra`, `id_actor`, `tipus_paper`, `personatge`) VALUES
+(1, 2, 1, 1, '0'),
+(2, 3, 2, 2, '0');
 
 -- --------------------------------------------------------
 
@@ -161,24 +162,19 @@ INSERT INTO `tipus_obra` (`id`, `descripcio`) VALUES
 
 CREATE TABLE `tipus_paper` (
   `id` int(20) NOT NULL,
-  `nom` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
-  `primari` tinyint(1) NOT NULL,
-  `secundari` tinyint(1) NOT NULL,
-  `extra` tinyint(1) NOT NULL,
-  `especialista` tinyint(1) NOT NULL,
-  `repartiment` tinyint(1) NOT NULL
+  `tipus` varchar(20) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `tipus_paper`
 --
 
-INSERT INTO `tipus_paper` (`id`, `nom`, `primari`, `secundari`, `extra`, `especialista`, `repartiment`) VALUES
-(1, 'Batman', 1, 0, 0, 0, 0),
-(2, 'Robin', 0, 1, 0, 0, 0),
-(3, 'Majordom Alfred', 0, 0, 1, 0, 0),
-(4, 'Peatón Paco', 0, 0, 0, 1, 0),
-(5, 'Camarera Yashira', 0, 0, 0, 0, 1);
+INSERT INTO `tipus_paper` (`id`, `tipus`) VALUES
+(6, 'primari'),
+(7, 'secundari'),
+(8, 'extra'),
+(9, 'especialista'),
+(10, 'repartiment');
 
 -- --------------------------------------------------------
 
@@ -291,7 +287,7 @@ ALTER TABLE `tipus_obra`
 -- AUTO_INCREMENT de la tabla `tipus_paper`
 --
 ALTER TABLE `tipus_paper`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `usuari`
 --

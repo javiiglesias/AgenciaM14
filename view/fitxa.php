@@ -59,6 +59,17 @@
                                 <td><h5><strong>Descripcio:</strong></h5></td>
                                 <td><p><?php echo $actor->getDescripcio(); ?></p></td>
                             </tr>
+                            <tr>
+                                <td> <h5><strong>Obres:</strong></h5> </td>
+                                <td>
+                                    <p>Obres en les que participa o ha participat:</p>
+                                    <hr>
+                                    <?php //foreach ($arrayObres as $data):?>
+                                        <p><?php echo $obres->getNomObra() ?></p>
+                                        <hr>
+                                    <?php// endforeach; ?>
+                                </td>
+                            </tr>
                         </table>
                     </div>
                 </div>            

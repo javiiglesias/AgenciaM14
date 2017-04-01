@@ -9,17 +9,14 @@
                 <?php } else { ?>
                     <li role="presentation"><a href="?ctl=directors">Mostrar Directors</a></li>
                 <?php } ?>
-                <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
-
+                <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>s
                     <?php if ($titlePage == "Afegir Director") { ?>
                         <li role = "presentation" class="active"><a href ="?ctl=director&act=afegir">Afegir director</a></li>
                     <?php } else { ?>
                         <li role = "presentation"><a href = "?ctl=director&act=afegir">Afegir nou director</a></li>
                     <?php } ?>
                     <?php if ($titlePage == "Detalls director") { ?>
-                        <li role="presentation" class="active"><a href="?ctl=director&act=detall">Mostrar Directors</a></li>
-                    <?php } else { ?>
-                        <li role="presentation"><a href="?ctl=director&act=detall">Mostrar Directors</a></li>
+                        <li role="presentation" class="active"><a href="#">Detalls Director</a></li>                    
                     <?php } ?>
                 <?php } ?>
             </ul>

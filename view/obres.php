@@ -92,7 +92,8 @@
                                         <?php } ?>
                                     </div>
                                 </div>
-                            </div></a>                    
+                            </div>
+                        </a>                    
                     <?php endforeach; ?>
                 <?php } ?>
             </div>

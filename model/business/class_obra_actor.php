@@ -96,20 +96,55 @@ class Obra_Actor {
         return $found;
     }
 
-    public function cercarIdOActor($idActor) {
-        $actor = new Actordb();
-        return $arrayTipusObraActor = $actor->buscarPerId($idActor);
-    }
-
-    public function cercarPersonatge($idActor) {
+    public function cercarIdActor($idActor) {
         $arrayTipusObraActor = $this->mostrarObraActors();
         $found = null;
         foreach ($arrayTipusObraActor as $obraActor) {
             if ($obraActor->getActor() == $idActor) {
-                $found = $obraActor->getPersonatge();
+                $found = $obraActor;
+            }
+        }
+        $actor = new Actordb();
+        $actorTrobat = $actor->buscarPerId($found->getActor());
+        return $actorTrobat;
+    }
+
+    public function cercarPersonatge($personatge) {
+        $arrayTipusObraActor = $this->mostrarObraActors();
+        $found = null;
+        foreach ($arrayTipusObraActor as $obraActor) {
+            if ($obraActor->getPersonatge() == $personatge) {
+                $found = $obraActor;
             }
         }
         return $found;
+    }
+
+    public function cercarObresPerActor($idActor) {
+        $arrayTipusObraActor = $this->mostrarObraActors();
+        $found = [];
+        foreach ($arrayTipusObraActor as $obraActor) {
+            if ($obraActor->getActor() == $idActor) {
+                $found = $obraActor;
+            }
+        }
+        $obra = new Obra();
+        $obraTrobada = $obra->cercarIdObra($found->getObra());
+        return $obraTrobada;
+    }
+
+    public function cercarPaper($idPaper) {
+        $arrayTipusObraActor = $this->mostrarObraActors();
+        $found = null;
+
+        foreach ($arrayTipusObraActor as $obraActor) {
+            if ($obraActor->getTipusPaper() == $idPaper) {
+                $found = $obraActor;
+            }
+        }
+        $paper = new tipus_paper();
+        $paperTrobat = $paper->cercarId($found->getTipusPaper());
+        return $paperTrobat;
     }
 
 }

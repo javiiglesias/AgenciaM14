@@ -70,13 +70,16 @@
                             <td>
                                 <p>Actors que participen en aquesta obra:</p>
                                 <hr>
-                                <?php foreach ($ArrayObraActors as $data): ?>	
-                                    <?php $actor = $obra_actor->cercarIdOActor($data->getActor()); ?>
-                                    <?php $personatge = $obra_actor->cercarPersonatge($data->getActor()); ?>
-                                    <p><strong> Actor:</strong> <?php echo $actor->getNom() . " " . $actor->getCognom1(); ?></p>
-                                    <p> <strong> personatge:</strong>  <?php echo $personatge ?> ()</p>
-                                    <hr>
-                                <?php endforeach; ?>
+                                <?php if (count($ArrayObraActors) > 0) { ?>
+                                    <?php foreach ($ArrayObraActors as $data): ?>
+                                        <?php $actor = $obra_actor->cercarIdActor($data->getActor());?>
+                                        <?php $personatge = $obra_actor->cercarPersonatge($data->getPersonatge()); ?>
+                                        <?php $paper = $obra_actor->cercarPaper($data->getTipusPaper()); ?>
+                                        <p><strong> Actor:</strong> <?php echo $actor->getNom() . " " . $actor->getCognom1(); ?></p>
+                                        <p> <strong> personatge:</strong>  <?php echo $personatge->getPersonatge() ?> (<?php echo $paper->getTipus(); ?>)</p>
+                                        <hr>
+                                    <?php endforeach; ?>
+                                <?php } ?>
                             </td>
                         </tr>
                     </table>

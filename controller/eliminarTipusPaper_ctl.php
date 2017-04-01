@@ -14,7 +14,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
     $arrayTipusPaper = $tipusPaper->cercarId($id);
     $tipusPaper->eliminarTipusPaper($id);
     $missatge = "S'ha eliminat el tipus de paper correctament!";
-    $redireccio = "?ctl=tipusObra&act=mostrar";
+    $redireccio = "?ctl=tipusPaper&act=mostrar";
     require_once 'view/confirmacio.php';
 
 } else {

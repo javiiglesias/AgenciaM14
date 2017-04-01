@@ -13,9 +13,8 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
     $director = $directorDAO->retornarDirectorsConcret($dni);
     $redireccio = "?ctl=directors";
     if (isset($director)) {
-        // mirar porque no entra aquí
         $directorDAO->eliminarDirector($director[0]->getDni());
-        $missatge = "S'ha esborrat el director correctament!";
+        $missatge = "S'ha eliminat el director correctament!";
         require_once 'view/confirmacio.php';
     }
 } else {

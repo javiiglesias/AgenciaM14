@@ -176,8 +176,7 @@ class Obra {
         $actor = new Actordb();
         $ArraydeActor = $actor->populateActordb();
 
-        $select = '<select name="actoractors[]"  class="form-control">';
-        $select = $select . '<option value=""></option>';
+        $select = '<select name="actors[]"  class="form-control">';
         foreach ($ArraydeActor as $act) {
             $select = $select . '<option value="' . $act->getId() . '">' . $act->getNom() . " " . $act->getCognom1() . " " . $act->getCognom2() . '</option>';
         }

@@ -51,17 +51,17 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 
             foreach ($_REQUEST['actors'] as $keyActor => $actor) {
                 foreach ($_REQUEST['paper'] as $keyPaper => $tipus_paper) {
-                    foreach ($_REQUEST['personatge'] as $keyPersonatge => $personatge) {                        
+                    foreach ($_REQUEST['personatge'] as $keyPersonatge => $personatge) {
                         if ($keyActor == $keyPaper && $keyPaper == $keyPersonatge) {
                             $obra_actor = new obra_actor();
-                            $obra = $obra_actor->setObra($idObra);
-                            $actor = $obra_actor->setActor($actor);
+                            $obra_actor->setObra($idObra);
+                            $obra_actor->setActor($actor);
                             $obra_actor->setTipusPaper($tipus_paper);
                             $obra_actor->setPersonatge($personatge);
                             $obra_actor->inserirObraActor($obra_actor);
                         }
                     }
-                }                
+                }
             }
 
 

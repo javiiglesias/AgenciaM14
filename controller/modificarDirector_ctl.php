@@ -6,7 +6,7 @@ require_once('model/Persistence/class_Directordb.php');
  * Date: 21/03/17
  * Time: 16:58
  */
-$titlePage = "Modificar Llibres";
+$titlePage = "Modificar Director";
 
 $director = new DirectorDb();
 
@@ -36,13 +36,16 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         if (isset($_REQUEST['cognom2'])) {
             $cognom2 = $_REQUEST['cognom2'];
         }
+        if (isset($_REQUEST['descripcio'])) {
+            $descripcio = $_REQUEST['descripcio'];
+        }
         $redireccio = "?ctl=directors";
-        if ($dni != null && $nom != null && $cognom1 != null && $cognom1 != null ) {
-            $director->modificarDirector($dni, $nom, $cognom1, $cognom2);
+        if ($dni != null && $nom != null && $cognom1 != null && $cognom2 != null && $descripcio != null ) {
+            $director->modificarDirector($dni, $nom, $cognom1, $cognom2,$descripcio);
             $missatge = "S'ha modificat el director correctament!";
             require_once 'view/confirmacio.php';
         } else {
-            $missatge = "El llibre no s'ha modificat. S'ha d'omplir tots els camps";
+            $missatge = "El Director no s'ha modificat. S'ha d'omplir tots els camps";
             require_once 'view/error.php';
         }
     } else {

@@ -9,7 +9,6 @@ require_once("config/db.inc.php");
 
 class DirectorDb {
 
-
     // modificar
     public function inserir($dni, $nom, $cognom1, $cognom2, $descripcio) {
 
@@ -18,30 +17,33 @@ class DirectorDb {
         $con->consulta($query);
         $con->close();
     }
+
     public function retornarDirectors() {
-        $query="SELECT * FROM director;";
-		$con = new db();
-		$arrayDeDirectors = $con->consultarDirector($query);
-		$con->close();
-		return $arrayDeDirectors;	  
+        $query = "SELECT * FROM director;";
+        $con = new db();
+        $arrayDeDirectors = $con->consultarDirector($query);
+        $con->close();
+        return $arrayDeDirectors;
     }
+
     public function retornarDirectorsConcret($dni) {
 //        $query="SELECT * FROM director WHERE nif = '".$dni."'";
-        $query="SELECT * FROM director WHERE nif ='".$dni."'";
+        $query = "SELECT * FROM director WHERE nif ='" . $dni . "'";
         $con = new db();
         $director = $con->consultarDirector($query);
         $con->close();
         return $director;
     }
 
-    public function modificarDirector($dni, $nom, $cognom1, $cognom2) {
-        $query = "UPDATE director SET nif='".$dni."', nom='".$nom."', cognom1='".$cognom1."', cognom2='".$cognom2."'  WHERE nif='".$dni."'";
+    public function modificarDirector($dni, $nom, $cognom1, $cognom2, $descripcio) {
+        $query = "UPDATE director SET nif='" . $dni . "', nom='" . $nom . "', cognom1='" . $cognom1 . "', cognom2='" . $cognom2 . "', descripcio='" . $descripcio . "'  WHERE nif='" . $dni . "'";
         $con = new db();
         $con->consulta($query);
         $con->close();
     }
+
     public function eliminarDirector($dni) {
-        $query = "DELETE FROM director WHERE nif='".$dni."'";
+        $query = "DELETE FROM director WHERE nif='" . $dni . "'";
         $con = new db();
         $con->consulta($query);
         $con->close();

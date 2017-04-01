@@ -62,7 +62,7 @@
                         </select>
                     </div>
                     <div class="col-sm-2"><br>
-                        <button name="Submit" class="btn btn-info"><image class="btn-icon" src="view/images/cercar.png"/>  Cercar</button>
+                        <button name="Submit" class="btn btn-primary"><image class="btn-icon" src="view/images/cercar.png"/>  Cercar</button>
                     </div>
                 </div>            
             </form>

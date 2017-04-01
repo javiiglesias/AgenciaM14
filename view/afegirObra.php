@@ -63,15 +63,13 @@
                 </div>   
                 <div class="form-group" id="addActor">
                     <label>Actors d'obra:</label>
-                    <span hidden id="select_actor"><?php echo $selectActor ?></span>
+                    <div hidden id="select_actor" ><?php echo $selectActor ?></div>
+                    <div hidden id="select_paper" ><?php echo $selectTipusPaper ?></div>
 
                     <div class="col-sm-12" id="addActor-btn"><br>                        
                         <div class="col-xs-6">
                             <p><button  type="button" class="btn btn-primary btn-sm" id="afegirActor" onClick="incrementar(cont = 0)"><span class="fa fa-plus"></span>Afegir Actor A Obra</button></p>                        
                         </div>
-                        <!--                        <div class="col-xs-6">
-                                                    <p><button  type="button" class="btn btn-primary btn-sm" id="afegirActor"><span class="fa fa-plus"></span>Afegir nou Actor</button></p>
-                                                </div>-->
                     </div>
                     <br>
                 </div>
@@ -104,25 +102,20 @@
         showMonthAfterYear: false,
         yearSuffix: ''
     };
-    $.datepicker.setDefaults($.datepicker.regional['ca']);
-    $(function () {
-        $("#fecha").datepicker();
-    });
+    $.datepicker.setDefaults($.datepicker.regional['ca']);    
     $(function () {
         $("#datepicker-1").datepicker({dateFormat: 'dd/mm/yy'});
     });
     $(function () {
         $("#datepicker-2").datepicker({dateFormat: 'dd/mm/yy'});
     });
+    
+    
     window.onload = function () {
         document.getElementById('afegirActor').onclick = afegirActor;
 
     };
-    function SelectActor() {
-        var div_actor = document.getElementById('div-actor');
-        var select = document.getElementById('select_actor').innerHTML;
-        div_actor.innerHTML = select;
-    }
+
 
     //BOTO AFEGIR ACTOR I PAPER
 
@@ -141,41 +134,36 @@
         divActor.setAttribute("id", "div-actor");
         divActor.setAttribute("class", "col-xs-12");
         document.getElementById("div-row").appendChild(divActor);
+        
+        var labelActor = "<label>Actor:</label>";
+        document.getElementById("div-actor").innerHTML = labelActor;
+        var selectActor = document.getElementById('select_actor').innerHTML;
+        document.getElementById("div-actor").innerHTML += selectActor;
 
-        var inputActor = document.createElement("input");
-        inputActor.setAttribute("class", "form-control");
-        inputActor.setAttribute("id", "id_actor");
-        var label = document.createElement("label");
-        label.setAttribute("id", "label_actor");
-        var text = document.createTextNode(" Actor:");
-        label.appendChild(text);
-        document.getElementById("div-actor").appendChild(label);
-        //document.getElementById("div-actor").appendChild(SelectActor());
-        document.getElementById("div-actor").appendChild(inputActor);
-
-        /* ===== Paper ======= */
+        /* ===== Personatge ======= */
         var divPersonatge = document.createElement("div");
         divPersonatge.setAttribute("id", "div-personatge");
         divPersonatge.setAttribute("class", "col-xs-6");
         document.getElementById("div-row").appendChild(divPersonatge);
+        
         var inputPersonatge = document.createElement("input");
         inputPersonatge.setAttribute("class", "form-control");
+        inputPersonatge.setAttribute("name", "personatge[]");
         var label2 = document.createElement("label");
         var text2 = document.createTextNode("Personatge:");
         label2.appendChild(text2);
         document.getElementById("div-personatge").appendChild(label2);
         document.getElementById("div-personatge").appendChild(inputPersonatge);
+        
+        /* ===== Paper ======= */
         var divPaper = document.createElement("div");
         divPaper.setAttribute("id", "div-paper");
         divPaper.setAttribute("class", "col-xs-6");
         document.getElementById("div-row").appendChild(divPaper);
-        var inputPaper = document.createElement("input");
-        inputPaper.setAttribute("class", "form-control");
-        var label2 = document.createElement("label");
-        var text2 = document.createTextNode("Tipus:");
-        label2.appendChild(text2);
-        document.getElementById("div-paper").appendChild(label2);
-        document.getElementById("div-paper").appendChild(inputPaper);
+        var labelPaper = "<label>Tipus Paper:</label>";
+        document.getElementById("div-paper").innerHTML = labelPaper;
+        var selectPaper = document.getElementById('select_paper').innerHTML;
+        document.getElementById("div-paper").innerHTML += selectPaper;
     }
 
 </script>

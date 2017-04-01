@@ -15,13 +15,11 @@ class Obra_Actor {
             case 0:
                 break;
             case 4:
-                $this->setIdObra(null);
-                $this->setNomObra(func_get_args()[0]);
-                $this->setDescripcioObra(func_get_args()[1]);
-                $this->setDataIniciObra(func_get_args()[2]);
-                $this->setDataFiObra(func_get_args()[3]);
-                $this->setTipusObra(func_get_args()[4]);
-                $this->setDirectorObra(func_get_args()[5]);
+                $this->setId(null);
+                $this->setObra(func_get_args()[0]);
+                $this->setActor(func_get_args()[1]);
+                $this->setTipusPaper(func_get_args()[2]);
+                $this->setPersonatge(func_get_args()[3]);
                 break;
         }
     }
@@ -64,42 +62,55 @@ class Obra_Actor {
 
     public function setTipusPaper($value) {
         $this->tipus_paper = $value;
-    }  
-
-    public function inserirObraActor($personatge, $obra, $actor, $tipusPaper) {
-        $ObraActor = new obra_actor($personatge, $obra, $actor, $tipusPaper);
-        $obraActorDb = new obraactorDb();
-        $obraActorDb->inserir($ObraActor);
     }
 
-    public function modificarObraActor($obraid, $personatge, $obra, $actor, $tipusPaper) {
-        $obraActorDb = new obraactorDb();
-        $obraActorDb->modificar($obraid, $personatge, $obra, $actor, $tipusPaper);
+    public function inserirObraActor($obra_actor) {
+        $obraActorDb = new obra_actordb();
+        $obraActorDb->inserir($obra_actor);
+    }
+
+    public function modificarObraActor($obraid, $obra, $actor, $tipusPaper, $personatge) {
+        $obraActorDb = new obra_actordb();
+        $obraActorDb->modificar($obraid, $obra, $actor, $tipusPaper, $personatge);
     }
 
     public function eliminarObraActor($obra) {
-        $obraDb = new obradb();
-        $obraDb->eliminar($obra);
+        $obraActorDb = new obra_actordb();
+        $obraActorDb->eliminar($obra);
     }
 
     public function mostrarObraActors() {
-        $obradb = new obradb();
-        $arrayTipusObra = $obradb->populateObraDb();
-        return $arrayTipusObra;
+        $obraActorDb = new obra_actordb();
+        $arrayTipusObraActor = $obraActorDb->populateObraActorDb();
+        return $arrayTipusObraActor;
     }
 
-    public function cercarIdObraActor($id) {
-        $arrayTipusObra = $this->mostrarObra();
-        $found = null;
-        foreach ($arrayTipusObra as $typeselect) {
-            if ($typeselect->getIdObra() == $id) {
-                $found = $typeselect;
+    public function cercarIdObraActor($idObra) {
+        $arrayTipusObraActor = $this->mostrarObraActors();
+        $found = [];
+        foreach ($arrayTipusObraActor as $key => $obraActor) {
+            if ($obraActor->getObra() == $idObra) {
+                $found[$key] = $obraActor;
             }
         }
         return $found;
     }
 
-    
+    public function cercarIdOActor($idActor) {
+        $actor = new Actordb();
+        return $arrayTipusObraActor = $actor->buscarPerId($idActor);
+    }
+
+    public function cercarPersonatge($idActor) {
+        $arrayTipusObraActor = $this->mostrarObraActors();
+        $found = null;
+        foreach ($arrayTipusObraActor as $obraActor) {
+            if ($obraActor->getActor() == $idActor) {
+                $found = $obraActor->getPersonatge();
+            }
+        }
+        return $found;
+    }
 
 }
 

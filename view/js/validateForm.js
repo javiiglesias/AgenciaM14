@@ -12,20 +12,34 @@ $(document).ready(function () {
     $('#descripcio').change(notEmpty);
     $('#foto').change(notEmpty);
     $('#sexe').change(notEmptyDesplegable);
+
+
+    $("#enviar").on("click", function () {
+        if (notEmpty() == true || notEmptyDesplegable() == true || validateDni() == true || validacioEmail() == true) {
+            $('#enviar').removeAttr('disabled');
+            $("#formulari").submit();
+            
+        } else {
+           $("#enviar").attr('disabled', 'disabled'); 
+        }
+    });
 });
 
 function notEmptyDesplegable() {
     var select = this.selectedIndex;
     var div = $(this).parent();
     var span = $(this).next();
+    var validacio = false;
     if (select == 0 || select == "") {
         div.addClass("has-error").removeClass("has-success");
         span.addClass("glyphicon-remove").removeClass("glyphicon-ok");
-
+        validacio = false;
     } else {
         div.addClass("has-success").removeClass("has-error");
         span.addClass("glyphicon-ok").removeClass("glyphicon-remove");
+        validacio = true;
     }
+    return validacio;
 }
 
 
@@ -33,24 +47,29 @@ function notEmpty() {
     var select = this.value;
     var div = $(this).parent();
     var span = $(this).next();
-    var missatge = $("#missatge_error");
+    var validacio = false;
     if (select == null || select == "") {
         div.addClass("has-error").removeClass("has-success");
         span.addClass("glyphicon-remove").removeClass("glyphicon-ok");
-        missatge.html('El camp ha de estar ple!');
+        validacio = false;
     } else {
         div.addClass("has-success").removeClass("has-error");
         span.addClass("glyphicon-ok").removeClass("glyphicon-remove");
-        missatge.hide();
+        validacio = true;
     }
+    return validacio;
 }
 
 function validateDni() {
     var dni = this.value;
+    var div = $(this).parent();
+    var span = $(this).next();
+    var missatge = $("#error_dni");
     var numero;
     var letr;
     var letra;
     var expresion_regular_dni;
+    var validacio = false;
 
     expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
 
@@ -62,16 +81,25 @@ function validateDni() {
         letra = letra.substring(numero, numero + 1);
         if (letra != letr.toUpperCase()) {
 
-            $('#errorDni').show();
-            $('#correctDni').hide();
+            div.addClass("has-error").removeClass("has-success");
+            span.addClass("glyphicon-remove").removeClass("glyphicon-ok");
+            missatge.show();
+            missatge.html('*El dni no es valid');
+            validacio = false;
         } else {
-            $('#errorDni').hide();
-            $('#correctDni').show();
+            div.addClass("has-success").removeClass("has-error");
+            span.addClass("glyphicon-ok").removeClass("glyphicon-remove");
+            missatge.hide();
+            validacio = true;
         }
     } else {
-        $('#correctDni').hide();
-        $('#errorDni').show();
+        div.addClass("has-error").removeClass("has-success");
+        span.addClass("glyphicon-remove").removeClass("glyphicon-ok");
+        missatge.show();
+        missatge.html('*El dni no es valid');
+        validacio = false;
     }
+    return validacio;
 }
 
 function validacioEmail() {
@@ -80,13 +108,17 @@ function validacioEmail() {
     var div = $(this).parent();
     var span = $(this).next();
     var missatge = $("#error_email");
+    var validacio = false;
     if (email.indexOf("@") == -1) {
         div.addClass("has-error").removeClass("has-success");
         span.addClass("glyphicon-remove").removeClass("glyphicon-ok");
         missatge.html('*Email no vàlid');
+        validacio = false;
     } else {
         div.addClass("has-success").removeClass("has-error");
         span.addClass("glyphicon-ok").removeClass("glyphicon-remove");
         missatge.hide();
+        validacio = true;
     }
+    return validacio;
 }

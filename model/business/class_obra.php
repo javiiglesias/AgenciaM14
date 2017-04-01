@@ -158,12 +158,25 @@ class Obra {
         $select = $select . '</select>';
         return $select;
     }
-    
+
+    public function createSelectTipusPaper() {
+        $tipusPaper = new tipus_paper();
+        $ArraydeTipusPaper = $tipusPaper->mostrarTipusPaper();
+
+        $select = '<select name="paper[]"  class="form-control">';
+        foreach ($ArraydeTipusPaper as $tipus) {
+
+            $select = $select . '<option value="' . $tipus->getId() . '">' . $tipus->getTipus() . '</option>';
+        }
+        $select = $select . '</select>';
+        return $select;
+    }
+
     public function createSelectActorObra() {
         $actor = new Actordb();
         $ArraydeActor = $actor->populateActordb();
 
-        $select = '<select name="actor"  class="form-control">';
+        $select = '<select name="actoractors[]"  class="form-control">';
         $select = $select . '<option value=""></option>';
         foreach ($ArraydeActor as $act) {
             $select = $select . '<option value="' . $act->getId() . '">' . $act->getNom() . " " . $act->getCognom1() . " " . $act->getCognom2() . '</option>';
@@ -171,8 +184,6 @@ class Obra {
         $select = $select . '</select>';
         return $select;
     }
-    
-    
 
     public function directorObraSeleccionat($directorSelect) {
         $director = new Directordb();
@@ -254,7 +265,7 @@ class Obra {
         $arrayObra = $this->mostrarObra();
 
         $found = end($arrayObra);
-          
+
         return $found;
     }
 

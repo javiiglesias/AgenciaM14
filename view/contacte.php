@@ -2,13 +2,12 @@
     <div class="container" >
         <div class="paragraf col-xs-12 col-md-5 col-lg-5">
             <h3 class="text-center">formulari de contacte</h3><br>
-            <form class="form-horizontal">
+            <form class="form-horizontal" name="formulari">
                 <div class="form-group has-feedback" id="validacio">
                     <label for="nom" class="col-sm-2 control-label">Nom:</label>
                     <div class="col-sm-10">
                         <input type="text" id="nom" class="form-control" id="inputPassword3" placeholder="Nom">
                         <span id="span-validacio" class="glyphicon form-control-feedback"></span>
-                        <span id="missatge_error"></span>
                     </div>
                 </div>
                 <div class="form-group has-feedback" id="validacio">
@@ -24,12 +23,11 @@
                     <div class="col-sm-10">
                         <textarea id="missatge" class="form-control" rows="3"></textarea>
                         <span id="span-validacio" class="glyphicon form-control-feedback"></span>
-                        <span id="missatge_error"></span>
                     </div>
                 </div> 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-warning"><span class="fa fa-paper-plane-o"></span>  Enviar</button>
+                        <button type="submit" id="enviar" class="btn btn-warning"><span class="fa fa-paper-plane-o"></span>  Enviar</button>
                     </div>
                 </div>
             </form>

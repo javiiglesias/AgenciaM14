@@ -18,6 +18,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
     $selectTipusObra = $obra->createSelectTipusObra();
     $selectDirector = $obra->createSelectDirectorObra();
     $selectActor = $obra->createSelectActorObra();
+    $selectTipusPaper = $obra->createSelectTipusPaper();
 
     if (isset($_REQUEST['Submit'])) {
 
@@ -42,28 +43,34 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
             $director = $_REQUEST['director'];
         }
 
-        if (isset($_REQUEST['director'])) {
-            $director = $_REQUEST['director'];
-        }
 
-        $redireccio = "?ctl=obres";
         if ($nom != null && $descripcio != null && $datainici != null && $datafi != null && $tipusObra != null && $director != null) {
             $obra->inserirObra(addslashes($nom), addslashes($descripcio), addslashes($datainici), addslashes($datafi), addslashes($tipusObra), addslashes($director));
             $ultimaObra = $obra->cercarUltimaObra();
-            $idObra = $ultimaObra->getIdObra() + 1;
-            $obra_actor = new obra_actor();
+            $idObra = $ultimaObra->getIdObra();
 
-            foreach ($_REQUEST['actors'] as $actor) {
-                foreach ($_REQUEST['personatge'] as $personatge) {
-                    foreach ($_REQUEST['tipusPaper'] as $tipus_paper) {
-                        $obra_actor->inserirObraActor($idObra, $actor,$tipus_paper,$personatge);
+            foreach ($_REQUEST['actors'] as $keyActor => $actor) {
+                foreach ($_REQUEST['paper'] as $keyPaper => $tipus_paper) {
+                    foreach ($_REQUEST['personatge'] as $keyPersonatge => $personatge) {                        
+                        if ($keyActor == $keyPaper && $keyPaper == $keyPersonatge) {
+                            $obra_actor = new obra_actor();
+                            $obra = $obra_actor->setObra($idObra);
+                            $actor = $obra_actor->setActor($actor);
+                            $obra_actor->setTipusPaper($tipus_paper);
+                            $obra_actor->setPersonatge($personatge);
+                            $obra_actor->inserirObraActor($obra_actor);
+                        }
                     }
-                }
+                }                
             }
+
+
             $missatge = "S'ha afegit l'obra correctament!";
+            $redireccio = "?ctl=obres";
             require_once 'view/confirmacio.php';
         } else {
             $missatge = "No s'ha pogut afegit l'obra, camps sense informació!";
+            $redireccio = "?ctl=obra&act=afegir";
             require_once 'view/error.php';
         }
     } else {

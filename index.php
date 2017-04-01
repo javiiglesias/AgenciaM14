@@ -123,6 +123,23 @@ switch ($ctl) {
                 break;
         }
         break;
+    
+    case"tipusPaper":
+        switch ($act) {
+            case "mostrar":
+                include "controller/tipusPaper_ctl.php";
+                break;
+            case "afegir":
+                include "controller/afegirTipusPaper_ctl.php";
+                break;
+            case "modificar":
+                include "controller/modificarTipusPaper_ctl.php";
+                break;
+            case "eliminar":
+                include "controller/eliminarTipusPaper_ctl.php";
+                break;
+        }
+        break;
 
 
     default:

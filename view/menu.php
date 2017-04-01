@@ -71,7 +71,6 @@
                                             <li><a href="?ctl=usuari&act=sortir">Tancar Sessio</a></li>   
                                         <?php } else { ?>
                                             <li><a href="?ctl=usuari&act=login">Iniciar Sessio</a></li>
-                                            <li><a href="?ctl=usuari&act=registre">Registrar-se</a></li>
                                         <?php } ?>                                                         
                                     </ul>
                             </li>

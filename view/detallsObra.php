@@ -65,6 +65,20 @@
                             <td> <h5><strong>Director:</strong></h5> </td>
                             <td><p> <?php echo $directorTrobat->getNom() . "  " . $directorTrobat->getCognom1() . "  " . $directorTrobat->getCognom2() ?></p></td>
                         </tr>
+                        <tr>
+                            <td> <h5><strong>Actors:</strong></h5> </td>
+                            <td>
+                                <p>Actors que participen en aquesta obra:</p>
+                                <hr>
+                                <?php foreach ($ArrayObraActors as $data): ?>	
+                                    <?php $actor = $obra_actor->cercarIdOActor($data->getActor()); ?>
+                                    <?php $personatge = $obra_actor->cercarPersonatge($data->getActor()); ?>
+                                    <p><strong> Actor:</strong> <?php echo $actor->getNom() . " " . $actor->getCognom1(); ?></p>
+                                    <p> <strong> personatge:</strong>  <?php echo $personatge ?> ()</p>
+                                    <hr>
+                                <?php endforeach; ?>
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>            

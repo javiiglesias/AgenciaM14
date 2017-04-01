@@ -3,14 +3,15 @@
 $titlePage = "Detalls Obra";
 
 $obra = new Obra();
+$obra_actor = new obra_actor();
 
 if (isset($_REQUEST['id'])) {
     $id = $_REQUEST['id'];
 }
 $obraTrobada = $obra->cercarIdObra($id);
-//var_dump($obraTrobada); exit();
 $tipusTrobat = $obra->cercartipusObra( $obraTrobada->getTipusObra());
 $directorTrobat = $obra->cercarDirectorObra( $obraTrobada->getDirectorObra());
+$ArrayObraActors = $obra_actor->cercarIdObraActor($id);
 
 require_once 'view/header.php';
 require_once 'view/detallsObra.php';

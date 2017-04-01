@@ -1,6 +1,6 @@
 <?php
 
-$titlePage = "Eliminar Tipus Obra";
+$titlePage = "Eliminar Tipus Paper";
 $descripcio = null;
 require_once 'view/header.php';
 
@@ -10,11 +10,10 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         $id = $_REQUEST['id'];
     }
 
-    $tipusObra = new tipus_obra();
-    $arrayTipusObra = $tipusObra->cercarId($id);
-    $tipusObra->eliminarTipusObra($id);
-    $missatge = "S'ha eliminat el tipus d'obra correctament!";
-    $redireccio = "?ctl=tipusObra&act=mostrar";
+    $tipusPaper = new tipus_paper();
+    $arrayTipusPaper = $tipusPaper->cercarId($id);
+    $tipusPaper->eliminarTipusPaper($id);
+    $missatge = "S'ha eliminat el tipus de paper correctament!";
     require_once 'view/confirmacio.php';
 
 } else {

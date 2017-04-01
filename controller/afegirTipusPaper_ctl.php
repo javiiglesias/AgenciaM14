@@ -16,9 +16,11 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         if ($nom != null) {            
             $tipusPaper->afegirTipusPaper($nom);
             $missatge = "S'ha afegit el tipus de paper correctament!";
+            $redireccio = "?ctl=tipusPaper&act=mostrar";
             require_once 'view/confirmacio.php';
         } else {
             $missatge = "No s'ha pogut afegir el tipus de paper, camps sense informació!";
+            $redireccio = "?ctl=tipusPaper&act=afegir";
             require_once 'view/error.php';
         }
     } else {

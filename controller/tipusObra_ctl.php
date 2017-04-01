@@ -2,17 +2,7 @@
 
 $titlePage = "Tipus Obra";
 
-$tipusObra = new tipus_obra("gh");
-
-$id = null;
-$descripcio = 0;
-
-if (isset($_REQUEST['id'])) {
-    $id = $_REQUEST['id'];
-}
-if (isset($_REQUEST['descripcio'])) {
-    $descripcio = $_REQUEST['descripcio'];
-}
+$tipusObra = new tipus_obra();
 
 
 $tipusObraArray = $tipusObra->mostrarTipusObra();

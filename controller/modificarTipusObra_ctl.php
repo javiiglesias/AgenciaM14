@@ -22,9 +22,11 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         if ($descripcio != null) {
             $tipusObra->modificarTipusObra($id, $descripcio);
             $missatge = "S'ha modificat el tipus d'obra correctament!";
+            $redireccio = "?ctl=tipusObra&act=mostrar";
             require_once 'view/confirmacio.php';
         } else {
             $missatge = "No s'ha pogut modificar el tipus d'obra, camps sense informació!";
+            $redireccio = "?ctl=tipusObra&act=mostrar";
             require_once 'view/error.php';
         }
     } else {

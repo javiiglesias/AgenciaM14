@@ -24,7 +24,7 @@
                 </div>        
             <?php } ?> 
 
-            <?php if (strpos($missatge, "modificat")) { ?>
+            <?php if (strpos($missatge, "modificat") || strpos($missatge, "modificar")) { ?>
                 <div class="alert alert-dismissible alert-danger text-center">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <h3> <?php echo $missatge; ?>  <img src="view/images/error.png" class="icon"</h3>
@@ -32,7 +32,7 @@
                 </div>        
             <?php } ?>
 
-            <?php if (strpos($missatge, "afegit")) { ?>
+            <?php if (strpos($missatge, "afegit") || strpos($missatge, "afegir")) { ?>
                 <div class="alert alert-dismissible alert-danger text-center">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <h3> <?php echo $missatge; ?>  <img src="view/images/error.png" class="icon"</h3>

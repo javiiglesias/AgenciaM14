@@ -39,7 +39,7 @@ class tipus_paperDb {
         $consulta = mysqli_query($db, $query) or die('Error, query failed: ' . $con->error());
         $cont = 0;
         while ($row = mysqli_fetch_array($consulta)) {
-            $tipusPaper = new tipus_paper($row["tipus"],$row["tipus"]);
+            $tipusPaper = new tipus_paper($row["tipus"]);
             $tipusPaper->setId($row["id"]);
             $arrayTipusPaper[$cont] = $tipusPaper;
             $cont++;

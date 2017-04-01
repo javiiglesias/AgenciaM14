@@ -1,4 +1,4 @@
-<div class="container">     
+<div class="container">  
     <br>
     <div class="row">
         <br>
@@ -34,15 +34,16 @@
         </div>  
     </div>
     <div  class="col-xs-12 col-md-3 col-lg-4 col-lg-push-4 formulari">        
-        <form action="?ctl=tipusPaper&act=afegir" method="post">  
-            <h1 class="text-center">Afegir Tipus Paper</h1>
+        <form action="?ctl=tipusPaper&act=modificar" method="post">  
+            <h1 class="text-center">Modificar Tipus Paper</h1>
             <small class="col-xs-offset-2 col-md-offset-1 col-sm-offset-1  col-lg-offset-3">Introdueix les dades del nou tipus de paper</small></br> 
             <div class="form-group">
+                <input type="text" name="id" hidden value="<?php echo $tipusPaperTrobat->getId(); ?>">
                 <label>Nom:</label>
-                <input type="text" name="nomPaper" class="form-control" >                
+                <input type="text" name="nom" class="form-control" value="<?php echo $tipusPaperTrobat->gettipus(); ?>">
             </div>
             <div class="col-md-offset-3 col-xs-offset-2">
-                <button name="Submit" class="btn btn-primary btn-lg"><image class="btn-icon" src="view/images/afegir.png"/> Afegir </button>
+                <button name="Submit" class="btn btn-primary btn-lg"><image class="btn-icon" src="view/images/guardar.png"/> Modificar </button>
             </div>
         </form>
     </div>

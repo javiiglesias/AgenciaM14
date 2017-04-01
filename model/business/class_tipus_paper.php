@@ -12,7 +12,7 @@ class tipus_paper {
         switch (func_num_args()) {
             case 0:
                 break;
-            case 2:
+            case 1:
                 $this->setId(null);
                 $this->setTipus(func_get_args()[0]);
                 break;
@@ -44,9 +44,9 @@ class tipus_paper {
     public function cercarId($id) {
         $arrayTipusPaper = $this->mostrarTipusPaper();
         $found = null;
-        foreach ($arrayTipusPaper as $typeselect) {
-            if ($typeselect->getId() == $id) {
-                $found = $typeselect;
+        foreach ($arrayTipusPaper as $tipus) {
+            if ($tipus->getId() == $id) {
+                $found = $tipus;
             }
         }
         return $found;

@@ -12,33 +12,25 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
     if (isset($_REQUEST['id'])) {
         $id = $_REQUEST['id'];
     }
-    if (isset($_REQUEST['nom'])) {
-        $nom = $_REQUEST['nom'];
-    }
-    if (isset($_REQUEST['primari'])) {
-        $primari = $_REQUEST['primari'];
-    }
-    if (isset($_REQUEST['secundari'])) {
-        $secundari = $_REQUEST['secundari'];
-    }
-    if (isset($_REQUEST['extra'])) {
-        $extra = $_REQUEST['extra'];
-    }
-    if (isset($_REQUEST['especialista'])) {
-        $especialista = $_REQUEST['especialista'];
-    }
-    if (isset($_REQUEST['repartiment'])) {
-        $repartiment = $_REQUEST['repartiment'];
-    }
-    $tipusPaper = new tipus_obra($nom, $primari, $secundari, $extra, $especialista, $repartiment);
-    $arrayTipusPaper = $tipusPaper->cercarId($id);
+
+    $tipusPaper = new tipus_paper();
+
+    $tipusPaperTrobat = $tipusPaper->cercarId($id);
+
     if (isset($_REQUEST['Submit'])) {
-        if ($nom != null && $primari != 0 && $secundari != 0 && $extra != 0 && $especialista != 0 && $repartiment != 0) {
-            $tipusPaper->modificarTipusObra($id, $nom, $primari, $secundari, $extra, $especialista, $repartiment);
+
+        if (isset($_REQUEST['nom'])) {
+            $nom = $_REQUEST['nom'];
+        }
+
+        if ($nom != null) {
+            $tipusPaper->modificarTipusPaper($id, $nom);
             $missatge = "S'ha modificat el tipus de paper correctament!";
+            $redireccio = "?ctl=tipusPaper&act=mostrar";
             require_once 'view/confirmacio.php';
         } else {
             $missatge = "No s'ha pogut modificar el tipus de paper, camps sense informació!";
+            $redireccio = "?ctl=tipusPaper&act=mostrar";
             require_once 'view/error.php';
         }
     } else {

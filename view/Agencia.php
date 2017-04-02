@@ -1,76 +1,104 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: javi
- * Date: 27/03/17
- * Time: 15:56
- */
-require_once 'view/menuEdicio.php';
-?>
 <div class="col-lg-12">
     <div class="container">
-        <div class="col-xs-12 col-md-6 col-md-push-3">
-            <h1>Pagina Agencia</h1>
+        <div class="row">
+            <div class="text-center">
+                <h1>Agencia</h1>
+            </div>
         </div>
-        <div class="row col-lg-8 col-lg-push-3 ">
-            <?php if (count($agencia) > 0) { ?>
-                <?php foreach ($agencia as $data): ?>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
-                        <div class="thumbnail col-lg-11 col-lg-pull-1 llibres text-center">
-                            <h1>Agencia</h1>
-                            <h5><strong><?php echo $data->getCif(); ?></strong></h5>
-                            <h5><strong><?php echo $data->getNom(); ?></strong></h5>
-                    </div>
-                        </div>
-                <?php endforeach; ?>
-            <?php } ?>
-            <?php if (count($directores) > 0) { ?>
-            <?php foreach ($directores as $data): ?>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
-                <div class="thumbnail col-lg-11 col-lg-pull-1 llibres text-center">
-                    <h1>Directores</h1>
-                    <h5><strong><?php echo $data->getDni(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getNom(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getCognom1(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getCognom2(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getDescripcio(); ?></strong></h5>
-            </div>
-                </div>
-                <?php endforeach; ?>
-            <?php } ?>
-            <?php if (count($obras) > 0) { ?>
-            <?php foreach ($obras as $data): ?>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
-                <div class="thumbnail col-lg-11 col-lg-pull-1 llibres text-center">
-                    <h1>Obras</h1>
-                    <h5><strong><?php echo $data->getNomObra(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getDescripcioObra(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getDataIniciObra(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getDataFiObra(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getTipusObra(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getDirectorObra(); ?></strong></h5>
-                </div>
-            </div>
-                <?php endforeach; ?>
-            <?php } ?>
-            <?php if (count($actores) > 0) { ?>
-            <?php foreach ($actores as $data): ?>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
-                <div class="thumbnail col-lg-11 col-lg-pull-1 llibres text-center">
-                    <h1>Actores</h1>
-                    <h5><strong><?php echo $data->getDni(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getNom(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getCognom1(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getCognom2(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getSexe(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getFoto(); ?></strong></h5>
-                    <h5><strong><?php echo $data->getDescripcio(); ?></strong></h5>
-                </div>
-            </div>
-                <?php endforeach; ?>
-            <?php } ?>
+        <br>
+        <div class="row">
+            <div class="col-lg-9 col-lg-push-2">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th class="bg-primary" colspan="2">Informacio d'Agència</th>
+                        </tr>  
+                        <tr>
+                            <?php if (count($agencia) > 0) { ?>
+                                <?php foreach ($agencia as $data): ?>
 
-        </div>
+                                    <td><strong>Nom d'Agencia:</strong>  <?php echo $data->getNom(); ?></td>
+                                    <td><strong>CIf:</strong>  <?php echo $data->getCif(); ?></td>
+                                <?php endforeach; ?>
+                            <?php } ?>
+                        </tr>  
+                        <tr>
+                            <th colspan="2"><h5><strong>Directors</strong></h5></th>
+                        </tr> 
+                        <?php if (count($directores) > 0) { ?>
+                            <?php $contDirector = count($directores); ?>
+                            <tr>
+                                <td class="text-left"><h6><strong>Aquesta Agencia te <?php echo $contDirector; ?> directors</strong></h6></td>
+                                <td colspan="3"> <?php foreach ($directores as $data): ?>   
+                                        <ul>
+                                            <a href="?ctl=director&act=detall&dni=<?php echo $data->getDni(); ?>" class="caixa-detalls" data-detalls="Clic per veure més detalls">
+                                                <li><?php echo $data->getNom() . $data->getCognom1() . $data->getCognom2() ?></li>
+                                            </a>
+                                        </ul>
+                                    <?php endforeach; ?> 
+                                </td>
+                            </tr>
+                        <?php } ?>
+
+                        <tr>
+                            <th colspan="2"><h5><strong>Obres</strong></h5></th>
+                        </tr> 
+                        <?php if (count($obras) > 0) { ?>
+                            <?php $contObres = count($obras); ?>
+                            <tr>
+                                <td class="text-left"><h6><strong>Aquesta Agencia te <?php echo $contObres; ?> Obres</strong></h6></td>
+                                <td colspan="3"> <?php foreach ($obras as $data): ?>   
+                                        <ul>
+                                            <a href="?ctl=obra&act=detalls&id=<?php echo $data->getIdObra(); ?>" class="caixa-detalls" data-detalls="Clic per veure més detalls">
+                                                <li><?php echo $data->getNomObra() ?></li>
+                                            </a>
+                                        </ul>
+                                    <?php endforeach; ?> 
+                                </td>
+                            </tr>
+                        <?php } ?>
+
+                        <tr>
+                            <th colspan="2"><h5><strong>Actors</strong></h5></th>
+                        </tr> 
+                        <?php if (count($actores) > 0) { ?>
+                            <?php $contActors = count($actores); ?>
+                            <tr>
+                                <td class="text-left"><h6><strong>Aquesta Agencia te <?php echo $contActors; ?> Actors</strong></h6></td>
+                                <td colspan="3"> <?php foreach ($actores as $data): ?>   
+                                        <ul>
+                                            <a href="?ctl=veure_fitxa&id=<?php echo $data->getId(); ?>" class="caixa-detalls" data-detalls="Clic per veure més detalls">
+                                                <li><?php echo $data->getNom() . " " . $data->getCognom1() . " " . $data->getCognom2() ?></li>
+                                            </a>
+                                        </ul>
+                                    <?php endforeach; ?> 
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </table>
+                </div>
+            </div>
+        </div>        
     </div>
 </div>
+<div id="fixa" class="alert alert-warning" style="display:none; position:absolute; z-index: 3;"></div>
+<script>    
+    $(function () {
+        $(".caixa-detalls").mouseover(function () {
+            var veure = $(this).data("detalls");
+            $("#fixa").html("<strong>" + veure + "</strong>").show();
+        });
 
+        $(".caixa-detalls").mouseout(function () {
+            $("#fixa").hide().html("");
+
+        });
+
+        $(document).mousemove(function (evento) {
+            var posx = evento.pageX;
+            var posy = evento.pageY;
+            $("#fixa").css("left", posx + 15);
+            $("#fixa").css("top", posy + 15);
+        });
+    });
+</script>

@@ -50,10 +50,12 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
             $idObra = $ultimaObra->getIdObra();
 
             foreach ($_REQUEST['actors'] as $keyActor => $actor) {
+                //var_dump($_REQUEST['actors']);
                 foreach ($_REQUEST['paper'] as $keyPaper => $tipus_paper) {
                     foreach ($_REQUEST['personatge'] as $keyPersonatge => $personatge) {
                         if ($keyActor == $keyPaper && $keyPaper == $keyPersonatge) {
                             $obra_actor = new obra_actor();
+                            $obra_actor->setActor($actor);
                             $obra_actor->setObra($idObra);
                             $obra_actor->setActor($actor);
                             $obra_actor->setTipusPaper($tipus_paper);
@@ -63,7 +65,6 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
                     }
                 }
             }
-
 
             $missatge = "S'ha afegit l'obra correctament!";
             $redireccio = "?ctl=obres";

@@ -12,17 +12,8 @@ $(document).ready(function () {
     $('#descripcio').change(notEmpty);
     $('#foto').change(notEmpty);
     $('#sexe').change(notEmptyDesplegable);
-
-
-    $("#enviar").on("click", function () {
-        if (notEmpty() == true || notEmptyDesplegable() == true || validateDni() == true || validacioEmail() == true) {
-            $('#enviar').removeAttr('disabled');
-            $("#formulari").submit();
-            
-        } else {
-           $("#enviar").attr('disabled', 'disabled'); 
-        }
-    });
+        
+   
 });
 
 function notEmptyDesplegable() {

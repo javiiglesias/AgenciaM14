@@ -45,7 +45,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 
     $ActorsObra = $obra_actor->cercarIdObraActor($id);
     
-    //var_dump($ActorsObra);
+    var_dump($ActorsObra);
 
     $tipusObraSeleccionat = $obra->tipusObraSeleccionat($obraTrobada->getTipusObra());
     $directorSeleccionat = $obra->directorObraSeleccionat($obraTrobada->getDirectorObra());
@@ -56,7 +56,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
             $obra->modificarObra($obraTrobada, addslashes($nom), addslashes($descripcio), addslashes($datainici), addslashes($datafi), addslashes($tipusObra), addslashes($director));
 
             foreach ($ActorsObra as $keyActor => $dateObraActor) {
-               // var_dump($dateObraActor);
+                //var_dump($dateObraActor);
                 foreach ($_REQUEST['actors'] as $keyActor => $actor) {
                     foreach ($_REQUEST['paper'] as $keyPaper => $tipus_paper) {
                         foreach ($_REQUEST['personatge'] as $keyPersonatge => $personatge) {

@@ -115,6 +115,10 @@ and open the template in the editor.
     width:30px;
 }
 
+.icon-bar{
+    background-color: #fff !important;
+}
+
 /** ====== LInks ===== **/
 
 a{

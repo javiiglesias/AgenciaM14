@@ -7,7 +7,7 @@ require_once("config/db.inc.php");
 class obra_actorDb {
 
     public function inserir($obra_actor) {
-
+        var_dump($obra_actor);
         $query = "insert into obra_actor values('', '" . $obra_actor->getObra() . "', '" . $obra_actor->getActor() . "', '" . $obra_actor->getTipusPaper() . "', '" . $obra_actor->getPersonatge() .  "');";
         $con = new db();
         $con->consulta($query);
@@ -15,8 +15,9 @@ class obra_actorDb {
     }
 
     public function modificar($obra_actor,$actor,$tipus_paper,$personatge) {
-        $query = "update obra_actor set id_actor='" . $actor. "', tipus_paper='" .$tipus_paper .  "', personatge='" . $personatge ."' WHERE personatge like'". $obra_actor->getPersonatge()."'";        
-        //var_dump($query);
+        var_dump($obra_actor->getId());
+        $query = "update obra_actor set id_actor='" . $actor. "', tipus_paper='" .$tipus_paper .  "', personatge='" . $personatge ."' WHERE id='". $obra_actor->getId()."'";        
+        var_dump($query);
         $con = new db();
         $con->consulta($query);
         $con->close();

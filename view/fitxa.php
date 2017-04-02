@@ -64,11 +64,12 @@
                                 <td>
                                     <p>Obres en les que participa:</p>
                                     <hr>
-                                    <?php foreach ($Arrayobres as $data):?>
-                                    <?php $obra = $obra_actor->cercarObra($data->getObra()); ?>
-                                    <ul>
-                                        <li><?php echo $obra->getNomObra() ?></li>
-                                    </ul>
+                                    <?php $cont = 0; ?>
+                                    <?php foreach ($Arrayobres as $data): ?>
+                                        <?php $obra = $obra_actor->cercarObra($data->getObra()); ?>                                        
+                                        <ul>                                            
+                                            <li><?php echo $obra->getNomObra() ?></li>
+                                        </ul>
                                         <hr>
                                     <?php endforeach; ?>
                                 </td>

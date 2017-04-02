@@ -61,8 +61,30 @@
                 <div class="form-group">
                     <label>Director:</label>
                     <?php echo $directorSeleccionat ?>
-                </div>                  
-                <div class="col-md-offset-3 col-xs-offset-2">
+                </div>     
+                <div class="form-group">
+                    <label>Actors d'obra:</label>
+                    <div class="row">
+                        <div class="col-xs-12">                            
+                            <?php foreach ($ActorsObra as $data): ?>                            
+                                <label>Actor:</label>
+                                <?php echo $obra->actorObraSelecctionat($data->getActor()); //var_dump($data)?>
+                            </div>
+                            <div class="col-xs-6">
+                                <label>Personatge:</label>
+                                <input class="form-control" name="personatge[]" value="<?php echo $data->getPersonatge(); ?>"/>
+                            </div>
+                            <div class="col-xs-6">
+                                <label>Tipus Paper:</label>
+                                <?php echo $obra->tipuspaperSeleccionat($data->getTipusPaper()); ?>  
+                            </div><br>
+                        <?php endforeach; ?> 
+                    </div>
+                    <br>
+                    <br>                    
+                </div>
+
+                <div class="col-xs-7 col-md-4 col-md-offset-5 col-xs-offset-1">
                     <button name="Submit" class="btn btn-primary btn-lg"><image class="btn-icon" src="view/images/guardar.png"/>  Modificar </button>
                 </div>
             </form>
@@ -81,8 +103,8 @@
         monthNames: ['Gener', 'Febrer', 'Març', 'Abril', 'Maig', 'Juny', 'Juliol', 'Agost', 'Setembre', 'Octubre', 'Novembre', 'Desembre'],
         monthNamesShort: ['Gen', 'Feb', 'Mar', 'Abr', 'Maig', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Des'],
         dayNames: ['Diumenge', 'Dilluns', 'Dimarts', 'Dimecres', 'Dijous', 'Divendres', 'Dissabte'],
-        dayNamesShort: ['Diu', 'Dill', 'Dima', 'Dime', 'Dijo', 'Dive', 'Diss'],
-        dayNamesMin: ['Diu', 'Dill', 'Dimt', 'Dimc', 'Dij', 'Div', 'Dis'],
+        dayNamesShort: ['Dg', 'Dl', 'Dt', 'Dm', 'Dj', 'Dv', 'Ds'],
+        dayNamesMin: ['Dg', 'DL', 'Dt', 'Dm', 'Dj', 'Dv', 'Ds'],
         weekHeader: 'Sm',
         dateFormat: 'dd/mm/yy',
         firstDay: 1,
@@ -92,56 +114,9 @@
     };
     $.datepicker.setDefaults($.datepicker.regional['ca']);
     $(function () {
-        $("#fecha").datepicker();
-    });
-   $(function () {
         $("#datepicker-1").datepicker({dateFormat: 'dd/mm/yy'});
     });
     $(function () {
         $("#datepicker-2").datepicker({dateFormat: 'dd/mm/yy'});
     });
-
-    //BOTO AFEGIR ACTOR I PAPER
-    document.getElementById('afegirActor').onclick = afegirActor;
-
-    function afegirActor() {
-
-        //Container Actor/Paper
-        var divRow = document.createElement("div");
-        divRow.setAttribute("id", "div-row");
-        divRow.setAttribute("class", "row");
-        document.getElementById("addActor").appendChild(divRow);
-        var btn = document.getElementById("addActor-btn");
-        btn.insertBefore(divRow, btn.childNodes[0]);
-
-        /* ===== Actor ======= */
-
-        var divActor = document.createElement("div");
-        divActor.setAttribute("id", "div-actor");
-        divActor.setAttribute("class", "col-xs-6");
-        document.getElementById("div-row").appendChild(divActor);
-
-        var inputActor = document.createElement("input");
-        inputActor.setAttribute("class", "form-control");
-        var label = document.createElement("label");
-        var text = document.createTextNode(" Actor:");
-        label.appendChild(text);
-        document.getElementById("div-actor").appendChild(label);
-        document.getElementById("div-actor").appendChild(inputActor);
-
-        /* ===== Paper ======= */
-        var divPaper = document.createElement("div");
-        divPaper.setAttribute("id", "div-paper");
-        divPaper.setAttribute("class", "col-xs-6");
-        document.getElementById("div-row").appendChild(divPaper);
-
-        var inputActor = document.createElement("input");
-        inputActor.setAttribute("class", "form-control");
-        var label2 = document.createElement("label");
-        var text2 = document.createTextNode(" Paper:");
-        label2.appendChild(text2);
-        document.getElementById("div-paper").appendChild(label2);
-        document.getElementById("div-paper").appendChild(inputActor);
-    }
-
 </script>

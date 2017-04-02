@@ -62,12 +62,15 @@
                             <tr>
                                 <td> <h5><strong>Obres:</strong></h5> </td>
                                 <td>
-                                    <p>Obres en les que participa o ha participat:</p>
+                                    <p>Obres en les que participa:</p>
                                     <hr>
-                                    <?php //foreach ($arrayObres as $data):?>
-                                        <p><?php echo $obres->getNomObra() ?></p>
+                                    <?php foreach ($Arrayobres as $data):?>
+                                    <?php $obra = $obra_actor->cercarObra($data->getObra()); ?>
+                                    <ul>
+                                        <li><?php echo $obra->getNomObra() ?></li>
+                                    </ul>
                                         <hr>
-                                    <?php// endforeach; ?>
+                                    <?php endforeach; ?>
                                 </td>
                             </tr>
                         </table>

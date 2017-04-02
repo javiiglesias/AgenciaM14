@@ -14,16 +14,16 @@ class obra_actorDb {
         $con->close();
     }
 
-    public function modificar($obra_actor, $obra, $actor, $tipus_paper, $personatge) {
-        $query = "update obra_actor set id_obra='" . $obra . "', id_actor='" . $actor. "', tipus_paper='" .$tipus_paper .  "', personatge='" . $personatge ."' WHERE id='" . $obra_actor->getId() . "'";
-        
+    public function modificar($obra_actor,$actor,$tipus_paper,$personatge) {
+        $query = "update obra_actor set id_actor='" . $actor. "', tipus_paper='" .$tipus_paper .  "', personatge='" . $personatge ."' WHERE personatge like'". $obra_actor->getPersonatge()."'";        
+        //var_dump($query);
         $con = new db();
         $con->consulta($query);
         $con->close();
     }
 
-    public function eliminar($obra) {
-        $query = "delete from obra_actor WHERE id='" . $obra->getId() . "'";
+    public function eliminar($obraActor) {
+        $query = "delete from obra_actor WHERE id_obra='" . $obraActor->getObra() . "'";
         $con = new db();
         $con->consulta($query);
         $con->close();

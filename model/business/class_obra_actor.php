@@ -69,9 +69,9 @@ class Obra_Actor {
         $obraActorDb->inserir($obra_actor);
     }
 
-    public function modificarObraActor($obraid, $obra, $actor, $tipusPaper, $personatge) {
+    public function modificarObraActor($ActorsObra,$actor,$tipus_paper,$personatge) {
         $obraActorDb = new obra_actordb();
-        $obraActorDb->modificar($obraid, $obra, $actor, $tipusPaper, $personatge);
+        $obraActorDb->modificar($ActorsObra, $actor,$tipus_paper,$personatge);
     }
 
     public function eliminarObraActor($obra) {
@@ -123,13 +123,17 @@ class Obra_Actor {
     public function cercarObresPerActor($idActor) {
         $arrayTipusObraActor = $this->mostrarObraActors();
         $found = [];
-        foreach ($arrayTipusObraActor as $obraActor) {
+        foreach ($arrayTipusObraActor as $key => $obraActor) {
             if ($obraActor->getActor() == $idActor) {
-                $found = $obraActor;
+                $found[$key]  = $obraActor;
             }
-        }
+        }        
+        return $found;
+    }
+    
+    public function cercarObra($idObra) {
         $obra = new Obra();
-        $obraTrobada = $obra->cercarIdObra($found->getObra());
+        $obraTrobada = $obra->cercarIdObra($idObra);
         return $obraTrobada;
     }
 

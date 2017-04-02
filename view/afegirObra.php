@@ -94,7 +94,7 @@
         monthNamesShort: ['Gen', 'Feb', 'Mar', 'Abr', 'Maig', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Des'],
         dayNames: ['Diumenge', 'Dilluns', 'Dimarts', 'Dimecres', 'Dijous', 'Divendres', 'Dissabte'],
         dayNamesShort: ['Diu', 'Dill', 'Dima', 'Dime', 'Dijo', 'Dive', 'Diss'],
-        dayNamesMin: ['Diu', 'Dill', 'Dimt', 'Dimc', 'Dij', 'Div', 'Dis'],
+        dayNamesMin: ['Dg', 'DL', 'Dt', 'Dm', 'Dj', 'Dv', 'Ds'],
         weekHeader: 'Sm',
         dateFormat: 'dd/mm/yy',
         firstDay: 1,

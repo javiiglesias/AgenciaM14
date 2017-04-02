@@ -172,6 +172,22 @@ class Obra {
         return $select;
     }
 
+    public function tipuspaperSeleccionat($idpaper) {
+        $tipusPaper = new tipus_paper();
+        $ArraydeTipusPaper = $tipusPaper->mostrarTipusPaper();
+
+        $select = '<select name="paper[]"  class="form-control">';
+        foreach ($ArraydeTipusPaper as $sec) {
+            if ($sec->getId() == $idpaper) {
+                $select = $select . '<option value="' . $sec->getId() . '" selected>' . $sec->getTipus() . '</option>';
+            } else {
+                $select = $select . '<option value="' . $sec->getId() . '">' . $sec->getTipus() . '</option>';
+            }
+        }
+        $select = $select . '</select>';
+        return $select;
+    }
+
     public function createSelectActorObra() {
         $actor = new Actordb();
         $ArraydeActor = $actor->populateActordb();
@@ -179,6 +195,22 @@ class Obra {
         $select = '<select name="actors[]"  class="form-control">';
         foreach ($ArraydeActor as $act) {
             $select = $select . '<option value="' . $act->getId() . '">' . $act->getNom() . " " . $act->getCognom1() . " " . $act->getCognom2() . '</option>';
+        }
+        $select = $select . '</select>';
+        return $select;
+    }
+
+    public function actorObraSelecctionat($idActor) {
+        $actor = new Actordb();
+        $ArraydeActor = $actor->populateActordb();
+
+        $select = '<select name="actors[]"  class="form-control">';
+        foreach ($ArraydeActor as $sec) {
+            if ($sec->getId() == $idActor) {
+                $select = $select . '<option value="' . $sec->getId() . '"selected>' . $sec->getNom() . '</option>';
+            } else {
+                $select = $select . '<option value="' . $sec->getId() . '">' . $sec->getNom() . '</option>';
+            }
         }
         $select = $select . '</select>';
         return $select;

@@ -12,14 +12,19 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         $id = $_REQUEST['id'];
     }
     $obra = new Obra();
+    $obra_actor = new obra_actor();
 
     $obraTrobada = $obra->cercarIdObra($id);
+    $ActorsObra = $obra_actor->cercarIdObraActor($id);
 
+    foreach ($ActorsObra as $keyActor => $dataObraActor) {
+        $obra_actor->eliminarObraActor($dataObraActor);
+    }
     $obra->eliminarObra($obraTrobada);
+
     $missatge = "S'ha eliminat l'obra correctament!";
     $redireccio = "?ctl=obres";
     require_once 'view/confirmacio.php';
-    
 } else {
     $missatge = "No tens permisos per entrar en aquesta pagina! sis plau inicia sessio. Gracies";
     require_once 'view/error.php';

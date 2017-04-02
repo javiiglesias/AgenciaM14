@@ -10,6 +10,7 @@ $(document).ready(function () {
     $('#cognom1').change(notEmpty);
     $('#cognom2').change(notEmpty);
     $('#descripcio').change(notEmpty);
+    $('.data').change(notEmpty);
     $('#foto').change(notEmpty);
     $('#sexe').change(notEmptyDesplegable);
         

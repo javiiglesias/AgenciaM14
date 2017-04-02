@@ -38,21 +38,25 @@
                 <h1 class="text-center">Modificar Obra</h1>
                 <small class="col-xs-offset-2 col-md-offset-1 col-sm-offset-1  col-lg-offset-3">Introdueix les dades de la nova Obra</small></br>             
                 <input type="hidden" name="id" value="<?php echo $obraTrobada->getIdObra(); ?>">
-                <div class="form-group">
+                <div class="form-group  has-feedback" id="validacio">
                     <label>Nom:</label>
-                    <input type="text" name="nom" class="form-control" value="<?php echo $obraTrobada->getNomObra(); ?>" >
+                    <input type="text" id="nom" name="nom" class="form-control" value="<?php echo $obraTrobada->getNomObra(); ?>" required>
+                    <span id="span-validacio" class="glyphicon form-control-feedback"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group  has-feedback" id="validacio">
                     <label>Descripcio: </label>
-                    <textarea type="text" name="descripcio" rows="4" cols="4" class="form-control" ><?php echo $obraTrobada->getDescripcioObra(); ?></textarea>
+                    <textarea type="text" id="descripcio" name="descripcio" rows="4" cols="4" class="form-control" required><?php echo $obraTrobada->getDescripcioObra(); ?></textarea>
+                    <span id="span-validacio" class="glyphicon form-control-feedback"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group  has-feedback" id="validacio">
                     <label>Data Inici:</label>
-                    <input type="date" name="datainici" id="datepicker-1" class="form-control" value="<?php echo $obraTrobada->getDataIniciObra(); ?>" >               
+                    <input type="date" name="datainici" id="datepicker-1" class="form-control data" value="<?php echo $obraTrobada->getDataIniciObra(); ?>" required >               
+                    <span id="span-validacio" class="glyphicon form-control-feedback"></span>
                 </div>       
-                <div class="form-group">
+                <div class="form-group  has-feedback" id="validacio">
                     <label>Data Fi:</label>
-                    <input type="date" name="datafi" id="datepicker-2" class="form-control" value="<?php echo $obraTrobada->getDataFiObra(); ?>">               
+                    <input type="date" name="datafi" id="datepicker-2" class="form-control data" value="<?php echo $obraTrobada->getDataFiObra(); ?>" required>               
+                    <span id="span-validacio" class="glyphicon form-control-feedback"></span>
                 </div>   
                 <div class="form-group">
                     <label>Tipus:</label>
@@ -70,9 +74,10 @@
                                 <label>Actor:</label>
                                 <?php echo $obra->actorObraSelecctionat($data->getActor()); //var_dump($data)?>
                             </div>
-                            <div class="col-xs-6">
+                            <div class="col-xs-6  has-feedback" id="validacio">
                                 <label>Personatge:</label>
-                                <input class="form-control" name="personatge[]" value="<?php echo $data->getPersonatge(); ?>"/>
+                                <input class="form-control" name="personatge[]" value="<?php echo $data->getPersonatge(); ?>" id="nom" required/>
+                                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
                             </div>
                             <div class="col-xs-6">
                                 <label>Tipus Paper:</label>

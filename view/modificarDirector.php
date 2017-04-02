@@ -30,17 +30,20 @@
                 <label>DNI:</label>
                 <input type="text" name="dni" readonly="readonly" class="form-control" value="<?php echo $dir[0]->getDni(); ?>">
             </div>
-            <div class="form-group">
+            <div class="form-group  has-feedback" id="validacio">
                 <label>Nom:</label>
-                <input type="text" name="nom" class="form-control" value="<?php echo $dir[0]->getNom(); ?>" >
+                <input type="text" id="nom" name="nom" class="form-control" value="<?php echo $dir[0]->getNom(); ?>" required>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group  has-feedback" id="validacio">
                 <label>Cognom1: </label>
-                <input type="text" name="cognom1" class="form-control" value="<?php echo $dir[0]->getCognom1(); ?>" >
+                <input type="text" id="cognom1" name="cognom1" class="form-control" value="<?php echo $dir[0]->getCognom1(); ?>" required >
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group  has-feedback" id="validacio">
                 <label>Cognom2: </label>
-                <input type="text" name="cognom2" class="form-control" value="<?php echo $dir[0]->getCognom2(); ?>" >
+                <input type="text" id="cognom2"name="cognom2" class="form-control" value="<?php echo $dir[0]->getCognom2(); ?>" required>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback" id="validacio">
                 <label>Descripció:</label>

@@ -31,12 +31,12 @@ class Sexedb {
     }
 
     function categoriaSeleccionat($catSelect) {
-        $select = '<select name="categoria">';
+        $select = '<select name="categoria" id="sexe" class="form-control">';
         foreach ($this->llistaSexe as $key => $cat) {
-            if ($cat->id == $catSelect->id) {
-                $select = $select . '<option value="' . $catSelect->id . '"selected>' . $catSelect->sexe . '</option>';
+            if ($cat->id == $catSelect) {
+                $select = $select . '<option value="' . $cat->id . '"selected>' . $catSelect . '</option>';
             } else {
-                $select = $select . '<option value="' . $cat->id . '">' . $cat->descripcion . '</option>';
+                $select = $select . '<option value="' . $cat->id . '">' . $cat->sexe . '</option>';
             }
         }
         $select = $select . '</select>';

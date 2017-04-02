@@ -54,7 +54,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
                 }
             } else {
                 //missatege de la clase validar
-                 
+                 $redireccio ="?ctl=actor&act=afegir";
                 $missatge = $nouActor->validarActor()->getMsg();
                 require_once 'view/confirmacio.php';
             }

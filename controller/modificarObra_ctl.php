@@ -45,7 +45,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 
     $ActorsObra = $obra_actor->cercarIdObraActor($id);
     
-    var_dump($ActorsObra);
+    //var_dump($ActorsObra);
 
     $tipusObraSeleccionat = $obra->tipusObraSeleccionat($obraTrobada->getTipusObra());
     $directorSeleccionat = $obra->directorObraSeleccionat($obraTrobada->getDirectorObra());

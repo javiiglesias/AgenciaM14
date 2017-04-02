@@ -37,10 +37,11 @@
         <form action="?ctl=tipusPaper&act=modificar" method="post">  
             <h1 class="text-center">Modificar Tipus Paper</h1>
             <small class="col-xs-offset-2 col-md-offset-1 col-sm-offset-1  col-lg-offset-3">Introdueix les dades del nou tipus de paper</small></br> 
-            <div class="form-group">
+            <div class="form-group  has-feedback" id="validacio">
                 <input type="text" name="id" hidden value="<?php echo $tipusPaperTrobat->getId(); ?>">
                 <label>Nom:</label>
-                <input type="text" name="nom" class="form-control" value="<?php echo $tipusPaperTrobat->gettipus(); ?>">
+                <input type="text" id="nom" name="nom" class="form-control" value="<?php echo $tipusPaperTrobat->gettipus(); ?>" required>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
             <div class="col-md-offset-3 col-xs-offset-2">
                 <button name="Submit" class="btn btn-primary btn-lg"><image class="btn-icon" src="view/images/guardar.png"/> Modificar </button>

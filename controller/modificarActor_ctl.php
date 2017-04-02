@@ -13,12 +13,13 @@ $descripcio = null;
 $id = null;
 
 require_once 'view/header.php';
-if (isset($_REQUEST['id'])) {
-    $id = $_REQUEST['id'];
-}
-$actor = $actordb->buscarPerId($id);
+
 
 if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
+    if (isset($_REQUEST['id'])) {
+        $id = $_REQUEST['id'];
+    }
+    $actor = $actordb->buscarPerId($id);
     if (isset($_REQUEST['Submit'])) {
         if (isset($_REQUEST['dni'])) {
             $dni = $_REQUEST['dni'];
@@ -44,9 +45,9 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
         if (isset($_REQUEST['id'])) {
             $id = $_REQUEST['id'];
         }
-        
-        $modActor = new Actor($dni, $nom, $cognom1, $cognom2, $sexe, $foto,$descripcio);
-        
+
+        $modActor = new Actor($dni, $nom, $cognom1, $cognom2, $sexe, $foto, $descripcio);
+
 
         if ($modActor->validarActor()->getOk()) {
             try {

@@ -40,26 +40,23 @@
             <div class="form-group has-feedback" id="validacio">
                 <label>DNI:</label>
                 <input type="text" id="dni" name="dni" class="form-control"  required>
-                <img class="icon" src="view/images/confirm.png" hidden id="correctDni"/>
-                <img class="icon" src="view/images/error.png" hidden id="errorDni"/>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
+                <span id="error_dni" class="missatge_error"></span>
             </div>
             <div class="form-group has-feedback" id="validacio">
                 <label>Nom:</label>
                 <input type="text" id="nom" name="nom" class="form-control" required>
-                <img class="icon" src="view/images/confirm.png" hidden id="correctnom"/>
-                <img class="icon" src="view/images/error.png" hidden id="errornom"/>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback" id="validacio">
                 <label>1º Cognom: </label>
                 <input type="text" id="cognom1" name="cognom1" class="form-control"  required >
-                <img class="icon" src="view/images/confirm.png" hidden id="correctcognom1"/>
-                <img class="icon" src="view/images/error.png" hidden id="errorcognom1"/>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback" id="validacio">
                 <label>2º Cognom:</label>
                 <input type="text" id="cognom2" name="cognom2" class="form-control"  required>
-                <img class="icon" src="view/images/confirm.png" hidden id="correctcognom2"/>
-                <img class="icon" src="view/images/error.png" hidden id="errorcognom2"/>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
             <div class="form-group">
                 <label>Sexe:</label>
@@ -69,22 +66,18 @@
 
                 echo $selsexe;
                 ?>
-                <img class="icon" src="view/images/confirm.png" hidden id="correctsexe"/>
-                <img class="icon" src="view/images/error.png" hidden id="errorsexe"/>
             </div>
 
-            <div class="form-group">
+            <div class="form-group has-feedback" id="validacio">
                 <label>Foto:</label>
                 <input type="text" id="foto" name="foto" class="form-control"  required>
-                <img class="icon" src="view/images/confirm.png" hidden id="correctfoto"/>
-                <img class="icon" src="view/images/error.png" hidden id="errorfoto"/>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group has-feedback" id="validacio">
                 <label>Descripcio:</label>
                 <textarea class="form-control" id="descripcio" name="descripcio" rows="4" cols="4"></textarea>
-                <img class="icon" src="view/images/confirm.png" hidden id="correctdescripcio"/>
-                <img class="icon" src="view/images/error.png" hidden id="errordescripcio"/>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
 
             <div class="col-md-offset-3 col-xs-offset-2">

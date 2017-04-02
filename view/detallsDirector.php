@@ -9,7 +9,7 @@
                 <?php } else { ?>
                     <li role="presentation"><a href="?ctl=directors">Mostrar Directors</a></li>
                 <?php } ?>
-                <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>s
+                <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
                     <?php if ($titlePage == "Afegir Director") { ?>
                         <li role = "presentation" class="active"><a href ="?ctl=director&act=afegir">Afegir director</a></li>
                     <?php } else { ?>

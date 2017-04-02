@@ -37,27 +37,31 @@
             <form action="?ctl=obra&act=afegir" method="post">  
                 <h1 class="text-center">Afegir Obra</h1>
                 <small class="col-xs-offset-2 col-md-offset-1 col-sm-offset-1  col-lg-offset-3">Introdueix les dades de la nova Obra</small></br>             
-                <div class="form-group">
+                <div class="form-group has-feedback" id="validacio">
                     <label>Nom:</label>
-                    <input type="text" name="nom" class="form-control" >
+                    <input type="text" id="nom" name="nom" class="form-control" required>
+                    <span id="span-validacio" class="glyphicon form-control-feedback"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group has-feedback" id="validacio">
                     <label>Descripcio: </label>
-                    <textarea type="text" name="descripcio" rows="4" cols="4" class="form-control" ></textarea>
+                    <textarea type="text" id="descripcio" name="descripcio" rows="4" cols="4" class="form-control" required></textarea>
+                    <span id="span-validacio" class="glyphicon form-control-feedback"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group has-feedback" id="validacio">
                     <label>Data Inici:</label>
-                    <input type="text" name="datainici" id="datepicker-1" class="form-control" >               
+                    <input type="text"  name="datainici" id="datepicker-1" class="form-control data" required >  
+                    <span id="span-validacio" class="glyphicon form-control-feedback"></span>
                 </div>       
-                <div class="form-group">
+                <div class="form-group  has-feedback" id="validacio"> 
                     <label>Data Fi:</label>
-                    <input type="text" name="datafi" id="datepicker-2" class="form-control" >               
+                    <input type="text"  name="datafi" id="datepicker-2" class="form-control data" required >               
+                    <span id="span-validacio" class="glyphicon form-control-feedback"></span>
                 </div>                 
-                <div class="form-group">
+                <div class="form-group  has-feedback" id="validacio"> 
                     <label>Tipus d'Obra:</label>
                     <?php echo $selectTipusObra; ?>
                 </div>   
-                <div class="form-group">
+                <div class="form-group  has-feedback" id="validacio"> 
                     <label>Director:</label>
                     <?php echo $selectDirector; ?>
                 </div>   
@@ -68,7 +72,7 @@
 
                     <div class="col-sm-12" id="addActor-btn"><br>                        
                         <div class="col-xs-6">
-                            <p><button  type="button" class="btn btn-primary btn-sm" id="afegirActor" onClick="incrementar(cont = 0)"><span class="fa fa-plus"></span>Afegir Actor A Obra</button></p>                        
+                            <p><button  type="button" class="btn btn-primary btn-sm" id="afegirActor"><span class="fa fa-plus"></span>Afegir Actor A Obra</button></p>                        
                         </div>
                     </div>
                     <br>

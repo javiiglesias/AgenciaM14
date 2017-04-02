@@ -1,4 +1,3 @@
-<?php require_once 'view/menuEdicio.php'; ?>
 <div class="container">  
     </br>
     <div class="row">
@@ -38,40 +37,48 @@
         <form action="?ctl=actor&act=modificar" method="post">  
             <h1 class="text-center">Modificar Actor</h1>
             <small class="col-xs-offset-2 col-md-offset-1 col-sm-offset-1  col-lg-offset-2">Introdueix les dades a modificar del actor </small></br> 
-            <div class="form-group">
+            <div class="form-group  has-feedback" id="validacio">
                 <label>DNI:</label>
-                <input type="text" name="dni" class="form-control" value="<?php echo $actor->getDni(); ?>" >
+                <input type="text" id="dni" name="dni" class="form-control" value="<?php echo $actor->getDni(); ?>" required>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
+                <span id="error_dni" class="missatge_error"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group  has-feedback" id="validacio">
                 <label>Nom:</label>
-                <input type="text" name="nom" class="form-control" value="<?php echo $actor->getNom(); ?>" >
+                <input type="text" id="nom" name="nom" class="form-control" value="<?php echo $actor->getNom(); ?>" required ><span id="span-validacio" class="glyphicon form-control-feedback"></span>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group  has-feedback" id="validacio">
                 <label>1º Cognom: </label>
-                <input type="text" name="cognom1" class="form-control" value="<?php echo $actor->getCognom1(); ?>">
+                <input type="text" id="cognom1" name="cognom1" class="form-control" value="<?php echo $actor->getCognom1(); ?>" required>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group  has-feedback" id="validacio">
                 <label>2º Cognom:</label>
-                <input type="text" name="cognom2" class="form-control" value="<?php echo $actor->getCognom2(); ?>" >
+                <input type="text" id="cognom2" name="cognom2" class="form-control" value="<?php echo $actor->getCognom2(); ?>" required >
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group  has-feedback" id="validacio">
                 <label>Sexe:</label>
                 <?php
                 $sexe = new Sexedb();
-                $selsexe = $sexe->createSelectCategories();
+                $sexeActor = $actor->getSexe();
+                $selsexe = $sexe->categoriaSeleccionat($sexeActor);
 
                 echo $selsexe;
                 ?> 
             </div>
 
-            <div class="form-group">
+            <div class="form-group  has-feedback" id="validacio">
                 <label>Foto:</label>
-                <input type="text" name="foto" class="form-control"value="<?php echo $actor->getFoto(); ?>" >
+                <input type="text" id="foto" name="foto" class="form-control"value="<?php echo $actor->getFoto(); ?>" >
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group  has-feedback" id="validacio">
                 <label>Descripcio:</label>
-                <textarea class="form-control" name="descripcio" rows="4" cols="4"><?php echo $actor->getDescripcio(); ?></textarea>
+                <textarea class="form-control" id="descripcio" name="descripcio" rows="4" cols="4"><?php echo $actor->getDescripcio(); ?></textarea>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
             <input type="hidden" name="id" value="<?php echo $id; ?>"/>
             <div class="col-md-offset-3 col-xs-offset-2">

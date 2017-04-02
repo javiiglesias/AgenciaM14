@@ -36,9 +36,10 @@
         <form action="?ctl=tipusObra&act=afegir" method="post">  
             <h1 class="text-center">Afegir Tipus Obra</h1>
             <small class="col-xs-offset-2 col-md-offset-1 col-sm-offset-1  col-lg-offset-3">Introdueix les dades del nou tipus d'obra</small></br> 
-            <div class="form-group">
+            <div class="form-group has-feedback" id="validacio">
                 <label>Descripci&oacute;:</label>
-                <input type="text" name="descripcio" class="form-control" >
+                <input type="text" id="nom" name="descripcio" class="form-control" required>
+                <span id="span-validacio" class="glyphicon form-control-feedback"></span>
             </div>
             <div class="col-md-offset-3 col-xs-offset-2">
                 <button name="Submit" class="btn btn-primary btn-lg"><image class="btn-icon" src="view/images/afegir.png"/> Afegir </button>
